@@ -1,0 +1,8 @@
+{
+  "name": "hdfcmapps",
+  "app_id": "040d0d97",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
