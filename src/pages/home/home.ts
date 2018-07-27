@@ -15,7 +15,8 @@ export class HomePage {
    this.configureDeploy(); // to configure
 
    const info =  Pro.deploy.getConfiguration() // // to get details 
-   console.log(info)
+   console.log(info);
+   
   //  console.error('testing');
   //Pro.monitoring.exception(new Error('error'))
    // FGXSFXGSDXY
