@@ -15,7 +15,7 @@ import { Pro } from '@ionic/pro';
 import {  Injectable, Injector } from '@angular/core';
 
 
-Pro.init('040D0D97', {
+Pro.init('040d0d97', {
   appVersion: '0.0.1'
 })
 
@@ -33,7 +33,10 @@ export class MyErrorHandler implements ErrorHandler {
   }
 
   handleError(err: any): void {
-    Pro.monitoring.handleNewError(err);
+
+    var user_id="RAJKUMAR";
+    var application_pack="crm"
+    Pro.monitoring.handleNewError(user_id+' '+application_pack+' '+err);
     // Remove this if you want to disable Ionic's auto exception handling
     // in development mode.
     this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);

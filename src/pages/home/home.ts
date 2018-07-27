@@ -9,8 +9,24 @@ import { Pro } from '@ionic/pro';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
-    Pro.monitoring.log('This happens sometimes', { level: 'error' })
+  console.log('Changed for Master branch');
+  //  console.error('testing');
+  //Pro.monitoring.exception(new Error('error'))
+ 
+   // FGXSFXGSDXY
+   
+
+  
+    
+   // Pro.monitoring.log('EDG'+" : "+'Now it is changed', { level: 'error' });
+
+    // Pro.monitoring.call(() => {
+    //   throw new Error('rAJKUMAR'+'error');
+    // })
 
   }
+  
+  
+ 
 
 }
