@@ -19,6 +19,7 @@ Pro.init('040d0d97', {
   appVersion: '0.0.1'
 })
 
+
 @Injectable()
 export class MyErrorHandler implements ErrorHandler {
   ionicErrorHandler: IonicErrorHandler;
