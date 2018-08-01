@@ -19,16 +19,19 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    myHandlerFunction(){
-
-      var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/04896128-2e2c-4950-a857-a220997957da/index.html';
   
-      // path= path.split("//", 1)[1]
-     console.log(path);
-      const browser = this.iab.create(path, '_self');
-    //   let toast = this.toastCtrl.create({
-    //    message: "Press Again to Confirm Exit",
-    //    duration: 3000
-    //  });
-  }
+}
+myHandlerFunction(){
+
+    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/04896128-2e2c-4950-a857-a220997957da/index.html';
+
+  //   // path= path.split("//", 1)[1]
+   console.log(path);
+    const browser = this.iab.create(path, '_self');
+  //   let toast = this.toastCtrl.create({
+  //    message: "Press Again to Confirm Exit",
+  //    duration: 3000
+  //  });
+};
+
 }
