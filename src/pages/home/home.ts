@@ -4,6 +4,7 @@ import { Pro } from '@ionic/pro';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+import { normalizeURL } from 'ionic-angular';
 
 
 @Component({
@@ -60,13 +61,68 @@ export class HomePage {
     const browser = this.iab.create('https://google.com', '_blank');
   }
   openWithInAppBrowserInternal(): void {
-    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/cc65eb75-5c2e-4b14-88af-3264424bbd11/manifest.json';
+    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/04896128-2e2c-4950-a857-a220997957da/index.html';
   
-    path= path.split("//", 1)[1]
+    // path= path.split("//", 1)[1]
    console.log(path);
-    const browser = this.iab.create(path, '_blank');
+    const browser = this.iab.create(path, '_self');
   }
   
+  async performManualUpdatecrm() {
+    const config = {
+      'appId': '040d0d97',
+      'channel': 'crm'
+    }
+    await Pro.deploy.configure(config);
+    const update = await Pro.deploy.checkForUpdate()
+    if (update.available){
+      await Pro.deploy.downloadUpdate((progress) => {
+        console.log(progress);
+      })
+      await Pro.deploy.extractUpdate((progress) => {
+        console.log(progress);
+      })
+      await Pro.deploy.reloadApp();
+    }
+  }
+  async performManualUpdateMaster() {
+    const config = {
+      'appId': '040d0d97',
+      'channel': 'Master'
+    }
+    await Pro.deploy.configure(config);
+
+    const update = await Pro.deploy.checkForUpdate()
+    if (update.available){
+      await Pro.deploy.downloadUpdate((progress) => {
+        console.log(progress);
+      })
+      await Pro.deploy.extractUpdate((progress) => {
+        console.log(progress);
+      })
+      await Pro.deploy.reloadApp();
+    }
+  }
+
+  getMasetrVersion(){
+    const config = {
+      'appId': '040d0d97',
+      'channel': 'Master'
+    }
+    await Pro.deploy.configure(config);
+    const info = await Pro.deploy.getCurrentVersion()
+console.log(info);
+  }
+  getCRMVersion(){
+    const config = {
+      'appId': '040d0d97',
+      'channel': 'crm'
+    }
+    await Pro.deploy.configure(config);
+    const info = await Pro.deploy.getCurrentVersion()
+console.log(info);
+  }
+
   
  
 

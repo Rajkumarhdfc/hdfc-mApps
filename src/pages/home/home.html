@@ -5,10 +5,21 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Works perfectly changed again </h2>
+  <h2>For update </h2>
 <button (click)="performAutomaticUpdate()">Check for update</button>
-<button (click)="openWithInAppBrowser()">Check for update</button>
-<button (click)="openWithInAppBrowserInternal()">Check for update</button>
+<button (click)="performManualUpdateMaster()">Update master</button>
+<button (click)="performManualUpdatecrm()">update crm </button>
+
+<h2>description: Get info about the currently deployed update. </h2>
+
+<button (click)="getMasetrVersion()">Check Master version</button>
+<button (click)="getCRMVersion()">Check crm version</button>
+
+
+<h2>description: Get info about the currently deployed update. </h2>
+
+
+<button (click)="openWithInAppBrowserInternal()">Open CRM channel</button>
   <p>
     This starter project comes with simple tabs-based layout for apps
     that are going to primarily use a Tabbed UI.
