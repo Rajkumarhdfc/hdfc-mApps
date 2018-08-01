@@ -75,6 +75,7 @@ export class HomePage {
     }
     await Pro.deploy.configure(config);
     const update = await Pro.deploy.checkForUpdate()
+    debugger;
     if (update.available){
       await Pro.deploy.downloadUpdate((progress) => {
         console.log(progress);
@@ -82,7 +83,7 @@ export class HomePage {
       await Pro.deploy.extractUpdate((progress) => {
         console.log(progress);
       })
-      await Pro.deploy.reloadApp();
+      //await Pro.deploy.reloadApp();
     }
   }
   async performManualUpdateMaster() {
@@ -93,6 +94,7 @@ export class HomePage {
     await Pro.deploy.configure(config);
 
     const update = await Pro.deploy.checkForUpdate()
+    debugger;
     if (update.available){
       await Pro.deploy.downloadUpdate((progress) => {
         console.log(progress);
@@ -100,7 +102,7 @@ export class HomePage {
       await Pro.deploy.extractUpdate((progress) => {
         console.log(progress);
       })
-      await Pro.deploy.reloadApp();
+     // await Pro.deploy.reloadApp();
     }
   }
 
@@ -122,7 +124,7 @@ console.log(info);
     const info = await Pro.deploy.getCurrentVersion()
 console.log(info);
   }
-  
+
 
   
  
