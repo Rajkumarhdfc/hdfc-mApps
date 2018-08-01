@@ -4,6 +4,8 @@ import { Pro } from '@ionic/pro';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -58,8 +60,13 @@ export class HomePage {
     const browser = this.iab.create('https://google.com', '_blank');
   }
   openWithInAppBrowserInternal(): void {
-    const browser = this.iab.create('file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/7fe2c35e-e410-4302-afb1-d665f3d906cc/manifest.json', '_blank');
+    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/cc65eb75-5c2e-4b14-88af-3264424bbd11/manifest.json';
+  
+    path= path.split("//", 1)[1]
+   console.log(path);
+    const browser = this.iab.create(path, '_blank');
   }
+  
   
  
 
