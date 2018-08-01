@@ -104,7 +104,7 @@ export class HomePage {
     }
   }
 
-  getMasetrVersion(){
+async  getMasetrVersion(){
     const config = {
       'appId': '040d0d97',
       'channel': 'Master'
@@ -113,7 +113,7 @@ export class HomePage {
     const info = await Pro.deploy.getCurrentVersion()
 console.log(info);
   }
-  getCRMVersion(){
+  async getCRMVersion(){
     const config = {
       'appId': '040d0d97',
       'channel': 'crm'
@@ -122,6 +122,7 @@ console.log(info);
     const info = await Pro.deploy.getCurrentVersion()
 console.log(info);
   }
+  
 
   
  
