@@ -80,7 +80,7 @@ export class HomePage {
       await Pro.deploy.downloadUpdate((progress) => {
         console.log(progress);
       })
-      await Pro.deploy.extractUpdate((progress) => {
+      await Pro.deploy.extractUpdate("CRM",(progress) => {
         console.log(progress);
       })
       //await Pro.deploy.reloadApp();
@@ -99,7 +99,7 @@ export class HomePage {
       await Pro.deploy.downloadUpdate((progress) => {
         console.log(progress);
       })
-      await Pro.deploy.extractUpdate((progress) => {
+      await Pro.deploy.extractUpdate("MASTER",(progress) => {
         console.log(progress);
       })
      // await Pro.deploy.reloadApp();
