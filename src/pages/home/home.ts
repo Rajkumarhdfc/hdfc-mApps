@@ -43,8 +43,8 @@ export class HomePage {
   ];
 
 
-  itemSelected(item: string) {
-    const versions =  Pro.deploy.getAvailableVersions();
+  async itemSelected(item: string) {
+    const versions = await Pro.deploy.getAvailableVersions();
     console.log("Selected Item", item);
     const app_path= this.seekChannels(versions, item);
     console.log(app_path);
@@ -83,6 +83,7 @@ export class HomePage {
     }
     const update = await Pro.deploy.checkForUpdate();
     debugger;
+    console.log(prevVersion);
     if (update.available && update.snapshot !=prevVersion){
       console.log('Fired for update');
       let loading = this.loadingCtrl.create({
@@ -106,7 +107,7 @@ export class HomePage {
 
       //await Pro.deploy.reloadApp();
     }
-    console.log('No update');
+    
   }
   
   async performAutomaticUpdate() {
@@ -278,6 +279,7 @@ console.log(info);
  
 
   seekChannels(versions, channel) {
+    debugger;
     for (var i=0, l=versions.length; i<l; i++) {
       if (typeof versions[i] == "object" && versions[i].channel === channel) {
         return versions[i].versionId;
@@ -290,11 +292,12 @@ console.log(info);
     console.log("ionViewDidEnter");
   console.log(this.items.length);
 var packList= [
-  'crm',
+  'Master',
   'Phone book',
   'Technical Appraisal',
   'File Approval',
-  'Master'
+  'Master',
+  'crm'
 ];
   for(var i = 0; i < packList.length; i++){
     console.log(packList[i])
