@@ -68,7 +68,7 @@ export class HomePage {
 
     const versions = await Pro.deploy.getAvailableVersions();
     console.log(versions);
-    const prevVersion="";
+   
     const config = {
       'appId': '040d0d97',
       'channel': channel,
@@ -77,14 +77,14 @@ export class HomePage {
    
     await Pro.deploy.configure(config);
     
-  
+    var prevVersion="";
     if(versions.length>0){
-      const  prevVersion=await this.seekChannels(versions,channel);
+      prevVersion  =await this.seekChannels(versions,channel);
     }
     const update = await Pro.deploy.checkForUpdate();
     debugger;
     console.log(prevVersion);
-    if (update.available && update.snapshot !=prevVersion){
+    if (update.available ==true && update.snapshot !=prevVersion){
       console.log('Fired for update');
       let loading = this.loadingCtrl.create({
         spinner: 'hide',
@@ -217,7 +217,7 @@ export class HomePage {
 
     const update = await Pro.deploy.checkForUpdate()
     debugger;
-    if (update.available && update.snapshot !=prevVersion){
+    if (update.available ==true && update.snapshot !=prevVersion){
       await Pro.deploy.downloadUpdate((progress) => {
         console.log(progress);
       })
