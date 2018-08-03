@@ -49,7 +49,7 @@ export class HomePage {
     const app_path= this.seekChannels(versions, item);
     console.log(app_path);
     var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/'+app_path+'/index.html';
-    const browser = this.iab.create(path, '_self');
+    const browser = this.iab.create(path, '_blank');
     console.log('launched successfully');
   }
 
@@ -296,7 +296,6 @@ var packList= [
   'Phone book',
   'Technical Appraisal',
   'File Approval',
-  'Master',
   'crm'
 ];
   for(var i = 0; i < packList.length; i++){
