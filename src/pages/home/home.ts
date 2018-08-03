@@ -35,16 +35,16 @@ export class HomePage {
 
 
   items = [
-    'crm',
+    'Master',
     'Phone book',
     'Technical Appraisal',
     'File Approval',
-    'Master'
+    'crm'
   ];
 
 
   itemSelected(item: string) {
-    const versions = await Pro.deploy.getAvailableVersions();
+    const versions =  Pro.deploy.getAvailableVersions();
     console.log("Selected Item", item);
     const app_path= this.seekChannels(versions, item);
     console.log(app_path);
