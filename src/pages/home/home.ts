@@ -49,7 +49,7 @@ export class HomePage {
     const app_path= this.seekChannels(versions, item);
     console.log(app_path);
     var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/'+app_path+'/index.html';
-    const browser = this.iab.create(path, '_blank');
+    const browser = this.iab.create(path, '_self');
     console.log('launched successfully');
   }
 
@@ -309,6 +309,7 @@ var packList= [
 async deleteVersion() {
   const versions = await Pro.deploy.getAvailableVersions();
   Pro.deploy.deleteVersionById(versions[0].versionId);
+
 }
 
 
