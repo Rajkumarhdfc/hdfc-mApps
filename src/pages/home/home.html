@@ -1,20 +1,55 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Hi this is for CRM Channel</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+
+      <ion-list>
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item }}
+        </button>
+      </ion-list>
+
+
+
+
+
+
+
+
   <h2>For update </h2>
 <button (click)="performAutomaticUpdate()">Check for update</button>
+
+
 <button (click)="performManualUpdateMaster()">Update master</button>
+
+
+
 <button (click)="performManualUpdatecrm()">update crm </button>
+
+<h2>description: Get info about the currently deployed update. </h2>
+
+<button (click)="performManualUpdatPB()">update Pb </button>
+
+<h2>description: Get info about the currently deployed update. </h2>
+
+
+<button (click)="performManualUpdateTA()">update File Approval </button>
+
+
+<h2>description: Get info about the currently deployed update. </h2>
+
+
+<button (click)="performManualUpdateFileApprovals()">Technical Appraisal </button>
 
 <h2>description: Get info about the currently deployed update. </h2>
 
 <button (click)="getMasetrVersion()">Check Master version</button>
 <button (click)="getCRMVersion()">Check crm version</button>
-
+<button (click)="checkVersions()">Check Available version</button>
 
 <h2>description: Get info about the currently deployed update. </h2>
 
