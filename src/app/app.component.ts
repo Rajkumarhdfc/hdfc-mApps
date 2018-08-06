@@ -27,7 +27,7 @@ myHandlerFunction(){
 
   //   // path= path.split("//", 1)[1]
    console.log(path);
-    const browser = this.iab.create(path, '_self');
+    const browser = this.iab.create('http://localhost:8080', '_self');
   //   let toast = this.toastCtrl.create({
   //    message: "Press Again to Confirm Exit",
   //    duration: 3000
