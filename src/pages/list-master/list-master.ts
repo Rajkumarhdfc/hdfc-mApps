@@ -36,10 +36,10 @@ export class ListMasterPage {
 
 
   items = [
-    'Master',
-    'Phone book',
-    'Technical Appraisal',
-    'File Approval',
+    // 'Master',
+    // 'Phone book',
+    // 'Technical Appraisal',
+    // 'File Approval',
     'crm'
   ];
 
@@ -293,10 +293,10 @@ console.log(info);
     console.log("ionViewDidEnter");
   console.log(this.items.length);
 var packList= [
-  'Master',
-  'Phone book',
-  'Technical Appraisal',
-  'File Approval',
+//   'Master',
+//   'Phone book',
+//   'Technical Appraisal',
+//   'File Approval',
   'crm'
 ];
   for(var i = 0; i < packList.length; i++){

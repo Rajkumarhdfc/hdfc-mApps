@@ -93,9 +93,9 @@ export class LoginPage {
         "DEVICE_INFO_JSON": '['+JSON.stringify(device_info)+']',
         "NOTIFICATION_ID": "yuiy8909"
       }
-
+      this.auth.setAuth({}, {"USER_PACK_LIST":["CRM"]});
       this.navCtrl.push(ChooseMpinPage, {
-        data:{}
+        data:{"USER_PACK_LIST":["CRM"]}
       });
 
      // let loader = this.loader.show('Authenticating...');
