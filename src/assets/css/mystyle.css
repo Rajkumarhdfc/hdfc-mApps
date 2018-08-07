@@ -1,0 +1,182 @@
+ion-app.md [padding] .scroll-content{
+    padding: 0px !important;
+}
+ion-app.ios [padding] .scroll-content{
+    padding:0px;
+}
+.item-md {
+    padding-left: 0px !important;
+}
+.toolbar-background-md {
+    border-color: #ff3636 !important;
+    background: #ff3636 !important;
+    color: white !important;
+}
+.bar-button-default-md {
+    color: #fff !important;
+}
+.toolbar-title-md {
+    padding: 0 12px !important;
+    font-size: 2rem !important;
+    font-weight: 500;
+    color: #fff !important;
+    font-family: Sansation !important;
+}
+
+
+
+
+
+
+
+.top_bg{
+    background-image: url('/assets/imgs/login_top_bg_a.png');
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 43vh;
+}
+.logo{
+    background-color: white;
+    width: 166px;
+    padding: 4px;
+    position: relative;
+    top: 10vh;
+    text-align: center;
+    margin: 0 auto;
+}
+.title_name{
+    font-size: 2rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    top: 15vh;
+    position: relative;
+    font-family: Sansation;
+    color: white;
+    letter-spacing: 0.5px;
+}
+.version_name{
+    font-size: 2rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    top: 17vh;
+    position: relative;
+    font-family: Sansation;
+    color: white;
+    letter-spacing: 0.5px;
+}
+.padding30{
+    padding:30px;
+}
+.btn_red{
+    padding: 22px 0px !important;
+    background-color: #ff3636 !important;
+    font-size: 2.2rem !important;
+    font-family: Sansation;
+    color: white !important;
+    letter-spacing: 0.5px !important;
+    text-transform: capitalize !important;
+}
+.forgot_txt{  
+    text-align: center;
+    color: gray;
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 0.5px;    
+}
+.MPIN_text{
+    text-align: center;
+    margin-top: 8vh;
+    font-family: Sansation;
+    color: black;
+    letter-spacing: 0.3px;
+    font-size: 2.2rem;
+}
+.MPIN_input{
+    width: 22% !important;
+    display: inline-flex !important;
+    font-size: 3rem !important;
+    margin-left: 5px !important;    
+}
+.MPIN_input>.text-input
+{
+    text-align: center !important;
+}
+.menuin .item-inner {
+    padding-left: 17px;
+}
+.card_top{
+    margin: 0px !important;
+    width: 100% !important;
+    background-color: #fff !important;
+}
+.icon_ref{
+    margin: 0px;
+    font-size: 4.2rem;
+    color: #ff3334;
+}
+.last_syn{
+    color: #b7b7b7;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+.syn_date{
+    color: #727272;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+.padddingTB0{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important; 
+}
+.bg_color{
+    background-color: #eeeeee !important;
+}
+.home_box{
+    border: 0;
+    margin-bottom: 20px !important;
+    margin-top: 40px !important;
+    border-radius: 6px;
+    color: #333;
+    background: #fff;
+    width: 100%;
+    padding: 15px !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+}
+.home_box_icon{
+    border-radius: 3px;
+    background-color: #999;
+    padding: 15px;
+    margin-top: -30px;
+    margin-right: 15px;
+    float: left;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(255,152,0,.4);
+    width: 100px;
+    height: 75px;
+    text-align: center;
+    color: white !important;
+    font-size: 4rem;
+}
+.dash_icon{
+    background: linear-gradient(60deg,#ffa726,#fb8c00);
+}
+.issu_icon{
+    background: linear-gradient(60deg,#ef5350,#e53935);
+}
+.list_icon{
+    background: linear-gradient(60deg,#26c6da,#00acc1);
+}
+.margion_top_30{
+    margin-top: 30px !important;
+}
+.box_title{
+    float: left;
+    font-size: 2.5rem;
+    font-family: Sansation;
+    letter-spacing: 0.5px;
+    margin-left: 15px !important;
+}

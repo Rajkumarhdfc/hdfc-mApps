@@ -1,0 +1,89 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Login with MPIN</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <div class="MPIN_text"> Enter MPIN </div> 
+  
+  
+    <ion-list class="padding30">
+        <form [formGroup]="todo" (ngSubmit)="HomePage()">
+          <ion-item>
+              <ion-input disabled type="text" text-center maxlength="4" [formControl]="todo.controls['mpin_val']"></ion-input>
+            </ion-item>  
+      </form>
+    </ion-list>
+  
+    <ion-row class="row1">
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('1')">1</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('2')">2</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('3')">3</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row2">
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('4')">4</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('5')">5</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('6')">6</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row3">
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('7')">7</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('8')">8</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('9')">9</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row4">
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="clear()">Clear</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="add('0')">0</button>
+        </ion-col>
+        <ion-col col-md-4>
+          <button ion-button outline class="button_pin" (click)="deleteVal()">Delete</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row5">
+        <ion-col col-md-4 center>
+          <button ion-button outline class="button_pin" (click)="HomePage()">Next</button>
+        </ion-col>
+      </ion-row>
+    <ion-grid padding>
+      <ion-row>
+        <ion-col> <button ion-button block class="btn_red" (click)="forgotMPIN()">Forgot MPIN ?</button> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> <button ion-button block class="btn_red" (click)="logout()">Log Out?</button> </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+    <div padding>
+     
+      
+    </div>
+  
+  
+  </ion-content>
+  

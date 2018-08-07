@@ -4,14 +4,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { Config, Nav } from 'ionic-angular';
+import { ListMasterPage, HomePage_main, DashboardPage, MylistPage,IssuePage, LoginMpinPage } from '../pages';
+import {AuthProvider} from "../providers/auth/auth";
+import { FirstRunPage } from '../pages';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(private iab: InAppBrowser,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(private iab: InAppBrowser,platform: Platform,private auth: AuthProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       platform.registerBackButtonAction(()=>this.myHandlerFunction());
       // Okay, so the platform is ready and our plugins are available.
@@ -19,7 +22,13 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-  
+    if (this.auth.getUserData() && this.auth.getUserData().USER_PACK_LIST!=null) {
+      this.rootPage = FirstRunPage;
+      
+     
+  }else{
+    this.rootPage = FirstRunPage;
+  }
 }
 myHandlerFunction(){
 

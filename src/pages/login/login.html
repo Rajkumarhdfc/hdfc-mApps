@@ -1,0 +1,82 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title center text-center>Log In</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+<form [formGroup]="credentialsForm">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" [formControl]="credentialsForm.controls['userId']" placeholder="Username">EDGARR</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" [formControl]="credentialsForm.controls['password']" placeholder="Password" >mowbly</ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="onLogIn()">Log In</button>
+  </div>
+  </form>
+
+</ion-content> -->
+
+<ion-content padding>
+
+  <div class="top_bg">
+    <div class="logo"> <img src="assets/imgs/logo_hdfc.png"> </div>
+    <span class="title_name"> HDFC Mobile Desk </span>
+    <span class="version_name"> Version 1.0 </span>
+</div> 
+
+  <form [formGroup]="credentialsForm">
+
+    <ion-list class="padding30">
+  
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [formControl]="credentialsForm.controls['userId']" placeholder="Username">EDGARR</ion-input>
+      </ion-item>
+  
+      <ion-item>
+          <ion-label floating>Password</ion-label>
+        <ion-input type="password" [formControl]="credentialsForm.controls['password']" placeholder="Password" >mowbly</ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div padding>
+      <!-- <button ion-button color="primary" block (click)="onLogIn()">Log In</button> -->
+      <button ion-button block class="btn_red" (click)="login()"> Login </button>
+    </div>
+    <div class="forgot_txt"> Forgot Password? </div>
+    </form>
+
+  <!-- <ion-list class="padding30">
+     
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+    
+  </ion-list>
+  
+  <div padding>
+    <button ion-button block class="btn_red" (click)="login()"> Login </button>
+  </div> -->
+
+  
+
+</ion-content>
+
