@@ -50,7 +50,7 @@ export class HomePage {
     console.log(app_path);
     var path = 'file:///data/user/0/com.hdfc.ionicApps/files/ionic_built_snapshots/'+app_path+'/index.html';
     const browser = this.iab.create(path, '_self');
-    console.log('launched successfully');
+    console.log('launched successfully done by Rajkumar');
   }
 
 
@@ -292,10 +292,10 @@ console.log(info);
     console.log("ionViewDidEnter");
   console.log(this.items.length);
 var packList= [
-  'Master',
-  'Phone book',
-  'Technical Appraisal',
-  'File Approval',
+  // 'Master',
+  // 'Phone book',
+  // 'Technical Appraisal',
+  // 'File Approval',
   'crm'
 ];
   for(var i = 0; i < packList.length; i++){
