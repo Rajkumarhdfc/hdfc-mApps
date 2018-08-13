@@ -44,10 +44,11 @@ export class LoginMpinPage {
     let mpin_val = this.auth.getAuth_mpin('MPIN');
     if (mpin_val == this.todo.value.mpin_val) {
       console.log('Success');
-      this.navCtrl.push(ListMasterPage);
+      this.navCtrl.setRoot(ListMasterPage);
     }
     else {
       console.log('Mpin fail');
+      alert('Invalid PIN');
     }
     // this.store.get('MPIN').then((val) => {
     //   if(val == this.todo.value.mpin_val){

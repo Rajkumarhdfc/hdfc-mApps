@@ -48,8 +48,9 @@ export class HomePage {
     console.log("Selected Item", item);
     const app_path= this.seekChannels(versions, item);
     console.log(app_path);
-    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/'+app_path+'/index.html';
+    var path = 'file:///data/user/0/com.hdfc.ionicApps/files/ionic_built_snapshots/'+app_path+'/index.html';
     const browser = this.iab.create(path, '_self');
+  
     console.log('launched successfully');
   }
 
@@ -79,7 +80,7 @@ export class HomePage {
     
     var prevVersion="";
     if(versions.length>0){
-      prevVersion  =await this.seekChannels(versions,channel);
+        prevVersion=await this.seekChannels(versions,channel);
     }
     const update = await Pro.deploy.checkForUpdate();
     debugger;
@@ -131,14 +132,14 @@ export class HomePage {
     const browser = this.iab.create('https://google.com', '_blank');
   }
   openMaster(): void {
-    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/Master/index.html';
+    var path = 'file:///data/user/0/com.hdfc.ionicApps/files/ionic_built_snapshots/Master/index.html';
   
     // path= path.split("//", 1)[1]
    console.log(path);
     const browser = this.iab.create(path, '_self');
   }
   openWithInAppBrowserInternal(): void {
-    var path = 'file:///data/user/0/io.ionic.starter/files/ionic_built_snapshots/crm/index.html';
+    var path = 'file:///data/user/0/com.hdfc.ionicApps/files/ionic_built_snapshots/crm/index.html';
   
     // path= path.split("//", 1)[1]
    console.log(path);
@@ -292,10 +293,10 @@ console.log(info);
     console.log("ionViewDidEnter");
   console.log(this.items.length);
 var packList= [
-  'Master',
-  'Phone book',
-  'Technical Appraisal',
-  'File Approval',
+  // 'Master',
+  // 'Phone book',
+  // 'Technical Appraisal',
+  // 'File Approval',
   'crm'
 ];
   for(var i = 0; i < packList.length; i++){

@@ -8,19 +8,36 @@ import { Config, Nav } from 'ionic-angular';
 import { ListMasterPage, HomePage_main, DashboardPage, MylistPage,IssuePage, LoginMpinPage } from '../pages';
 import {AuthProvider} from "../providers/auth/auth";
 import { FirstRunPage } from '../pages';
+import { FCM } from '@ionic-native/fcm';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = TabsPage;
 
-  constructor(private iab: InAppBrowser,platform: Platform,private auth: AuthProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(public fcm: FCM,private iab: InAppBrowser,platform: Platform,private auth: AuthProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
     //  platform.registerBackButtonAction(()=>this.myHandlerFunction());
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      fcm.onNotification().subscribe( data => {
+        if(data.wasTapped){
+          console.log(data);
+          //Notification was received on device tray and tapped by the user.
+        }else{
+          console.log(data);
+          //Notification was received in foreground. Maybe the user needs to be notified.
+        }
+      });
+   
+
+      this.fcm.onTokenRefresh().subscribe(token => {
+        alert('Token is changed');
+        console.log(token);
+      });
+
     });
     if (this.auth.getUserData() && this.auth.getUserData().USER_PACK_LIST!=null) {
       this.rootPage = LoginMpinPage;

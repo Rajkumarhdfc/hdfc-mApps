@@ -31,6 +31,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { Device } from '@ionic-native/device';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Network } from '@ionic-native/network';
+import { FCM } from '@ionic-native/fcm';
 
 //import { OtpPage } from './../pages/otp/otp';
 
@@ -124,7 +125,7 @@ export class MyErrorHandler implements ErrorHandler {
     TabsPage
   ],
   providers: [
-    StorageProvider,SQLite,NativeStorage,GeolocProvider,
+    StorageProvider,SQLite,NativeStorage,GeolocProvider,FCM,
     NetworkInfoProvider,
     ,AuthProvider,
     DeviceProvider,

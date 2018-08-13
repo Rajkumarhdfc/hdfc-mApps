@@ -37,7 +37,8 @@ export class ConfirmMpinPage {
     if(this.cpin == this.todo.value.mpin_val){
       this.auth.setAuth_mpin(this.todo.value.mpin_val);
       console.log('Success');
-      this.navCtrl.push(LoginMpinPage);
+    //  this.navCtrl.push(LoginMpinPage);
+    this.navCtrl.setRoot(ListMasterPage);
     }
     else{
       console.log('Mpin fail');
