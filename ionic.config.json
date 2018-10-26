@@ -1,8 +1,8 @@
 {
-  "name": "hdfcmapps",
-  "app_id": "040d0d97",
-  "type": "ionic-angular",
+  "name": "newPro",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "040d0d97"
 }
