@@ -1,0 +1,26 @@
+
+<ion-content padding>
+
+<div class="card_input">
+  <ion-item>
+    <ion-label position="stacked" class="input_lbl"> Issue </ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  
+  <ion-item class="mt-20">
+    <ion-label position="stacked" class="input_lbl"> Remarks </ion-label>
+    <ion-textarea rows="6" cols="20" placeholder="Enter your remark here..."></ion-textarea>
+  </ion-item>
+
+
+</div> 
+
+  <ion-button class="mt-40 main_btn" shape="round" expand="full" (click)="presentAlertConfirm()"> Save </ion-button>
+
+</ion-content>

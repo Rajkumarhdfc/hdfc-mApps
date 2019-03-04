@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> <ion-back-button></ion-back-button> </ion-buttons>
+    <ion-title class="ml-15"> Mrs Bansal Priyanka </ion-title>
+    <ion-buttons slot="end" (click)="homePage()"> <ion-icon name="home" class="home_icon"></ion-icon>  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-tabs>
+
+    <ion-tab-bar slot="top" class="tab-bar">
+      <ion-tab-button tab="create" class="tab-bar-btn">
+        <ion-label>Create Issue</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="history" class="tab-bar-btn">
+        <ion-label> History </ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  
+  </ion-tabs>
+
+</ion-content>

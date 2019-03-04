@@ -1,0 +1,335 @@
+
+ion-content{
+    --ion-background-color:#F5F6F8;
+}
+ion-header{
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 0px 6px 15px 0px #E7EAF0;
+}
+
+.card {
+    background-color: #FFF;
+    box-shadow: 0px 6px 15px 0px #E7EAF0;
+    margin: 15px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .card_input{
+    background-color: #FFF;
+    box-shadow: 0px 6px 15px 0px #E7EAF0;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .header-md:after{
+    background-image: none;
+  }
+
+  .icon_desh_spn{
+    font-size: 26px;
+    position: relative;
+    top: 6px;
+    color: #6d6b6b;
+    margin-right: 8px;
+  }
+
+  .dashboard_text{
+      font-size: 18px;
+      color: #515C6F;
+      line-height: 50px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+  }
+
+.dashboard_box {
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    z-index: 999;
+    position: fixed;
+    float: left;
+    right: 5%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 41px;
+    color: white;
+    margin-top: -45px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.color_list{
+  background-color: #f79090;
+  box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+}
+.color_dash{
+  background-color: #aa7dd4;
+  box-shadow: 4px 13px 30px 1px rgba(170, 125, 212, 0.3);
+}
+.color_issu{
+  background-color: #71ab71;
+  box-shadow: 4px 13px 30px 1px rgba(113, 171, 113, 0.3)
+}
+.menu_bg{
+  --background: #fff;
+  --min-height: 60px;
+  box-shadow: 1px 2px 13px #E7EAF0;
+  font-size: 17px;
+  color: #2a303c;
+  letter-spacing: 1px;
+}
+
+.toolbar-background{
+  --background: rgba(255,175,78,1);
+  --background: -moz-linear-gradient(-45deg, rgba(255,175,78,1) 0%, rgba(255,118,118,1) 100%);
+  --background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,78,1)), color-stop(100%, rgba(255,118,118,1)));
+  --background: -webkit-linear-gradient(-45deg, rgba(255,175,78,1) 0%, rgba(255,118,118,1) 100%);
+  --background: -o-linear-gradient(-45deg, rgba(255,175,78,1) 0%, rgba(255,118,118,1) 100%);
+  --background: -ms-linear-gradient(-45deg, rgba(255,175,78,1) 0%, rgba(255,118,118,1) 100%);
+  --background: linear-gradient(135deg, rgba(255,175,78,1) 0%, rgba(255,118,118,1) 100%);
+  --filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4e', endColorstr='#ff7676', GradientType=1 );
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.ptb0{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.inner-scroll{
+  --background-color: white !important;
+}
+
+.menu_round{
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  float: left;
+  border-radius: 50%;
+}
+
+.menu_text{
+  font-size: 18px;
+  color: white;
+  letter-spacing: 1px;
+  float: left;
+  margin-left: 13px;
+  font-weight: 300;
+}
+
+.name_menu{
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.list_trag_box{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 0 0;
+}
+.color_bg_trag_I{
+  border-color: #8B9DFF transparent transparent transparent;
+}
+.color_bg_trag_P{
+  border-color: #4AD1C7 transparent transparent transparent;
+}
+.color_bg_trag_V{
+  border-color: #FFAF52 transparent transparent transparent;
+}
+.btn_raised{
+  --background: #ED5199 !important;;
+  --color: #ffffff !important;
+  --box-shadow:none;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+}
+.btn_photo{
+  --background: transparent;
+  --color: #FF8C69 !important;
+  --box-shadow:none;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+}
+.btn_issue{
+  --background: transparent;
+  --color: #67B5F7 !important;
+  --box-shadow:none;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+}
+.list_trag_text{
+  position: absolute;
+  top: 6px;
+  z-index: 9999;
+  color: white;
+  left: 6px;
+}
+.m0{
+  margin: 0px;
+}
+.p0{
+  padding: 0px;
+}
+.pl0{
+  padding-left: 0px;
+}
+.pr0{
+  padding-right: 0px;
+}
+.pl5{
+  padding-left: 5px;
+}
+.pm5{
+  padding-bottom: 5px;
+}
+.text-right{
+  text-align: right;
+}
+.list_title_name{
+  font-weight: 500;
+  font-size: 17px;
+  color: #515C6F;
+  letter-spacing: 1px;
+}
+.list_ser_no{
+  float: right;
+  font-weight: 400;
+  color: #908f8f;
+}
+.list_ser_date{
+  font-weight: 300;
+  color: #504848;
+}
+.issue_id{
+  font-weight: 300;
+  color: #504848;
+  font-size: 13px;
+}
+.num_vs{
+  text-align: right;
+}
+.issue_list_title_name{
+  font-weight: 300;
+  font-size: 14px;
+  color: #515C6F;
+  letter-spacing: 1px;
+}
+.issue_rem{
+  font-size: 13px;
+  font-weight: 400;
+  color: #0b1c31;
+  letter-spacing: 1px;
+  background-color: #f5f8ff;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.issue_num{
+  font-weight: 500;
+  color: #67B5F7;
+}
+.issue_box_rem{
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+}
+.issue_rem_box{
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.btn-bge{
+  float: right;
+  font-size: 11px;
+}
+
+.home_icon{
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.lbl_name{
+  font-weight: 400;
+  font-size: 14px;
+  color: #515C6F;
+  opacity: 0.7;
+}
+
+.lbl_value{
+  font-weight: 500;
+  font-size: 14px;
+  color: #01050c;
+  opacity: 0.7;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+.mt-40{
+  margin-top: 40px;
+}
+
+.input_lbl{
+  font-weight: 400;
+  font-size: 14px !important;
+  color: #536877 !important;
+  letter-spacing: 1px;
+}
+
+.main_btn {
+  --background: #FF6969;
+  font-size: 15px;
+  height: 42px;
+}
+
+.tab-selected {
+  color: #ff6969;
+}
+
+.call_details{
+  font-weight: 500;
+  color: #504848;
+}
+.call_icon{
+  color: #ff6969;
+  font-size: 23px;
+  padding-top: 10px;
+  text-align: end;
+  padding-right: 15px;
+}
+
+.bad_info{
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.search_div{
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  background-color: white;
+  height: 56px;
+  width: 84%;
+  z-index: 9999;
+  left: 0;
+  transition-timing-function: linear;
+}
+
+.searchbar-input {
+  height: 50px !important;
+  padding: 15px !important;
+}
+
+ion-header ion-toolbar {
+  --background: #ff6969 !important;
+  --color: white !important;
+}
