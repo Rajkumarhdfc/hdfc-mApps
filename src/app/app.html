@@ -1,0 +1,91 @@
+
+<ion-header>
+
+ <ion-navbar *ngIf="navheaderstat" color="header">  
+  <ion-title>
+    <ion-row>
+      <ion-icon class="arrow_icon_top" name="home" (click)="goBack()"></ion-icon>
+      <ion-col col-5>
+        <div class="user_name_details"> {{borrname}} </div>
+        <div class="user_lac_details"> {{lac}}  </div>
+      </ion-col>
+      <ion-col col-6 text-right>
+        <img class="mr8" src="assets/imgs/phone.png" (click)="openPagecomm()"> 
+        <img class="mr8" src="assets/imgs/menu_top.png" (click)="openPageFup()"> 
+        <img class="mr8" src="assets/imgs/info_top.png" (click)="openPagealerts()"> 
+        <img class="mr8" src="assets/imgs/camera.png" (click)="openPagephotocapture()"> 
+        <img class="w16-m" src="assets/imgs/cal.png" (click)="openBB()"> 
+      </ion-col>
+    </ion-row>
+   </ion-title> 
+
+ </ion-navbar>
+
+
+  <ion-toolbar class="footer_div" *ngIf="headerstatus">
+     <ion-buttons>
+        <button ion-button block *ngFor="let fp of pages1" (click)="openPage1(fp)" [ngClass]="{'footer_btna':nav.getActive().name==fp.comp_name}" class="footer_btn rm"  tappable>
+          <span style="text-align: center; width: 100%; display: inline-block; margin-top: -13px; "> 
+            <ion-icon name="{{fp.icon}}" class="footer_icon"></ion-icon>
+            <span class="block"> {{fp.title}} </span>
+          </span>
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+ <ion-menu [content]="content"  persistent="true" [hidden]="!menustatus">
+      <ion-header>
+          <div class="menu_top_img"> 
+             <ion-row style="position: absolute; bottom: 15px; width: 100%;"> 
+                <ion-col col-3  class="text-center"> <span class="user_icon_box"> <ion-icon name="person"></ion-icon> </span>  </ion-col>
+                <ion-col col-9> 
+                  <div class="user_name"> {{ldap_id}} </div> 
+                  <div class="user_dev"> Dev 0.1 </div>
+                </ion-col>
+             </ion-row>
+          </div>
+      </ion-header>
+
+      <ion-content class="bg_white">
+        <ul>
+          <li menuClose *ngFor="let p of pages" (click)="openPage(p)" tappable>
+            <ion-icon name="{{p.icon}}" class="mr10 icon_color"></ion-icon>
+              {{p.title}}
+          </li>      
+        </ul>
+      </ion-content>
+
+  </ion-menu>
+
+<ion-nav [root]="rootPage"  #content></ion-nav>
+
+
+<!-- <ion-footer class="site-footer" *ngIf="footerstatus">
+<ion-toolbar class="footer_div">
+    <ion-buttons>
+    <button ion-button block *ngFor="let fp of footerpages" [ngClass]="{'footer_btna':nav.getActive().name==fp.comp_name}"(click)="openFooterPage(fp,$event)" class="footer_btn rm ml15" tappable >
+
+      <span style="text-align: center; width: 100%; display: inline-block;"> 
+        <ion-icon name="{{fp.icon}}" class="footer_icon"></ion-icon>
+        <span class="block"> {{fp.title}} </span>
+      </span>
+    </button>
+       <button ion-button block  class="footer_btn rm ml15" (click)="openBB()">
+
+      <span style="text-align: center; width: 100%; display: inline-block;"> 
+        <ion-icon name="calculator" class="footer_icon"></ion-icon>
+        <span class="block"> Calc </span>
+      </span>
+    </button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-footer> -->

@@ -1,0 +1,25 @@
+
+<ion-content padding>
+
+    <div class="tab_card padding0 mt20">
+
+        <ion-row class="tab_th" text-wrap>
+          <ion-col text-wrap class="width-30 text-left">ORIGINAL </ion-col>
+          <ion-col text-wrap class="width-40 text-left"> DOC CODE  </ion-col>
+          <ion-col text-wrap class="width-30 text-left" id="date">ACTION DATE  </ion-col>
+        </ion-row>
+
+        <ion-row text-wrap *ngFor="let item of docdetails; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+          <ion-col text-wrap class="width-30 tab_line_text text-left">{{item.original}}  </ion-col>
+          <ion-col  text-wrap class="width-40 tab_line_text text-left">{{item.doc_code}}  </ion-col>
+          <ion-col text-wrap class="width-30 tab_line_text text-right">{{item.action_date|date:'dd-MM-yy'}}  </ion-col>
+        </ion-row>
+
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

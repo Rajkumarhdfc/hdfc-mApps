@@ -1,0 +1,253 @@
+<!-- 
+<ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+  	<ion-row>
+      <ion-col class="left" col-4 text-wrap>{{paramtab1.lac}}</ion-col>
+    	<ion-col class="right">{{paramtab1.name}}</ion-col>
+    </ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+<div><!-- 
+<ion-header no-border>
+  <ion-toolbar  class="footer_div">
+     <ion-buttons>
+    <button ion-button block *ngFor="let fp of pages" (click)="openPage(fp)" class="footer_btn rm" >
+      <span style="text-align: center; width: 100%; display: inline-block;"> 
+        <ion-icon name="{{fp.icon}}" class="footer_icon"></ion-icon>
+        <span class="block"> {{fp.title}} </span>
+      </span>
+    </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+<br>
+<br> -->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="text-right"> <button ion-button round outline (click)="openModal()">File Reminder</button> </div> 
+  
+    <div *ngFor="let acitem of acdetails; index as i ;" (swipe)="swipe($event)" class="tab_card">
+    <div>
+    <ion-row text-wrap class="tab_th">
+        <ion-col class="width"><b>ACC</b></ion-col>
+        <ion-col class="width text-right"><b>PEMI</b></ion-col>
+        <ion-col class="width text-right"><b>EMI</b></ion-col>
+        <ion-col class="width text-right"><b>AI</b></ion-col>
+        <ion-col class="width text-right"><b>PPC</b></ion-col>
+        <ion-col class="width text-right"><b>SI</b></ion-col>
+        <ion-col class="width text-right"><b>IC</b></ion-col>
+        <ion-col class="width text-right"><b>TOTAL</b></ion-col>
+    </ion-row>
+    </div>
+    <div>
+     <ion-row text-wrap class="font" class="colortext">
+        <ion-col text-wrap class="width"><b>LYo/s:</b></ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_PMI}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_EMI}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_ADD_INT}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_PPC}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_SI}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.LY_OS_MR}}</ion-col>
+        <ion-col text-wrap class="width text-right"><b>{{acitem.LY_OS_TOTAL}}</b></ion-col>
+    </ion-row>
+    </div>
+    <div>
+    <ion-row text-wrap class="font" class="textcolor">
+        <ion-col text-wrap class="width"><b>Recble:</b></ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.pmi_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.emi_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.add_int_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.ppc_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.si_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.mr_recble}}</ion-col>
+        <ion-col text-wrap class="width text-right"><b>{{acitem.tot_recble}}</b></ion-col>
+    </ion-row>
+    </div>
+    <div>
+    <ion-row text-wrap class="font" class="colortext">
+        <ion-col text-wrap class="width"><b>Recd:</b></ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.pmi_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.emi_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.add_int_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.ppc_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.si_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.mr_recd}}</ion-col>
+        <ion-col text-wrap class="width text-right"><b>{{acitem.tot_recd}}</b></ion-col>
+    </ion-row>
+    </div>
+     <div>
+    <ion-row text-wrap class="font" class="textcolor" style="border: none;">
+        <ion-col text-wrap class="width"><b>Curro/s:</b></ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.pmi_curos}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.emi_curos}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.add_curos}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.cur_ppcos}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.cur_sios}}</ion-col>
+        <ion-col text-wrap class="width text-right">{{acitem.mr_curos}}</ion-col>
+        <ion-col text-wrap class="width text-right"><b>{{acitem.tot_curos}}</b></ion-col>
+    </ion-row>
+    </div>
+    </div>
+    <div class="tab_card mt_15">
+        <ion-grid *ngFor="let item of itemlist; index as i ;">
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>EMI:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.EMI}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>MONTH O/S:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.M0NTH_OS}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>ASSET CLASSIFICATION:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.ASSET_CLASS}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>BAL TERM/CURR ROI:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.BAL_TERM}}/{{item.ROI}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap id="date"><b>RCD/LAST TRANS DATE:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.RCD| date : 'dd-MM-yy'}}/{{item.LAST_TRANS_DATE| date : 'dd-MM-yy'}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>SANCTION/DIS AMOUNT:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.SANCTION}}/{{item.DISBAMT}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>PAYMODE:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.PAY_MODE}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col  class="header" text-wrap><b>FRAUD CLASS:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.FRAUD_CLASS}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>PROP CLASSI CODE:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.PROP_CLASS}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>LOAN GROUP NAME:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.GROUP_NO}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>LOAN ORIGIN/THROUGH WHOM:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.LOAN_ORIGIN}}/{{item.THROUGH_WHOM}}
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+        <ion-grid *ngFor="let item of lacacdtls; index as i ;">
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>AMOUNT PRIN:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.prin_os_last_tr_comb}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>MRU DATE:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.last_rcbl_dt | date : 'dd-MM-yy'}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="even">
+        <ion-col class="header" text-wrap><b>TO DATE:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.TO_DATE | date : 'dd-MM-yy'}}
+        </ion-col>
+        </ion-row>
+        <ion-row class="odd">
+        <ion-col class="header" text-wrap><b>PLT:</b>
+        </ion-col>
+        <ion-col  text-wrap>{{item.plt}}
+        </ion-col>
+        </ion-row>
+        </ion-grid>   
+    </div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<!-- <ion-tabs scroll="true" direction="x">
+    <ion-tab [root]="acDetailsRoot" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="ACCOUNT"></ion-tab>
+    <ion-tab [root]="propertyDetailsRoot"  [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="PROPERTY">
+    </ion-tab>
+    <ion-tab [root]="disbursementRoot" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="DISBURSEMENT">
+    </ion-tab>
+    <ion-tab [root]="uniqueIdRoot" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="UNIQUE ID"></ion-tab>
+    <ion-tab [root]="transPage" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="TRANS"></ion-tab>
+    <ion-tab [root]="remarksPage" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="REMARK"></ion-tab>
+    <ion-tab [root]="viewdocsPage" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="VIEW DOCS"></ion-tab>
+    <ion-tab [root]="addetailsPage" [rootParams]= "paramtab1" mode="md" tabsHighlight="true" tabTitle="AD DETAILS"></ion-tab>
+</ion-tabs>
+ -->
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

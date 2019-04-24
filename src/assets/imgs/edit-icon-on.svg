@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>edit-icon-on</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="edit-icon-on" stroke="#00334E" stroke-width="1.4">
+            <path d="M0.360430197,14.3045887 C0.357748299,14.305284 0.355119503,14.3060216 0.352561855,14.306801 L0.360432333,14.3045881 Z M0.823095362,14.1745028 L5.10260191,12.9712488 C5.16457634,12.954464 5.2246841,12.9188973 5.2777314,12.86585 L13.9413912,4.2021902 C14.1694231,3.97415831 14.293067,3.67677891 14.293067,3.35953608 C14.293067,3.04130792 14.1688473,2.74190671 13.9413912,2.51688196 L12.483917,1.05940774 C12.2558851,0.831375843 11.9585057,0.707731959 11.6412628,0.707731959 C11.3230347,0.707731959 11.0236335,0.831951611 10.7982772,1.05973901 L2.13108296,9.71533557 C2.0800686,9.76634993 2.04223407,9.83066863 2.0239751,9.89666262 L0.823095362,14.1745028 Z" id="Path" fill-rule="nonzero"></path>
+            <path d="M2.2519586,9.71678372 L5.44389866,12.7445212" id="Path-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.65593549,2.14517889 L12.7734268,5.31921719" id="Path-4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

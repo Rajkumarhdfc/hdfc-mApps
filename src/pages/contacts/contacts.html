@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>contacts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+<div class="sub_title_name mt20 mb_10" style="margin-left: 18px;">Borrower</div>
+<div class="tab_card padding0 mt20 tab_adj_w">
+	<div>
+    <ion-row class="tab_th" text-wrap>
+      <ion-col text-wrap class="width-25">CUST NUM: </ion-col>
+      <ion-col text-wrap class="width-25"> TYPE: </ion-col>
+      <ion-col text-wrap class="width-50">CONTACT: </ion-col>
+    </ion-row>
+	</div>
+	<div>
+
+    <ion-row text-wrap *ngFor="let item of custcontact; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+      <ion-col text-wrap class="width-25 tab_line_text">{{item.cust_number}} </ion-col>
+      <ion-col  text-wrap class="width-25 tab_line_text">{{item.contact_type}} </ion-col>
+      <ion-col text-wrap class="width-50 tab_line_text">{{item.contact_det}} </ion-col>
+    </ion-row>
+
+	</div>
+</div>
+<!--    <div class="title_page_div">Co-Borrower</div>
+ -->   <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

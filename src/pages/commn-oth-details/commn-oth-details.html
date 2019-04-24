@@ -1,0 +1,89 @@
+<!--
+  Generated template for the CommnOthDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>commn oth details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+<div>
+	<ion-grid *ngFor="let item of commothdtls; index as i ;" class="tab_card_comm_oth">
+    <ion-row class="even">
+    <ion-col class="header" text-wrap><b>NAME:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.name}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="odd">
+    <ion-col class="header" text-wrap><b>ADDRESS1:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.address1}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="even">
+    <ion-col class="header" text-wrap><b>ADDRESS2:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.address2}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="odd">
+    <ion-col class="header" text-wrap><b>RELATION:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.relation}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="even">
+    <ion-col  class="header" text-wrap><b>MOBILE 1:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.mobile1}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="odd">
+    <ion-col  class="header" text-wrap><b>MOBILE 2:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.mobile2}}
+    </ion-col>
+    </ion-row>
+     <ion-row class="even">
+    <ion-col  class="header" text-wrap><b>EMAIL ID:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.email_id}}
+    </ion-col>
+    </ion-row>
+     <ion-row class="odd">
+    <ion-col class="header" text-wrap><b>OFF TEL NO:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.off_tel_no}}
+    </ion-col>
+    </ion-row>
+    <ion-row class="even">
+    <ion-col  class="header" text-wrap><b>RES TEL NO:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.res_tel_no}}
+    </ion-col>
+    </ion-row>
+     <ion-row class="odd">
+    <ion-col class="header" text-wrap><b>FAX:</b>
+    </ion-col>
+    <ion-col  text-wrap class="font15">{{item.fax}}
+    </ion-col>
+    </ion-row>
+</ion-grid>
+
+<br>
+<br>
+<br>	
+<br>
+<br>
+</div>
+</ion-content>

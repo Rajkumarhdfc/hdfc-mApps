@@ -1,0 +1,92 @@
+<!--
+  Generated template for the BucketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Basket</ion-title>
+
+    <ion-buttons start>
+        <button ion-button (click)="close()">
+      <img class="" src="assets/imgs/close-icon-new.svg" style="width: 37px; margin-right: 15px;">
+      </button>
+  </ion-buttons>
+    <!-- <ion-buttons start>
+      <button ion-button (click)="close()">
+        <ion-icon name="close-circle" style="zoom:2.0" color="primary"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-row class="mt25">
+        <ion-col col-6>
+            <div class="left_align">
+                <span class="sub_text_rem"> Basket List </span>
+            </div>
+        </ion-col>
+        <ion-col col-6>
+            <div class="right_align" style=" display: block;  margin-top: 5px;">
+                <button ion-button type="submit" class="btn_basket" (click)="showPrompt()">
+                   Create Basket
+                </button>  
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+
+  <div>
+  
+      <ion-item *ngFor="let items of mybasketlist" class="card_box_list_basket">
+        <ion-row> 
+          <ion-chip #chip2>
+
+            <div class="text_bis" (click)="UpdateBasketChip(items.basket)"> {{items.basket}}</div>
+          <!-- <ion-col col-10 class="text_bis" (click)="UpdateBasketChip(items.basket)">{{items.basket}}</ion-col> -->
+        <!-- <ion-col col-2 class="text-right"> -->
+              <!-- <img class="" src="assets/imgs/close-icon-new.svg" (click)="delete(chip2)"> -->
+              <!-- <button ion-button (click)="delete(chip2)">
+                  <ion-icon name="close"></ion-icon>
+                </button> -->
+                <ion-icon name="close"  class="img_close_icon" (click)="delete(chip2,items.basket)"></ion-icon>
+
+          <!-- </ion-col> -->
+        </ion-chip>
+         </ion-row> 
+      </ion-item>
+
+
+      
+      
+  </div>
+  
+
+
+
+<!--Create Basket-->
+  <!-- <div class="tab_card" style="margin: 20px; width: 93%;" [hidden]="!creatflag">
+    <form [formGroup]="bucketform">
+ <ion-item>
+      <ion-input  name="Basket" type="text" placeholder="Enter the Name of Basket" name="Basket" [(ngModel)]="Basket"  
+      (ionChange)= "AreaChange(Basket)" style=" border-bottom: 1px solid gray;"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col text-center> 
+        <button ion-button type="submit" (click)= "save()">SAVE</button>
+      </ion-col>
+    </ion-row> </form>
+  </div> -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

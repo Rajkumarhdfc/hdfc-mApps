@@ -1,0 +1,53 @@
+<!--
+  Generated template for the FuActionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Fu Action</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-grid>
+   <ion-row class="mt_10">
+    <ion-col col-12 text-right>
+        <ion-select  [(ngModel)]="Filter"  (ionChange)="onChange(Filter)" interface="popover" class="selector" placeholder="FILTER">
+            <ion-option value="INCOMING" class="option">INCOMING</ion-option>
+            <ion-option value="TELECALL" class="option">TELECALL</ion-option>
+            <ion-option value="VISIT"   class="option">VISIT</ion-option>
+             <ion-option value="OTHERS" class="option">OTHERS</ion-option>
+            <ion-option value="ALL"   class="option">ALL</ion-option>
+          </ion-select>
+    </ion-col> 
+  </ion-row> 
+  
+      <div class="tab_card padding0 mt_10">
+        <ion-row class="tab_th" text-wrap>
+          <ion-col text-wrap class="width-15"> ACT </ion-col>
+          <ion-col text-wrap class="width-25" id="date"> DATE </ion-col>
+          <ion-col text-wrap class="width-20"> RES </ion-col>
+          <ion-col text-wrap class="width-20"> OBS </ion-col>
+          <ion-col text-wrap class="width-20"> OPRID </ion-col>
+        </ion-row>
+
+        <ion-row text-wrap *ngFor="let item of fu_action; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+            <ion-col text-wrap class="width-15 tab_line_text"> 
+            <span class="link" *ngIf="item.srno" (click)="openPopover(item.srno)">&nbsp;{{item.action}}&nbsp; </span> </ion-col>
+            <ion-col  class="width-25 tab_line_text"  text-wrap>{{item.date_of_action | date : 'dd-MM-yy'}}   </ion-col>
+            <ion-col text-wrap class="width-20 tab_line_text">{{item.response}}   </ion-col>
+            <ion-col text-wrap class="width-20 tab_line_text">{{item.def_observ}}  </ion-col>
+            <ion-col text-wrap class="width-20 tab_line_text">{{item.opr_id}}  </ion-col>
+        </ion-row>
+
+    </div>
+
+</ion-grid>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

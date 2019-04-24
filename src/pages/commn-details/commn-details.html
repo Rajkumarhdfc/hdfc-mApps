@@ -1,0 +1,257 @@
+<!--
+  Generated template for the CommnDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>commn details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-toolbar class="oth_tab_segment">
+    <ion-segment [(ngModel)]="addr">
+      <ion-segment-button  color="light" value="Borrower">  Borrower </ion-segment-button>
+      <ion-segment-button  value="Co-Borrower"> Co-Borrower </ion-segment-button>
+      <ion-segment-button  value="Guaranter"> Guaranter </ion-segment-button>
+        <ion-segment-button  value="permaddrs">  Per Add  </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+	<ion-item-sliding>
+	<ion-item>
+
+  <div [ngSwitch]="addr">
+
+  
+	<div *ngSwitchCase ="'Borrower'" class="ml_5_mr_5">
+	   <ion-item *ngFor="let items of borrower; index as i ;" class="tab_card padding0 mt_15">
+      <div class="error" *ngIf="index==-1">
+                  No Records Found*
+  </div> 
+
+  
+ 
+    <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+            <div> 
+                <ion-item *ngIf="items.addresstype ==='C'" >
+                  <div [innerHtml]="testhtml(items.comm_address)" class="add_text" style="width: 80%; float: left"></div>
+  
+                  <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                  <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+                  </div>
+                  </ion-item>
+
+           </div> 
+
+          
+       
+            <ion-item *ngIf="items.addresstype ==='E'">
+                <div [innerHtml]="testhtml(items.empl_address)" class="add_text" style="width: 80%; float: left"></div>
+
+                <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                        <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+                </div>
+            </ion-item>
+ 
+            <ion-item *ngIf="items.addresstype ==='P'">
+                <div [innerHtml]="testhtml(items.prop_address)" class="add_text" style="width: 80%; float: left" ></div>
+                <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                        <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+                </div>
+            </ion-item>
+
+        </ion-item>
+    </div>
+<!-- coborrower -->
+
+<div *ngSwitchCase ="'Co-Borrower'" class="ml_15_mr_10">
+    <ion-item *ngFor="let items of coborrower; index as i ;" class="tab_card padding0 mt_15">
+     <div class="error" *ngIf="index==-1">
+                 No Records Found*
+ </div> 
+
+ 
+
+   <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+           <div> 
+               <ion-item *ngIf="items.addresstype ==='C'" >
+                 <div [innerHtml]="testhtml(items.comm_address)" class="add_text" style="width: 80%; float: left"></div>
+ 
+                 <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                 <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+                 </div>
+                 </ion-item>
+
+          </div> 
+
+         
+      
+           <ion-item *ngIf="items.addresstype ==='E'">
+               <div [innerHtml]="testhtml(items.empl_address)" class="add_text" style="width: 80%; float: left"></div>
+
+               <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                       <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+               </div>
+           </ion-item>
+
+           <ion-item *ngIf="items.addresstype ==='P'">
+               <div [innerHtml]="testhtml(items.prop_address)" class="add_text" style="width: 80%; float: left" ></div>
+               <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                       <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+               </div>
+           </ion-item>
+
+       </ion-item>
+   </div>
+
+
+
+
+    <!-- <div *ngSwitchCase ="'Co-Borrower'" class="ml_15_mr_10">
+       <ion-item *ngFor="let item of coborrower; index as i ;" class="tab_card mt_15 padding20">
+        <div class="error" *ngIf="index==-1">
+                  No Records Found*
+                </div> 
+
+                <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+            <div>
+
+                <ion-item *ngIf="item.addresstype ==='C'">
+                    <div [innerHtml]="testhtml(item.comm_address)" class="font13s"></div>
+                </ion-item>
+
+            </div>
+           
+
+            <ion-item *ngIf="item.addresstype ==='E'">
+            <div [innerHtml]="testhtml(item.empl_address)" class="font13s"></div>
+            </ion-item>
+
+            <ion-item *ngIf="item.addresstype ==='P'" >
+            <div [innerHtml]="testhtml(item.prop_address)" class="font13s"></div>
+            </ion-item>
+
+            <div class="map_icon" (click)="RedirectToMap(item,i)" [style.background-color]="getColor(item.latitude,item.longitude)" icon-right float-right type="submit">
+                    <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+            </div>
+
+        </ion-item>
+    </div> -->
+<!-- guarantor -->
+
+
+
+<div *ngSwitchCase ="'Guaranter'" class="ml_15_mr_10">
+    <ion-item *ngFor="let items of guarantor; index as i ;" class="tab_card padding0 mt_15">
+     <div class="error" *ngIf="index==-1">
+                 No Records Found*
+ </div> 
+
+ 
+
+   <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+           <div> 
+               <ion-item *ngIf="items.addresstype ==='C'" >
+                 <div [innerHtml]="testhtml(items.comm_address)" class="add_text" style="width: 80%; float: left"></div>
+ 
+                 <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                 <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+                 </div>
+                 </ion-item>
+
+          </div> 
+
+         
+      
+           <ion-item *ngIf="items.addresstype ==='E'">
+               <div [innerHtml]="testhtml(items.empl_address)" class="add_text" style="width: 80%; float: left"></div>
+
+               <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                       <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+               </div>
+           </ion-item>
+
+           <ion-item *ngIf="items.addresstype ==='P'">
+               <div [innerHtml]="testhtml(items.prop_address)" class="add_text" style="width: 80%; float: left" ></div>
+               <div class="map_icon" (click)="RedirectToMap(items,i)" [style.background-color]="getColor(items.latitude,items.longitude)" icon-right float-right type="submit">
+                       <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+               </div>
+           </ion-item>
+
+       </ion-item>
+   </div>
+
+ <!-- <div *ngSwitchCase ="'Guaranter'" class="ml_15_mr_10">
+ 
+       <ion-item *ngFor="let item of guarantor; index as i ;" class="tab_card mt_15 padding20">
+        <div class="error" *ngIf="index==-1">
+                  No Records Found*
+                </div> 
+                <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+            <div>
+            <ion-item *ngIf="item.addresstype ==='C'">
+                <div [innerHtml]="testhtml(item.comm_address)" class="font13s"></div>
+            </ion-item>
+            </div>
+
+            <ion-item *ngIf="item.addresstype ==='E'">
+                <div  [innerHtml]="testhtml(item.empl_address)" class="font13s"></div>
+            </ion-item>
+
+            <ion-item *ngIf="item.addresstype ==='P'" >
+                <div [innerHtml]="testhtml(item.prop_address)" class="font13s"></div>
+            </ion-item>
+
+            <div class="map_icon" (click)="RedirectToMap(item,i)" [style.background-color]="getColor(item.latitude,item.longitude)" icon-right float-right type="submit">
+            <ion-icon name="map" style="font-size: 25px;"></ion-icon>
+            </div>
+           </ion-item>
+      </div> -->
+
+<!-- permanent address-->
+   <div *ngSwitchCase ="'permaddrs'" class="ml_15_mr_10">
+      <ion-item *ngFor="let item of permaddress; index as i ;" class="tab_card mt_15 padding20">
+      <ion-item *ngIf="item.perm_address!=''&&item.perm_address!=null" >
+      <div class="tab_th padding13" [innerHtml]="testtype(items.address)"></div>
+
+      <div *ngIf="i==0&&item.perm_address!=''">
+      Borrower: 
+      <br>
+      <div [innerHtml]="testhtml(item.perm_address)" class="font13s">
+      </div>
+      </div>
+
+      <div *ngIf="i==1&&item.perm_address!=''&&item.perm_address!=null">
+       Coborrower: 
+      <br> 
+       <div [innerHtml]="testhtml(item.perm_address)" class="font13s">
+      </div>
+      </div>
+     <div *ngIf="i==2&&item.perm_address!=''&&item.perm_address!=null">
+      Guaranter:
+      <br>
+      <div [innerHtml]="testhtml(item.perm_address)" class="font13s">
+      </div>
+      </div>
+     <div class="map_icon" (click)="RedirectToMap1(item,i)" [style.background-color]="getColor(item.latitude,item.longitude)" icon-right float-right type="submit">
+    <ion-icon name="map" style="font-size: 25px;">
+    </ion-icon>
+    </div>
+    </ion-item>
+  </ion-item>
+  </div>
+
+
+
+  
+</div>
+</ion-item>
+</ion-item-sliding>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

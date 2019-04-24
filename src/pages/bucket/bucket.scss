@@ -1,0 +1,42 @@
+page-bucket {
+    .toolbar-background-md {
+        background-color: #b92424;
+    }
+    .icon-md-primary {
+        color: #fdfdfd;
+    }
+    .btn_basket{
+        background-color: transparent;
+        border: 1px solid gray;
+        height: 36px;
+        border-radius: 50px;
+        width: 150px;
+        text-transform: uppercase;
+        color: #00334e !important;
+        font-size: 9pt;
+        margin-top: -7px !important;
+    }
+    .card_box_list_basket {
+        height: 70px;
+        background-color: white;
+        padding-top: 7px;
+        padding-left: 20px !important;
+        padding-right: 20px;
+        width: 100%;
+        box-shadow: 0px 1px 20px #e0e0e0;
+        margin-bottom: 8px;
+    }
+    .button-md.activated {
+        background-color: transparent;
+        -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21), 0 0 0 0 transparent;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21), 0 0 0 0 transparent;
+    }
+
+
+    .chip-md {
+        color: #00334e;
+        background-color: transparent;
+    }
+}
+
+

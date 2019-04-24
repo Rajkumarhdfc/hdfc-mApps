@@ -1,0 +1,271 @@
+<!--
+  Generated template for the AddFollowUpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Follow Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding scroll="false">
+  <form [formGroup]="addfollowup">
+    
+    <div class="tab_th padding13 mt25"> Add Follow Up  </div>
+    <div class="tab_card padding20">
+      <ion-row> 
+          <ion-col col-12>
+                <ion-item>
+                  <ion-label stacked > Action * </ion-label>
+                  <ion-input type="text"  formControlName="action" name="Action" 
+                  (keyup)="getItems_all('ACTION_CD',$event,'')"> 
+                  </ion-input>
+                </ion-item> 
+
+                <div *ngIf="showList">
+                  <ion-list class="list_div_bg">
+                  <ion-item *ngFor="let item of list1" (click)="setValue_All(item.para_value,item.para_desc,'','action','action',110)">
+                  {{item.para_desc}}  
+                </ion-item>
+                </ion-list>
+                </div>
+          </ion-col>
+
+
+          <ion-col col-12> 
+              <ion-item>
+                  <ion-label stacked> Action To Be *</ion-label>
+                  <ion-input type="text"  formControlName="ActionToBe" (keyup)="getItems_all('ACTION_TO_BE_CD',$event,'4')">
+                  </ion-input>
+                  </ion-item>
+                <ion-list class="list_div_bg" *ngIf="showList4">
+                  <ion-item *ngFor="let items of list1"  (click)="setValue_All(items.para_value,items.para_desc,'4','ActionToBe','ActionToBe',400)">
+                {{items.para_desc}} 
+                </ion-item>
+                  </ion-list> 
+          </ion-col>
+
+
+          <ion-col col-6>    
+                <ion-item>
+                    <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
+                      <ion-label stacked>Action Date *</ion-label>
+                      <ion-datetime type="Date" formControlName="ActionDate" min="2016" max="2019" displayFormat="DD/MM/YYYY" 
+                      (ionChange)="compareTwoDate1()"></ion-datetime>
+                </ion-item>
+                  <div *ngIf="error.isError" class="alert alert-danger error">
+                  {{ error.errorMessage }}
+                  </div>
+                  <div class="error" *ngIf="addfollowup.get('ActionDate').hasError('required') && addfollowup.get('ActionDate').touched">
+                    this field is required*
+                  </div>  
+          </ion-col>
+
+              <ion-col col-6>
+                  <ion-item>
+                      <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
+                        <ion-label stacked>Next Action Date *</ion-label>
+                        <ion-datetime  type="date"  min="2019" max="2020"  formControlName="NextActionDate" 
+                        displayFormat="DD/MM/YYYY"  
+                        (ionChange)="compareTwoDate2()"></ion-datetime>
+                  </ion-item>
+                      <div *ngIf="error1.isError" class="alert alert-danger error">
+                      {{ error1.errorMessage }}
+                      </div>
+                      
+                      <div class="error" *ngIf="addfollowup.get('NextActionDate').hasError('required') && addfollowup.get('NextActionDate').touched">
+                        this field is required*
+                      </div>
+              </ion-col>
+
+               <!-- <ion-col col-12>
+                  <ion-item>
+                      <ion-label stacked> Area Code *</ion-label>
+                  <ion-input type="text"  formControlName="areacode"  
+                  (keyup)="getItems_all('AREA_CODE',$event,'1')">
+                      </ion-input>
+                      </ion-item>
+                    <div class="error" *ngIf="addfollowup.get('areacode').hasError('required') && addfollowup.get('areacode').touched">
+                      this field is required*
+                    </div>
+                    
+                    <ion-list  class="list_div_bg" *ngIf="showList1">
+                        <ion-item *ngFor="let items of list1" (click)="setValue_All(items.para_value,items.para_desc,'1','areacode','areacode',200)">
+                      {{items.para_desc}} 
+                      </ion-item>
+                      </ion-list> 
+                 </ion-col> -->
+
+
+                  <ion-col col-12>
+                      <ion-item>
+                          <ion-label stacked> Response *</ion-label>
+                          <ion-input type="text"  formControlName="response" 
+                          (keyup)="getItems_all('RESPONSE_CD',$event,'2')">
+                          </ion-input>
+                          </ion-item>
+                        <div class="error" *ngIf="addfollowup.get('response').hasError('required') && addfollowup.get('response').touched">
+                          this field is required*
+                        </div>
+                        <ion-list  class="list_div_bg" *ngIf="showList2">
+                          <ion-item *ngFor="let items of list1" (click)="setValue_All(items.para_value,items.para_desc,'2','response','response',400)">
+                        {{items.para_desc}} 
+                        </ion-item>
+                        </ion-list> 
+                  </ion-col>
+
+
+                  <ion-col col-12> 
+                      <ion-item>
+                          <ion-label stacked> Obs Cd *</ion-label>
+                        <ion-input type="text" formControlName="ObsCd"  (keyup)="getItems_all('DEF_OBS_CD',$event,'3')">
+                          </ion-input>
+                          </ion-item>
+                        <ion-list class="list_div_bg"  *ngIf="showList3">
+                          <ion-item *ngFor="let items of list1"  (click)="setValue_All(items.para_value,items.para_desc,'3','ObsCd','ObsCd',490)">
+                        {{items.para_desc}} 
+                        </ion-item>
+                      </ion-list> 
+                  </ion-col>
+
+  
+         
+                    <ion-col col-6> 
+
+                        <ion-item>
+                            <ion-label stacked> Amt Spent</ion-label>
+                            <ion-input formControlName="AmtSpent"  type="number"></ion-input>
+                          </ion-item>
+                            <div class="error" *ngIf="addfollowup.get('AmtSpent').hasError('required') && addfollowup.get('AmtSpent').touched">
+                            this field is required*
+                          </div>
+                          <div class="error" *ngIf="addfollowup.get('AmtSpent').hasError('pattern') && addfollowup.get('AmtSpent').touched">
+                            enter only digits
+                          </div>
+
+                    </ion-col>
+
+
+                    <ion-col col-6>   
+                      <ion-item>
+                        <ion-label stacked> Amt Chargeable *</ion-label>
+                        <ion-input formControlName="AmtCharg"    type="number"></ion-input>
+                      </ion-item>
+                        <div class="error" *ngIf="addfollowup.get('AmtCharg').hasError('required') && addfollowup.get('AmtCharg').touched">
+                        this field is required*
+                      </div>
+                      <div class="error" *ngIf="addfollowup.get('AmtCharg').hasError('pattern') && addfollowup.get('AmtCharg').touched">
+                        enter only digits
+                      </div> 
+                    </ion-col>
+
+                  <ion-col col-12>
+                      <ion-item>
+                          <ion-label stacked> Remark</ion-label>
+                          <ion-textarea formControlName="Remark"  max="600" type="text" style="height:150px;"></ion-textarea>
+                      </ion-item>
+                  </ion-col>
+
+                  <ion-col col-12>
+                      <ion-item>
+                          <ion-label stacked> Ci Type </ion-label>
+                          <ion-select formControlName="CiType"   interface="popover">
+                          <ion-option  value="{{items.para_value}}" *ngFor="let items of citype">{{items.para_desc}}</ion-option>
+                          </ion-select>
+                        </ion-item>
+                </ion-col>
+
+
+                <ion-col col-6> 
+                    <ion-item>
+                        <ion-label stacked> Action Type *</ion-label>
+                          <ion-select formControlName="ActionType" interface="popover">
+                            <ion-option value="P">P</ion-option>
+                            <ion-option value="T">T</ion-option>
+                          </ion-select>
+                      </ion-item>
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item>
+                        <ion-label stacked> Risk Event</ion-label>
+                          <ion-select formControlName="RiskEvent"  interface="popover">
+                          <ion-option value="{{item.para_value}}" *ngFor="let item of riskevent">{{item.para_desc}}</ion-option>
+                          </ion-select>
+                      </ion-item> 
+                  </ion-col>
+
+
+        </ion-row>
+    
+        <ion-row> 
+          <ion-col col-6 text-right> <button ion-button round outline (click)="resetForm()">Cancel</button> </ion-col>
+          <ion-col col-6> <button ion-button [disabled]='!addfollowup.valid ||saveflag' color="primary" round  class="button" (click)="Fu_ActionInsertData()">Save</button> </ion-col> 
+        </ion-row>
+
+    </div>
+ </form>
+
+ 
+
+  <div stacked  class="tab_th padding13 mt25" [hidden]="!crossflag"> Cross Link Accounts </div>
+
+  <div> 
+
+  <div *ngFor="let items of crosslinks;let i=index" class="tab_card padding20">
+
+    <ion-row>
+        <ion-col col-12> 
+          <div class="font16 mt_10 mb_10"> Acc No &nbsp;&nbsp; {{items.lac_no1}} </div> 
+        </ion-col> 
+
+        <ion-col col-6>  
+            <ion-item inset>
+                <ion-label stacked> Action* </ion-label>
+                  <ion-input type="text" value="{{items.action_cl}}"
+                (keyup)="getItems1(i,$event)"> 
+                  </ion-input>
+                </ion-item> 
+                
+                <div *ngIf="showList5 && i==crosslinkindex">
+                  <ion-list class="list_div_bg">
+                  <ion-item *ngFor="let item of list" (click)="optionscross(item.para_value,item.para_desc)">
+                  {{item.para_desc}}  
+                </ion-item>
+                </ion-list>
+                </div>
+        </ion-col>
+
+
+        <ion-col col-6>    
+          <ion-item>
+            <ion-label stacked> Amt Chargeable *</ion-label>
+            <ion-input type="tel" maxlength="6" (keyup)="getAmtChrg(i,$event)"  value="{{items.amount_cr_cl}}" ></ion-input>
+          </ion-item> 
+        </ion-col>
+
+    </ion-row>
+
+    </div>
+
+
+  <ion-row class="text-center mt_10" > 
+    <ion-col col-12> 
+        <button [hidden]="!crossflag"  [disabled]='!addfollowup.valid' ion-button class="button"  color="primary" round
+  (click)="Fu_ActionInsertDataCrosslinks()">Save</button>
+    </ion-col>
+  </ion-row>
+
+  
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

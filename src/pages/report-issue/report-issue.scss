@@ -1,0 +1,30 @@
+page-report-issue {
+    ion-input{
+        border-bottom: 1px solid #a09e9e;
+        margin-top: 6px;
+    }
+    .item-md {
+        margin-bottom: 20px;
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+        margin-right: 15px;
+        border-bottom: 1px solid #dedede;
+    }
+    .item-inner {
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+    }
+    .label-md-header, .item-input .label-md-header, .item-select .label-md-header, .item-datetime .label-md-header {
+        color: #6d6b6b;
+        font-size: 14px;
+    }
+    .button {
+        width: 100%;
+        height: 46px;
+    }
+    
+    .toolbar-md-header .bar-button-default-md{
+        color: #00334e;
+    }
+}

@@ -1,0 +1,58 @@
+
+  <ion-header>
+    <ion-navbar hideBackButton color="header">
+    <ion-title class="header-text">Details</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+        <ion-label class="right time_sec">Sync time {{minutes}} min : {{seconds}} sec</ion-label>
+
+        <div style="width:100%; text-align: center;" class="mt20 mb10">
+           
+            <button round type="submit" class="button_rund_red" (click)="startSync()" style="margin-left: 5%;">
+             Start Sync 
+            </button>
+            <button round class="button_rund" type="submit" (click)="CotinuetoDashboard()">
+             Continue 
+            </button>
+        </div>
+
+
+        <ion-row style="padding:15px 15px 0px 15px;">
+            <ion-col col-1 class="view_all_text"> No. </ion-col>
+            <ion-col col-8 class="view_all_text"> TABLE NAME </ion-col>
+            <ion-col col-3 class="view_all_text right_align"> ROW COUNT </ion-col>
+        </ion-row>
+        <ion-row class="card_box_list_sync" *ngFor="let items of displayData; let i=index">
+            <ion-col col-1 class="sync_text"> {{i + 1}} </ion-col>
+            <ion-col col-8 class="sync_text"> {{items.TABLE_NAME}} </ion-col>
+            <ion-col col-3 class="right_align sync_text"> {{items.ROW_COUNT}} <ion-icon name="ios-checkmark-circle" class="custom-icon" [hidden]="items.SYNC_FLAG" item-right></ion-icon> </ion-col>      
+        </ion-row>
+
+
+        
+
+<!-- 
+            <div *ngIf="rflag" class="tab_card" style="margin: 12px; width: 96%;">
+        <ion-grid>
+            <ion-row class="tab_th">
+                <ion-col class="width-9"><b>No.</b></ion-col>                
+                <ion-col class="width-67" text-wrap><b>TABLE NAME</b></ion-col>
+                <ion-col class="width-24"><b>ROW <span class="text-right" style="padding-left: 18px;">COUNT</span></b></ion-col>
+            </ion-row>
+            <ion-row *ngFor="let item of displayfullsyncdata; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'even'">
+                <ion-col class="width-9">{{i + 1}}</ion-col>
+                <ion-col class="width-67" text-wrap>{{item.TABLE_NAME}}</ion-col>
+                <ion-col class="width-24">{{item.ROW_COUNT}} 
+                <ion-icon name="ios-checkmark-circle" class="custom-icon" [hidden]="item.SYNC_FLAG" item-right></ion-icon>
+                </ion-col>                
+            </ion-row>
+
+        </ion-grid>  
+    </div> -->
+
+
+    <br> <br> <br> <br> <br> <br> <br> 
+</ion-content>
+

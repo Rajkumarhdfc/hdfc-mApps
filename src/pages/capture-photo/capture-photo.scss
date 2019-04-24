@@ -1,0 +1,97 @@
+page-capture-photo {
+
+.header{
+	color:#b30000;
+ }
+
+ion-footer{
+ min-height:20px;
+}
+ion-select {
+    max-width: 100%;
+}
+
+.selector{
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+ion-col.width-30.col {
+    max-width: 30%;
+}
+
+ion-col.width-25.col {
+    max-width: 25%;
+}
+
+ion-col.width-15.col {
+    max-width: 15%;
+}
+ion-col.width-10.col {
+    max-width: 10%;
+}
+ion-col.width-20.col {
+    max-width: 20%;
+}
+ion-card {
+   border-top: 3px solid #b30000;
+}
+.scroll-content{
+    margin-top: 80px;
+}
+
+
+.btn_select{
+    color: #708c9b;
+    border: 1px solid #708c9b;
+    font-size: 10pt;
+}
+
+.button {
+    height: 38px;
+    font-size: 9pt;
+    padding : 10px 30px 10px 18px;
+    min-width: auto !important;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+}
+
+.btn_submit{
+    width: 150px;
+    text-align: center;
+    padding: 0px;
+    height: 59px;
+    box-shadow: 0px 3px 9px 1px #ef8181 !important;
+    font-size: 11pt;
+    letter-spacing: 0.8px;
+    width: 170px;
+}
+
+.item-md .item-button {
+    padding: 0 0.6em;
+    height: 30px;
+    font-size: 1.2rem;
+    width: 95px;
+    background-color: #cecece;
+    color: #00334e !important;
+}
+
+.text_scan{
+    color: #00334e;
+    font-size: 11pt;
+    text-align: center;
+}
+.scan_active{
+    background-color: #00334e !important;
+    color: white !important;
+    background-image: url(../assets/imgs/CAP_TICK.png) !important;
+    background-position: 96%;
+    background-repeat: no-repeat;
+}
+
+.input_class{
+    height: 50px !important;
+    text-align: center;
+}
+
+}

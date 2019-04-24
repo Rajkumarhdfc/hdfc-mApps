@@ -1,0 +1,17 @@
+<!-- <ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+  	<ion-row>
+  		<ion-col class="left" col-4 text-wrap>{{ paramtab1.lac}}</ion-col>
+  		<ion-col class="right">{{ paramtab1.name}}</ion-col>
+  	</ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header>
+ -->
+<ion-tabs class="tabs_common">
+    <ion-tab [root]="fuActionRoot"  [rootParams]= "paramtab1" tabTitle=" FU Action "></ion-tab>
+    <ion-tab [root]="legalActionRoot" [rootParams]= "paramtab1" tabTitle=" Legal Action "></ion-tab>
+    <ion-tab [root]="addFollowUpRoot" [rootParams]= "paramtab1" tabTitle=" Add Follow Up "></ion-tab>
+    <!-- <ion-tab [root]="propClassRoot" [rootParams]= "paramtab1" tabTitle=" PROP Class "></ion-tab> -->
+</ion-tabs>

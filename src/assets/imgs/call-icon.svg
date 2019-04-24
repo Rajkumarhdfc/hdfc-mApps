@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="53px" viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>call-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-8.4%" y="-10.0%" width="116.7%" height="120.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.22810768   0 0 0 0 0.281464175   0 0 0 0 0.342844203  0 0 0 0.0957440997 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M2.78467408,3.20964256 C1.85658635,4.13773029 1.46943839,5.47699923 1.75919759,6.75712479 C2.13992175,8.43925495 3.38943278,10.3581064 5.52385127,12.4925249 C7.52272298,14.4913966 9.31591773,15.6974362 10.88338,16.1227222 C12.205786,16.4815191 13.619087,16.1052062 14.5879794,15.1363137 L15.9306622,13.7936503 L13.2002162,11.0632043 L12.0761187,12.1873017 C11.565244,12.6981764 10.7903261,12.8369779 10.134021,12.5351731 C9.34217976,12.1712042 8.46590046,11.50102 7.49062828,10.5257478 C6.47567832,9.51079788 5.75758456,8.56916579 5.33838872,7.69110567 C5.02317774,7.03085533 5.15830548,6.24362115 5.6756512,5.72627543 L6.76947499,4.63246311 L4.06566426,1.92865238 L2.78467408,3.20964256 Z M4.50170791,0.620521427 L8.07760823,4.19642174 C8.31842938,4.43724289 8.31842835,4.82769144 8.07760594,5.06851133 L6.54773622,6.59836501 C6.39992139,6.74617985 6.36131283,6.97110758 6.45137459,7.15975362 C6.80258743,7.89541454 7.43902053,8.72996548 8.36271559,9.65366054 C9.24347322,10.5344182 10.0104552,11.121011 10.6492017,11.4146101 C10.8366968,11.5008306 11.0580664,11.4611794 11.2040314,11.3152144 L12.7641725,9.75507332 C13.0049928,9.51425306 13.3954395,9.51425306 13.6362598,9.75507332 L17.2387963,13.3576098 C17.4796178,13.5984313 17.4796164,13.9888805 17.2387931,14.2297002 L15.4600636,16.0084042 C14.1786278,17.2898399 12.3094212,17.7875447 10.5604305,17.3130062 C8.75228152,16.8224168 6.78941116,15.5022593 4.65176397,13.3646122 C2.36729468,11.0801429 0.996768365,8.97545049 0.556307865,7.02939089 C0.173078708,5.33632494 0.685115069,3.56502697 1.91258678,2.33755526 L3.62962061,0.620521427 C3.87044087,0.379701168 4.26088765,0.379701168 4.50170791,0.620521427 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-/-main-1.1" transform="translate(-453.000000, -823.000000)">
+            <g id="All-listing" transform="translate(25.000000, 698.000000)">
+                <g id="Group-2" filter="url(#filter-1)" transform="translate(0.000000, 39.000000)">
+                    <g id="01">
+                        <g id="icons" transform="translate(400.240741, 99.000000)">
+                            <g id="call-icon" transform="translate(46.092593, 0.000000)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <use id="Original--Path-" fill="#00334E" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

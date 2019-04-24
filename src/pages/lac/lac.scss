@@ -1,0 +1,38 @@
+page-lac {
+
+   
+.header{
+	color:#b30000;
+ }
+
+ion-footer{
+ min-height:20px;
+}
+
+.selector{
+    justify-content: center;
+    border: solid 0.75px #b30000;
+    background-color: #ffffff;
+}
+
+ion-col.width-30.col {
+    max-width: 30%;
+}
+
+ion-col.width-25.col {
+    max-width: 25%;
+}
+
+ion-col.width-15.col {
+    max-width: 15%;
+}
+ion-col.width-10.col {
+    max-width: 10%;
+}
+ion-col.width-20.col {
+    max-width: 20%;
+}
+ion-card {
+   border-top: 3px solid #b30000;
+}
+}

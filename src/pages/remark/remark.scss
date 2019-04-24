@@ -1,0 +1,40 @@
+page-remark {
+  
+.header{
+	color:#b30000;
+ }
+ion-footer{
+ min-height:20px;
+}
+.selector{
+    justify-content: center;
+    border: solid 0.75px #b30000;
+    background-color: #ffffff;
+}
+
+.testtry{
+    color: #00334e !important;
+    border: 2px solid #00334e !important;
+    font-size: 10pt !important;
+}
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+    .scroll-content {
+      margin-top: 215px !important;
+    }
+   .tabbar {
+        top: 140px !important;
+    }
+  }
+  
+  @media (min-width: 300px) and (max-width: 599px) {
+    .scroll-content {
+      margin-top: 185px !important;
+    }
+    .tabbar{
+        top: 124px !important;
+    }
+  }
+
+}

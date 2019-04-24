@@ -1,0 +1,38 @@
+page-popover {
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background-color: gray;
+    }
+    
+    .popover_head > .toolbar-background-md {
+        background-color: #00334e !important;
+        padding: 10px;
+        color: white;
+        height: 64px;
+        padding-top: 16px;
+        padding-left: 20px;
+    }
+
+    .popover_head .toolbar-title.toolbar-title-md {
+        color: white !important;
+    }
+
+    .popover-md .popover-content{
+        top: 35% !important;
+        left: 114px !important;
+        position: absolute !important;
+    }
+
+    .popover-content{
+        left: 114px !important;
+    }
+    
+    .img_close_icon{
+        top: 23px;
+        float: right;
+        position: absolute;
+        right: 24px;
+        color: white;
+    }
+    
+}

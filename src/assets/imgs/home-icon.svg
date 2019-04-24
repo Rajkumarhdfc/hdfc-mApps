@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>home-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-8.4%" y="-10.0%" width="116.7%" height="120.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.22810768   0 0 0 0 0.281464175   0 0 0 0 0.342844203  0 0 0 0.0957440997 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M14.5022536,15.8739209 C14.7389654,15.8739209 14.9308581,15.6842857 14.9308581,15.4503588 L14.9308581,7.76201014 C14.9308581,7.6391018 14.8768341,7.52225438 14.7828102,7.44180085 L8.84007494,2.35676886 C8.68002373,2.21981753 8.44276585,2.21886744 8.28159682,2.35453248 L2.23407401,7.44507242 C2.13846995,7.52554772 2.08339102,7.64341082 2.08339102,7.76751809 L2.08339102,15.4503588 C2.08339102,15.6842857 2.27528379,15.8739209 2.51199552,15.8739209 L5.75605774,15.8739209 L5.75605774,10.4987692 L11.4231928,10.4987692 L11.4231928,15.8739209 L14.5022536,15.8739209 Z M7.17045779,17.271681 L2.51199552,17.271681 C1.49413221,17.271681 0.668990969,16.4562473 0.668990969,15.4503588 L0.668990969,7.76751809 C0.668990969,7.23385535 0.905831061,6.72704258 1.31692965,6.38099779 L7.36445246,1.29045785 C8.05748124,0.707096567 9.07769302,0.711181926 9.76591516,1.30007432 L15.7086505,6.38510631 C16.112954,6.73105748 16.3452582,7.2335028 16.3452582,7.76201014 L16.3452582,15.4503588 C16.3452582,16.4562473 15.5201169,17.271681 14.5022536,17.271681 L10.0087927,17.271681 L10.0087927,11.8965293 L7.17045779,11.8965293 L7.17045779,17.271681 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-/-main-1.1" transform="translate(-407.000000, -823.000000)">
+            <g id="All-listing" transform="translate(25.000000, 698.000000)">
+                <g id="Group-2" filter="url(#filter-1)" transform="translate(0.000000, 39.000000)">
+                    <g id="01">
+                        <g id="icons" transform="translate(400.240741, 99.000000)">
+                            <g id="home-icon" transform="translate(0.092593, 0.000000)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <use id="Original---Path" fill="#00334E" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

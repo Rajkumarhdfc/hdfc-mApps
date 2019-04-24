@@ -1,0 +1,43 @@
+page-ac-details {
+
+
+.font{
+  font-size:13.5px;
+}
+.textcolor{
+  border-bottom: 1px solid #e4e3e3;
+  padding: 5px;
+  color: #464646;
+}
+.colortext{
+  border-bottom: 1px solid #e4e3e3;
+  padding: 5px;
+  color: #464646;
+}
+.width{
+  max-width:40%
+}
+.scroll{
+  overflow: scroll; 
+}
+.popover-md .popover-content {
+  left: 200px !important;
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .scroll-content {
+    margin-top: 142px ;
+  }
+  .mr15{
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+  .scroll-content {
+    margin-top: 125px;
+  }
+}
+
+
+}

@@ -1,0 +1,80 @@
+
+
+<ion-content>
+
+  <div>
+  
+    <ion-grid *ngFor="let item of propname; index as i ;" class="tab_card mt25 padding0" 
+    [hidden]="item.PROP_NAME==' '">
+      <ion-row class="h56">
+        <ion-col col-5 class="side_head" text-wrap> PROP NAME: </ion-col>
+        <ion-col col-7 text-wrap> <span class="tab_value"> {{item.PROP_NAME}} </span> </ion-col>
+      </ion-row>
+    </ion-grid>  
+     
+    <ion-grid *ngFor="let item of proplist; index as i ;" class="">
+  
+      <ion-row class="tab_card padding15">
+          <ion-col text-wrap><span class="prop-no block"> {{item.prop_no}} </span> 
+          <span class="prop-text block" style="margin-top: 5px;"> {{item.prop_addr_line1}} {{item.prop_addr_line2}}, {{item.prop_pin}}, {{item.prop_city}}, {{item.prop_state}} </span>
+          </ion-col>
+      </ion-row>
+
+<div class="tab_card mt25 padding0">
+
+      <ion-row class="h56">
+        <ion-col cal-5 class="side_head" text-wrap> AREA: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value">{{item.prop_area}}  </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col cal-5 class="side_head" text-wrap> NO OF OWNERS: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value tr_even">{{item.no_of_owners}} </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col cal-5 class="side_head" text-wrap> COST AT LENDING: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value">{{item.prop_val_cost}} </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col cal-5 class="side_head" text-wrap> RESERVE PRICE IF ANY: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value tr_even">{{item.reserve_price}} </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col  cal-5 class="side_head" text-wrap> MASTER FILE INFO: </ion-col>
+        <ion-col  col-7 text-wrap class="tab_value"> {{item.master_fileno}} </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col  cal-5 class="side_head" text-wrap> DOCKET LOCATION: </ion-col>
+        <ion-col  col-7 text-wrap class="tab_value tr_even"> {{item.docket_location}} </ion-col>
+      </ion-row>
+  
+       <ion-row class="h56">
+        <ion-col  cal-5 class="side_head" text-wrap> TA REMARKS: </ion-col>
+        <ion-col  col-7 text-wrap class="tab_value"> {{item.ta_remarks}} </ion-col>
+      </ion-row>
+  
+       <ion-row class="h56">
+        <ion-col cal-5 class="side_head" text-wrap> TOTAL PLOT AREA: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value tr_even"> {{item.tot_plot_area}} </ion-col>
+      </ion-row>
+  
+      <ion-row class="h56">
+        <ion-col  cal-5 class="side_head" text-wrap> PROPERTY LAT-LONG: </ion-col>
+        <ion-col col-7 text-wrap class="tab_value"> {{item.prop_lat}}/{{item.prop_longi}} <ion-icon *ngIf="item.prop_lat!=undefined && item.prop_lat!=' '" name="map"></ion-icon>
+      </ion-col>
+      </ion-row>
+
+    </div>
+  
+  </ion-grid>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+  </ion-content>

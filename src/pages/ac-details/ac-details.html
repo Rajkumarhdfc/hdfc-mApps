@@ -1,0 +1,158 @@
+
+<ion-content scroll="true">
+
+   <div class="mb_10 sub_title_name"> Account Details </div> 
+
+    <div *ngFor="let acitem of acdetails; index as i ;" (swipe)="swipe($event)" class="tab_card padding0">
+        <div style="overflow: scroll;"> 
+        <table>
+            <tr class="text-wrap tab_th">
+                <th class="w16 text-left"> ACC </th>
+                <th class="w16 text-right"> PEMI </th>
+                <th class="w16 text-right"> EMI </th>
+                <th class="w16 text-right"> AI </th>
+                <th class="w16 text-right"> PPC </th>
+                <th class="w16 text-right"> SI</th>
+                <th class="w16 text-right">IC</th>
+                <th class="w16 text-right">TOTAL</th>
+
+
+            </tr> 
+            <tr class=""> 
+                <td class=" text-left"> LYo/s: </td>
+                <td class=" text-right"> {{acitem.LY_OS_EMI}} </td>
+                <td class=" text-right"> {{acitem.LY_OS_PMI}}</td>
+                <td class=" text-right"> {{acitem.LY_OS_ADD_INT}}</td>
+                <td class=" text-right"> {{acitem.LY_OS_PPC}}</td>
+                <td class=" text-right"> {{acitem.LY_OS_SI}}</td>
+                <td class=" text-right"> {{acitem.LY_OS_MR}}</td>
+                <td class=" text-right"> {{acitem.LY_OS_TOTAL}}</td>
+
+
+            </tr>
+            <tr class="tr_even"> 
+                <td class=" text-left"> Recble:</td>
+                <td class=" text-right"> {{acitem.pmi_recble}} </td>
+                <td class=" text-right"> {{acitem.emi_recble}}</td>
+                <td class=" text-right"> {{acitem.add_int_recble}}</td>
+                <td class=" text-right"> {{acitem.ppc_recble}}</td>
+                <td class=" text-right"> {{acitem.si_recble}}</td>
+                <td class=" text-right"> {{acitem.mr_recble}}</td>
+                <td class=" text-right"> {{acitem.tot_recble}}</td>
+            </tr>
+
+            <tr class=""> 
+                <td class=" text-left"> Recd:</td>
+                <td class=" text-right"> {{acitem.pmi_recd}} </td>
+                <td class=" text-right"> {{acitem.emi_recd}}</td>
+                <td class=" text-right"> {{acitem.add_int_recd}}</td>
+                <td class=" text-right">{{acitem.ppc_recd}}</td>
+                <td class=" text-right">{{acitem.si_recd}}</td>
+                <td class=" text-right">{{acitem.mr_recd}}</td>
+                <td class=" text-right">{{acitem.tot_recd}}</td>
+            </tr>
+
+            <tr class="tr_even"> 
+                <td class=" text-left">Curro/s:</td>
+                <td class=" text-right"> {{acitem.pmi_curos}} </td>
+                <td class=" text-right"> {{acitem.emi_curos}}</td>
+                <td class=" text-right"> {{acitem.add_curos}}</td>
+                <td class=" text-right">{{acitem.cur_ppcos}}</td>
+                <td class=" text-right">{{acitem.cur_sios}}</td>
+                <td class=" text-right">{{acitem.mr_curos}}</td>
+                <td class=" text-right">{{acitem.tot_curos}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+    <div class="tab_card mt25 padding0">
+        <ion-grid class="padding0" *ngFor="let item of itemlist; index as i ;">
+
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap> EMI: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.EMI}} </ion-col>
+        </ion-row>
+        
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap> MONTH O/S: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value tr_even">{{item.M0NTH_OS}}</ion-col>
+        </ion-row>
+        
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap> ASSET CLASSIFICATION: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.ASSET_CLASS}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap> BAL TERM/CURR ROI: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value tr_even"> {{item.BAL_TERM}}/{{item.ROI}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap id="date"> RCD/LAST TRANS DATE: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.RCD| date : 'dd-MM-yy'}}/{{item.LAST_TRANS_DATE| date : 'dd-MM-yy'}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap>SANCTION/DIS AMOUNT: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value tr_even">{{item.SANCTION}}/{{item.DISBAMT}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5 class="side_head" text-wrap>PAYMODE: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.PAY_MODE}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5  class="side_head" text-wrap>FRAUD CLASS: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value tr_even">{{item.FRAUD_CLASS}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5  class="side_head" text-wrap>PROP CLASSI CODE: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.PROP_CLASS}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5  class="side_head" text-wrap>LOAN GROUP NAME: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value tr_even">{{item.GROUP_NO}} </ion-col>
+        </ion-row>
+
+        <ion-row class="h56">
+            <ion-col col-5  class="side_head" text-wrap>LOAN ORIGIN/THROUGH WHOM: </ion-col>
+            <ion-col col-7 text-wrap class="tab_value">{{item.LOAN_ORIGIN}}/{{item.THROUGH_WHOM}} </ion-col>
+        </ion-row>
+
+        </ion-grid>
+
+        <ion-grid *ngFor="let item of lacacdtls; index as i ;" class="padding0">
+            <ion-row class="h56">
+                <ion-col col-5 class="side_head" text-wrap>AMOUNT PRIN: </ion-col>
+                <ion-col col-7 text-wrap class="tab_value tr_even">{{item.prin_os_last_tr_comb}}
+            </ion-col>
+            </ion-row>
+            <ion-row class="h56">
+                <ion-col col-5  class="side_head" text-wrap>MRU DATE: </ion-col>
+                <ion-col col-7 text-wrap class="tab_value">{{item.last_rcbl_dt | date : 'dd-MM-yy'}}
+            </ion-col>
+            </ion-row>
+            <ion-row class="h56">
+                <ion-col col-5 class="side_head" text-wrap>TO DATE: </ion-col>
+                <ion-col col-7 text-wrap class="tab_value tr_even">{{item.TO_DATE | date : 'dd-MM-yy'}}
+            </ion-col>
+            </ion-row>
+            <ion-row class="h56">
+                <ion-col col-5 class="side_head" text-wrap>PLT: </ion-col>
+                <ion-col col-7 text-wrap class="tab_value">{{item.plt}}
+            </ion-col>
+            </ion-row>
+        </ion-grid>   
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

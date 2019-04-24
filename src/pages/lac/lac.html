@@ -1,0 +1,15 @@
+<!-- <ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+  	<ion-row>
+  		<ion-col class="left" col-4 text-wrap>{{ paramtab1.lac}}</ion-col>
+  		<ion-col class="right">{{ paramtab1.name}}</ion-col>
+  	</ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header> -->
+
+<ion-tabs>
+    <ion-tab [root]="lacAmrtRoot" [rootParams]= "paramtab1" tabTitle="LAC AMRT"></ion-tab>
+    <ion-tab [root]="lacTermsRoot" [rootParams]= "paramtab1" tabTitle="LAC TERMS"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,57 @@
+
+<ion-content padding>
+
+
+<div class="tab_card padding0">
+  
+    <ion-row class="tab_th" text-wrap>
+        <ion-col text-wrap class="width-25 text-left"> TOTAL </ion-col>
+        <ion-col text-wrap class="width-25 text-right" id="date"> RECEIVABLE  </ion-col>
+        <ion-col text-wrap class="width-25 text-right" id="date"> RECEIVED </ion-col>
+        <ion-col text-wrap class="width-25 text-right" id="date"> CURRENT 0/S </ion-col>
+  </ion-row>
+
+  <ion-row text-wrap *ngFor="let item of tot; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+    <ion-col text-wrap class="width-25 text-left"> AI </ion-col>
+    <ion-col  class="width-25 text-right tab_line_text" text-wrap>{{item.total_rcbl}} </ion-col>
+    <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.total_rcvd}} </ion-col>
+     <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.total_out}} </ion-col>
+  </ion-row>
+
+  <ion-row text-wrap *ngFor="let item of tot; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+    <ion-col text-wrap class="width-25 text-left"> MR </ion-col>
+    <ion-col  class="width-25 text-right tab_line_text" text-wrap>{{item.mr_rcbl}} </ion-col>
+    <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.mr_rcvd}} </ion-col>
+    <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.mr_out}} </ion-col>
+  </ion-row>
+
+</div>
+
+<div class="tab_card padding0 mt25">
+  <ion-row class="tab_th" text-wrap>
+    <ion-col text-wrap class="width-16 text-right" id="date">TRAN DT</ion-col>
+ 	  <ion-col text-wrap class="width-16 text-right"> AI RCBL </ion-col>
+    <ion-col text-wrap class="width-16 text-right" id="date"> AI RCVD </ion-col>
+    <ion-col text-wrap class="width-16 text-right" id="date"> AI OUT </ion-col>
+    <ion-col text-wrap class="width-16 text-right">MR RCBI</ion-col>
+    <ion-col text-wrap class="width-18 text-right" id="date"> MR RCVD </ion-col>
+    
+	</ion-row>
+	<ion-row text-wrap *ngFor="let item of ai; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+    
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.tran_dt| date:'dd-MM-yy'}}  </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.ai_rcbl}} </ion-col>
+    <ion-col  class="width-16 text-right tab_line_text" text-wrap>{{item.ai_rcvd }} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.ai_out}} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.mr_rcbi}} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.mr_rcvd}} </ion-col>
+
+  </ion-row>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

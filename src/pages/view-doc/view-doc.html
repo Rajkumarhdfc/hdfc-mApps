@@ -1,0 +1,17 @@
+
+<ion-content padding>
+  <div class="tab_card padding0">
+      <ion-row class="tab_th" text-wrap> <ion-col class="padding13"> DOCUMENT NAME </ion-col> </ion-row>
+
+	<ion-grid *ngFor="let item of viewdocs; index as i ;" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+  	<ion-row>
+    <ion-col  style="padding-top: 15px;" text-wrap>{{item.DOC_DESC}}
+    </ion-col>
+      <ion-col text-right> <button ion-button outline type="submit" 
+        (click)="viewDocument(item.FILENAME)"> View </button> </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div> 
+</ion-content>
+
+

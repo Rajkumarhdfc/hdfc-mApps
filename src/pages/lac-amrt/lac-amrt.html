@@ -1,0 +1,46 @@
+<!--
+  Generated template for the LacAmrtPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>LAC AMRT</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  	<div class="tab_card">
+        <ion-row class="tab_th" text-wrap>
+            <ion-col text-wrap class="width-20"><b>FR DT</b>
+            </ion-col>
+            <ion-col text-wrap class="width-20" id="date"><b>TO DT</b>
+            </ion-col>
+            <ion-col text-wrap class="width-20" id="date"><b>DT OF AMRT</b>
+            </ion-col>
+            <ion-col text-wrap class="width-20" id="date"><b>YYYYYY</b>
+            </ion-col>
+            <ion-col text-wrap class="width-25" id="date"><b>PERIODICITY</b>
+            </ion-col>
+        </ion-row>
+        <ion-row text-wrap *ngFor="let item of LamrtTerms; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'even'">
+            <ion-col text-wrap class="width-20">{{item.AMRT_FR_DT | date : 'dd-MM-yy'}}
+            </ion-col>
+            <ion-col  class="width-20" text-wrap>{{item.AMRT_TO_DT | date : 'dd-MM-yy'}}
+            </ion-col>
+            <ion-col text-wrap class="width-20">{{item.DT_OF_AMRT | date : 'dd-MM-yy' }}
+            </ion-col>
+            <ion-col text-wrap class="width-20">{{item.YYYYYY}}
+            </ion-col>
+            <ion-col text-wrap class="width-25">{{item.PERIODICITY}}
+            </ion-col>
+        </ion-row>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

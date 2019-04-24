@@ -1,0 +1,74 @@
+<!-- 
+<ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+    <ion-row>
+      <ion-col class="left" col-4 text-wrap>{{LacNo}}</ion-col>
+      <ion-col class="right">{{Borrname}}</ion-col>
+    </ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+	<div>
+	
+  </div>
+
+
+  <ion-row> 
+    <ion-col col-12 class="text_scan"> Choose the document you want to scan </ion-col> 
+    <ion-col col-12> 
+        <button ion-button outline  [ngClass]="{'scan_active':isClicked[0]}" (click)="activeClass(0,PROPERTY)" > Property</button>
+        <button ion-button outline  [ngClass]="{'scan_active':isClicked[1]}" (click)="activeClass(1,CUSTOMER)"> Customer </button>
+        <button ion-button outline  [ngClass]="{'scan_active':isClicked[2]}" (click)="activeClass(2,LEGAL)"> Legal</button>
+        <button ion-button outline  [ngClass]="{'scan_active':isClicked[3]}" (click)="activeClass(3,OTHERS)"> Others </button>
+    </ion-col> 
+    <!-- <ion-col col-12 class="mt10 mb10"> 
+        <ion-input type="text" placeholder="Enter document name" class="input_class"></ion-input>
+    </ion-col> -->
+
+  </ion-row>
+
+
+
+  <ion-row style="margin-top: 20px;"> 
+    <!-- <ion-col col-6> 
+        <ion-select [(ngModel)]="Filter"  (ionChange)="onChange(Filter)" interface="popover" class="selector" placeholder="Photo Type">
+            <ion-option value="PROPERTY" class="option">PROPERTY</ion-option>
+            <ion-option value="CUSTOMER" class="option">CUSTOMER</ion-option>
+            <ion-option value="LEGAL NOTICE" class="option">LEGAL NOTICE</ion-option>
+            <ion-option value="OTHERS" class="option">OTHERS</ion-option>
+        </ion-select>
+    </ion-col> -->
+
+    <ion-col col-3> 
+    </ion-col>
+
+    <ion-col col-6 style="text-align: center;">
+        <button ion-button outline (click)="takePhoto()" style="width: 100%; margin-top: 0px; height: 48px;"> <ion-icon name="camera" style="margin-right:15px;"></ion-icon> CAPTURE
+        </button>
+    </ion-col>
+
+    <ion-col col-3> 
+    </ion-col>
+
+  </ion-row>
+
+ <!-- <img [src]="imageURL"   style="max-height: 250px; max-width: 500px; margin: auto; padding: 10px 15px 15px 15px;" *ngIf="imageURL"/> -->
+    <ion-item *ngFor="let item of previousurl ;let id = index ">
+      <img [src]="item"   style="max-height: 250px; max-width: 500px; margin: auto; padding: 10px 15px 15px 15px;" *ngIf="imageURL"/>
+      <button ion-button color="primary" round float-right (click)="removeImage(id)">DELETE</button> 
+      </ion-item>
+
+
+	<div style="text-align: center;">
+   <button ion-button class="btn_submit" color="primary" [disabled]='!imgflag' (click)="saveImage(item)"> SAVE </button>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

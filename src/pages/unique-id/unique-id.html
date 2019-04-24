@@ -1,0 +1,45 @@
+
+
+<ion-content padding>
+
+  <ion-grid *ngFor="let item of uid; index as i ;" class="tab_card padding0 mt_10">
+
+      <ion-row>
+          <ion-col col-6 class="padding0" style="background-color: #c0d4ea">  
+              <div class="prop-text ptlrb">  Origin Branch </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.origin_branch}} </div> 
+  
+              <div class="prop-text ptlrb"> Lac No </div> 
+              <div class="prop-value-txt pt10lrb">  {{item.lac_no}} </div> 
+  
+              <div class="prop-text ptlrb"> Total </div> 
+              <div class="prop-value-txt pt10lrb"> Rs.{{item.total}}  </div>
+  
+          </ion-col> 
+          <ion-col col-6 class="padding0"> 
+              <div class="prop-text ptlrb light_gray"> CUR_EMIOS </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.cur_emios}} </div> 
+  
+              <div class="prop-text ptlrb light_gray"> CUR_MROS </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.cur_mros}}  </div> 
+  
+              <div class="prop-text ptlrb light_gray"> CUR_OSADD </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.cur_osadd}} </div>
+
+              <div class="prop-text ptlrb light_gray"> PLT_COMB </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.plt_comb}}  </div> 
+  
+              <div class="prop-text ptlrb light_gray"> MONTHS_COMB </div> 
+              <div class="prop-value-txt pt10lrb"> {{item.months_comb}} </div>
+
+          </ion-col>
+        </ion-row> 
+
+</ion-grid>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

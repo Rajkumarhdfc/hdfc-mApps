@@ -1,0 +1,24 @@
+page-prop-class {
+    ion-input{
+        border-bottom: 1px solid #b4c3cb;
+        margin-top: 6px;
+    }
+    .item-md {
+        margin-bottom: 20px;
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+        margin-right: 15px;
+        border-bottom: 1px solid #b4c3cb;
+    }
+    .item-inner {
+        padding-right: 0px !important;
+        margin-right: 0px !important;
+    }
+    .label-md-header, .item-input .label-md-header, .item-select .label-md-header, .item-datetime .label-md-header {
+        color: #00334e;
+        font-weight: 400;
+        font-size: 10pt !important;
+    }
+
+}

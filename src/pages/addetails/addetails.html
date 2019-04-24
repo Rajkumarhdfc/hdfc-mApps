@@ -1,0 +1,19 @@
+<!-- <ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+  	<ion-row>
+  		<ion-col class="left" col-4 text-wrap>{{paramtab1.lac}}</ion-col>
+  		<ion-col class="right">{{paramtab1.name}}</ion-col>
+  	</ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header> -->
+
+<ion-tabs>
+    <ion-tab [root]="actRRoot"  [rootParams]= "paramtab1" tabTitle="ACT R" ></ion-tab>
+    <ion-tab [root]="lacdIRoot" [rootParams]= "paramtab1" tabTitle="LACD I" ></ion-tab>
+    <ion-tab [root]="fActRoot"  [rootParams]= "paramtab1" tabTitle="F ACT" ></ion-tab>
+    <ion-tab [root]="techiRoot" [rootParams]= "paramtab1" tabTitle="TECHI" ></ion-tab>
+    <!-- <ion-tab [root]="docRoot"   [rootParams]= "paramtab1" tabTitle="DOC" ></ion-tab> -->
+    <ion-tab [root]="criIRoot"  [rootParams]= "paramtab1" tabTitle="CRI I"></ion-tab>
+</ion-tabs>

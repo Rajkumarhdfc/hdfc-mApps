@@ -1,0 +1,57 @@
+<!--
+  Generated template for the PmiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>PMI</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+<ion-content padding>
+
+  <div class="tab_card padding0 ">
+
+  <ion-row class="tab_th" text-wrap>
+      <ion-col text-wrap class="width-25 text-left"> TOTAL </ion-col>
+      <ion-col text-wrap class="width-25 text-left" id="date"> RCBL </ion-col>
+      <ion-col text-wrap class="width-25 text-left" id="date"> RCVD</ion-col>
+      <ion-col text-wrap class="width-25 text-left" id="date"> CR O/S </ion-col>
+  </ion-row>
+
+
+  <ion-row text-wrap *ngFor="let item of tot; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+    <ion-col text-wrap class="width-25 text-left tab_line_text"> PMI </ion-col>
+    <ion-col  class="width-25 text-right tab_line_text" text-wrap>{{item.rcbl}} </ion-col>
+    <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.rcvd}} </ion-col>
+    <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.os}} </ion-col>
+  </ion-row>
+
+</div>
+
+<div class="tab_card padding0 mt25">
+    <ion-row class="tab_th">
+      <ion-col text-wrap class="width-16 text-right"> RCBL  </ion-col>
+      <ion-col text-wrap class="width-16 text-right" id="date"> RCVD </ion-col>
+      <ion-col text-wrap class="width-16 text-right" id="date"> OS </ion-col>
+      <ion-col text-wrap class="width-18 text-right" id="date"> EFF DATE  </ion-col>
+      <ion-col text-wrap class="width-16 text-right"> TR TYPE  </ion-col>
+      <ion-col text-wrap class="width-16 text-right" id="date"> TIME </ion-col>
+    </ion-row>
+	
+	<ion-row text-wrap *ngFor="let item of pmi; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.rcbl}} </ion-col>
+    <ion-col  class="width-16 text-right tab_line_text" text-wrap [ngClass]="(item.rcvd > 0) ? 'pos' : 'neg'">{{item.rcvd}} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text" [ngClass]="(item.os > 0) ? 'pos' : 'neg'">{{item.os}} </ion-col>
+    <ion-col text-wrap class="width-18 text-right tab_line_text">{{item.effective_dt | date:'dd-MM-yy'}} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.tr_type}} </ion-col>
+    <ion-col text-wrap class="width-16 text-right tab_line_text">{{item.timestamp | date:'dd-MM-yy'}} </ion-col>
+
+    <span text-wrap style="width: 100%; display: block;" class="text-left">{{item.bnc_reason}} </span> </ion-row>
+
+</div>
+</ion-content>

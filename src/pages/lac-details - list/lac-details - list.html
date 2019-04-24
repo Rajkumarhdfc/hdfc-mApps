@@ -1,0 +1,375 @@
+
+<ion-header>
+    <ion-navbar hideBackButton color="header">
+        
+        <button ion-button menuToggle class="w40p">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title> Dashboard </ion-title>
+
+        <ion-buttons end style="width: 4%;  text-align: center;">
+            <button ion-button icon-only (click)="onButtonClick()"   style="width: 27px;">
+                <img src="assets/imgs/search-off.svg">
+            </button>
+        </ion-buttons>
+
+        <ion-buttons end style="width: 10%;  text-align: center;">
+            <button ion-button icon-only (click)="GlobalBucket()" style="width: 27px;">
+               <img src="assets/imgs/basket-off.svg"> 
+            </button>
+        </ion-buttons>
+</ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <div class="search_div" [hidden]="search_flag">
+        <ion-row>
+            <ion-col col-8>
+                    <ion-searchbar [(ngModel)]="searchitem" (ionInput)="setFilteredItems(searchitem)" [debounce]="100" placeholder="Search">
+                    </ion-searchbar>
+            </ion-col>
+            <ion-col col-4 style="padding-top: 26px; text-align: right;">
+                    <img src="assets/imgs/filter-icon-off.svg" style=" width: 33px; margin-right: 10px; border: 1px solid #7f99a6; padding: 6px;" (click)="showRadio()">
+                    <button ion-button class="search_btn" (click)="searchclose()" [hidden]="search_flag"> CLOSE </button>
+            </ion-col>
+        </ion-row>
+    </div>
+
+
+ 
+    <!-- <div class="welcome_text"> Welcome back <span class="font-weight-500"> Rajashekar </span> </div>  -->
+
+    <!-- <div class="sub_text"> Overview </div>
+    <ion-row>
+        <ion-col col-6>
+           <div class="card_box">
+                <div class="card_lbl"> Visit Tomorrow </div> 
+                <div class="card_num"> 9 </div>
+           </div> 
+        </ion-col>
+        <ion-col col-6>
+            <div class="card_box">
+                <div class="card_lbl"> Call Tomorrow </div> 
+                <div class="card_num"> 17 </div>
+           </div> 
+        </ion-col>
+        <ion-col col-6>
+            <div class="card_box">
+                 <div class="card_lbl"> Difficult Level </div> 
+                 <div class="card_num"> 8 </div>
+            </div> 
+         </ion-col>
+         <ion-col col-6>
+             <div class="card_box">
+                 <div class="card_lbl"> Payment Received </div> 
+                 <div class="card_num"> 41 </div>
+            </div> 
+         </ion-col>
+    </ion-row> -->
+
+    <!-- <ion-row>
+        <ion-col col-6>
+            <ion-label class="left_align" style="margin: 15px 20px; color: #b30000;">
+                <b>PLT TOTAL : &nbsp;&nbsp;{{plttot | number : '1.0-2'}} Cr</b>
+            </ion-label>
+        </ion-col>
+        <ion-col col-6>
+            <ion-label class="right_align">
+                <b>COUNT: &nbsp;&nbsp;{{scroll_count}}/{{totlen}}</b>
+            </ion-label>
+        </ion-col>
+    </ion-row> -->
+<!-- 
+    <ion-row class="mt25">
+        <ion-col col-6>
+            <div class="left_align" style="margin-top: 7px;">
+                <span class="sub_text"> Reminders </span> <span class="view_all_text ml5"> 3/14 </span> 
+            </div>
+        </ion-col>
+        <ion-col col-6>
+            <div class="right_align">
+                <span class="view_all_text"> VIEW ALL </span> <span class="ml5 edits_icon_adj"> <img src="assets/imgs/edit-icon-off-new.svg" style="width: 27px;"> </span>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col col-12>
+           <div class="card_box_list">
+                <span class="card_list_data"> 05 <span class="card_list_mon"> MAR </span> </span>
+                <span class="card_list_name"> Mr Suprada Sudhir </span>
+                <span class="card_list_text"> TCM </span>
+                <span class="right_align card_list_icon"> 
+                    <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                    <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                    <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                    <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                </span>
+           </div> 
+        </ion-col>
+        <ion-col col-12>
+                <div class="card_box_list">
+                        <span class="card_list_data"> 02 <span class="card_list_mon"> MAR </span> </span>
+                        <span class="card_list_name"> Mrs Neha Sharma </span>
+                        <span class="card_list_text"> TCM </span>
+                        <span class="right_align card_list_icon"> 
+                            <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                            <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                            <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                            <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                        </span>
+                   </div>  
+         </ion-col>
+         <ion-col col-12>
+                <div class="card_box_list">
+                        <span class="card_list_data"> 07 <span class="card_list_mon"> MAR </span> </span>
+                        <span class="card_list_name"> Mr Ram Harshan </span>
+                        <span class="card_list_text"> TCM </span>
+                        <span class="right_align card_list_icon"> 
+                            <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                            <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                            <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                            <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                        </span>
+                   </div>  
+         </ion-col>
+    </ion-row> -->
+
+
+
+    <ion-row class="mt25">
+        <ion-col col-6>
+            <div class="left_align" style="margin-top: 7px;">
+                <span class="sub_text"> All Listing </span> <span class="view_all_text ml5">{{scroll_count}}/{{totlen}}</span> 
+            </div>
+        </ion-col>
+        <!-- <ion-col col-6>
+            <div class="right_align">
+                <span class="view_all_text"> VIEW ALL </span> <span class="ml5 edits_icon_adj"> <img src="assets/imgs/filter-icon-off.svg" style=" width: 20px; margin-left: 5px;"> </span>
+            </div>
+            
+        </ion-col> -->
+    </ion-row>
+
+    <ion-item-sliding>
+            <ion-item *ngFor="let items of tableItemlist;let i=index;">
+                <div class="main_card_box">
+                    <ion-row>
+                        <ion-col col-1 class="padding0">
+                            <div class="allocated_box"> 
+                                <span class="allocated_text"> ALLOCATED </span> 
+                            </div>
+                        </ion-col>
+                        <ion-col col-11 class="padding0">
+                            <div class="side_box"> 
+                                <div class="side_box_top" (click)="click_count_header(items.LAC_NO)" style="height: 75px;">
+                                    <span class="name_adj" (click)="navigate(items.LAC_NO,items.BORR_NAME,i)"> 
+                                        <span class="side_box_name"> {{items.BORR_NAME}} </span>
+                                        <span class="side_box_add"> {{items.FOLLOW_UP}} </span>
+                                    </span>
+                                   
+                                    <!-- <span class="rating_icon" (click)="presentPopover(items)">
+                                    <span class="default" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived','default': items.difficulty_level=='','default': items.difficulty_level==null}"></span> </span> -->
+                                    
+                                    <ion-icon name="star-outline"  class="default" (click)="presentPopover(items)" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived'}"></ion-icon>
+
+                                    <span class="btn_vi_to btn_visit" (click)="navigate_my_basket(items)"><ion-icon  *ngIf="items.my_basket==undefined || items.my_basket==''" name="basket"></ion-icon>{{items.my_basket}}</span> 
+                                    <span class="down_arrow_adj"> 
+
+                                        <ion-icon *ngIf="items.details_flag!=true" (click)="toggleList(i,items.LAC_NO)" name="ios-arrow-down-outline" class="dropdownicon">
+                                            </ion-icon> 
+
+                                        <ion-icon  (click)="toggleList(i,items.LAC_NO)" *ngIf="items.details_flag==true" name="ios-arrow-up-outline" class="dropupicon" >
+                                            </ion-icon>
+
+                                    </span>
+                                </div>
+                                <div class="side_box_bottom">
+                                    <span class="side_box_aac"> No. of Acc <span class="side_box_num_val">{{items.no_of_acc}}</span> </span> 
+                                    <span class="side_box_tot"> Total Exposure  <span class="side_box_num_val"><img src="assets/imgs/INR_icon.png" class="inr_icon">{{formatNumber(items.plt_count)}}</span> </span> 
+                                    <span class="right_align side_box_icon_adj"> 
+                                        <img class="mr15" src="assets/imgs/home_icon_new.svg" (click)="getCommAddForBorr(items.LAC_NO)">
+                                        <img class="mr15" src="assets/imgs/phone_inoc_new.svg" (click)="GetCustContact(items.LAC_NO)">
+                                        <img class="mr15" src="assets/imgs/plot-icon-new.svg" (click)="goToMap(items.LAC_NO,items.BORR_NAME)">
+                                    </span> 
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div> 
+
+                <div class="main_card_box_exp" [attr.id]=i *ngIf="items.details_flag==true">
+                        <ion-row>
+                            <ion-col col-1 class="padding0">
+                            </ion-col>
+                            <ion-col col-11 class="padding0">
+                                <div class="side_box pb20">
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> P/M OS </div>
+                                            <div class="more_details_val"> {{items.M_OS}}/{{items.MONTHS_OS}}  </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> Pro Name </div>
+                                            <div class="more_details_val"> {{items.PROP_NAME}} </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> Company Arrang </div>
+                                            <div class="more_details_val"> {{items.company_arrangement}} </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> Max Act Date </div>
+                                            <div class="more_details_val"> {{items.max_action_date | date:'dd-MM-yy'}} </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> Emp Comp </div>
+                                            <div class="more_details_val"> {{items.EMP_COMPANY_NAME}} </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> Emp Area </div>
+                                            <div class="more_details_val"> {{items.EMP_AREA}} </div>
+                                        </ion-col>
+                                        <!-- <ion-col col-6>
+                                            <div class="more_details_lbl"> No. Of Acc </div>
+                                            <div class="more_details_val"> {{items.no_of_acc}} </div>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="more_details_lbl"> PLT Count </div>
+                                            <div class="more_details_val"> {{items.plt_count}} </div>
+                                        </ion-col> -->
+                                    </ion-row>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                </div>  
+
+             </ion-item> 
+    </ion-item-sliding>
+
+
+    <!-- <ion-item-sliding>
+        <ion-item *ngFor="let items of tableItemlist;let i=index;">
+
+            <div class="main_card_div">
+                <div class="main_card" [style.border-left-color]="getColor(items.followupflag)">
+                    <div class="content">
+
+                        <ion-row class="text-left">
+                            <ion-col col-2 class="icon_tel">
+                                <span class="icon_round" [style.background-color]="getColorbasket(items.my_basket)" (click)="navigate_my_basket(items)"> <ion-icon name="basket"></ion-icon> </span>
+                                <span> {{basket}} </span>
+                            </ion-col>
+
+                            <ion-col col-8 class="padding_left20" (click)="navigate(items.LAC_NO,items.BORR_NAME,i)">
+                                <span class="title_name_lbl"> {{items.BORR_NAME}} </span>
+                                <span class="title_name_lbl_two"> {{items.LAC_NO}} <ion-badge item-start color="badge">ALLOCATED</ion-badge></span>
+                                <span class="bask_lbl" text-wrap>{{items.my_basket}}</span>
+                            </ion-col>
+
+                            <ion-col col-2>
+                                <ion-row>
+                                    <ion-col class="box_lbl_val" text-wrap col-12 id="{{ 'dropdown' + i }}">
+                                        <ion-icon *ngIf="items.details_flag!=true" (click)="toggleList(i,items.LAC_NO)" name="ios-arrow-down-outline" class="dropdownicon">
+                                         </ion-icon> 
+                                     </ion-col>
+
+                                     <ion-col class="box_lbl_val" text-wrap col-2 id="{{ 'dropup' + i }}">
+                                        <ion-icon  (click)="toggleList(i,items.LAC_NO)" *ngIf="items.details_flag==true" name="ios-arrow-up-outline" class="dropupicon" >
+                                        </ion-icon>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+
+                            
+
+                        </ion-row>
+
+                        <ion-row class="text-left">
+
+                            <ion-col col-2 class="icon_tel">
+                                <div class="" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Difficult','try': items.difficulty_level=='Try','paymentcolor': items.difficulty_level=='PaymentReceived'}" (click)="openPopover(items)" class="">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+                            </ion-col>
+
+                            <span class="line_dts"></span>
+
+                            <ion-col col-10 class="padding_left20 paddimg_top20">
+
+                                <ion-row>
+                                    <ion-col class="box_lbl" col-3> P/M OS: </ion-col>
+                                    <ion-col class="box_lbl_val" text-wrap col-9> {{items.M_OS}}/{{items.MONTHS_OS}} </ion-col>
+                                </ion-row>
+
+                                <ion-row>
+                                    <ion-col class="box_lbl" col-3> Follow Up: </ion-col>
+                                    <ion-col class="box_lbl_val" text-wrap col-9>{{items.FOLLOW_UP}}</ion-col>
+                                </ion-row>
+
+
+
+                            <div [attr.id]=i *ngIf="items.details_flag==true">
+                                <ion-row>
+                                    <ion-col class="box_lbl" col-3> Prop Name: </ion-col>
+                                    <ion-col class="box_lbl_val" text-wrap col-9> {{items.PROP_NAME}} </ion-col>
+                                </ion-row>
+
+                                <ion-row>
+                                    <ion-col class="box_lbl" col-3> Comp Arrang: </ion-col>
+                                    <ion-col class="box_lbl_val" text-wrap col-9>{{items.company_arrangement}}</ion-col>
+                                </ion-row>
+
+                                 <ion-row>
+                                    <ion-col class="box_lbl" col-3> Max Act Date: </ion-col>
+                                    <ion-col class="box_lbl_val" text-wrap col-9>{{items.max_action_date | date:'dd-MM-yy'}}</ion-col>
+                                </ion-row>
+
+                                    <ion-row>
+                                        <ion-col class="box_lbl" col-3> Emp Comp: </ion-col>
+                                        <ion-col class="box_lbl_val" text-wrap col-9> {{items.EMP_COMPANY_NAME}} </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col class="box_lbl" col-3> Prop Area: </ion-col>
+                                        <ion-col class="box_lbl_val" text-wrap col-9> {{items.PROP_AREA_DESC}} </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col class="box_lbl" col-3> Emp Area: </ion-col>
+                                        <ion-col class="box_lbl_val" text-wrap col-9> {{items.EMP_AREA}} </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col class="box_lbl" col-3> No of acct: </ion-col>
+                                        <ion-col class="box_lbl_val" text-wrap col-9> 
+                                        {{items.no_of_acc}} </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col class="box_lbl" col-3>  PLT count: </ion-col>
+                                        <ion-col class="box_lbl_val" text-wrap col-9>  {{items.plt_count}}</ion-col>
+                                    </ion-row>
+                            </div>
+
+                            </ion-col>
+
+                        </ion-row>
+
+                    </div>
+                </div>               
+            </div>
+
+        </ion-item>
+    </ion-item-sliding> -->
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="canWeLoadMoreContent()" distance="1%">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    
+</ion-content>

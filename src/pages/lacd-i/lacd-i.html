@@ -1,0 +1,34 @@
+<!--
+  Generated template for the LacdIPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>lacd i</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+    <div class="tab_card padding0 mt20">
+      <ion-row class="tab_th" text-wrap>
+        <ion-col text-wrap class="width-60 text-left">RISK EVENT </ion-col>
+        <ion-col text-wrap class="width-20 text-left"> UPDATED BY </ion-col>
+        <ion-col text-wrap class="width-20 text-left" id="date"> UPDATED DATE </ion-col>
+      </ion-row>
+
+      <ion-row text-wrap *ngFor="let item of lacddetails; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
+      <ion-col text-wrap class="width-60 tab_line_text text-left">{{item.RISK_EVENT}}  </ion-col>
+      <ion-col  text-wrap class="width-20 tab_line_text text-left">{{item.UPDATED_BY}} </ion-col>
+      <ion-col text-wrap class="width-20 tab_line_text text-right">{{item.UPDATED_DATE |date:'dd-MM-yy'}} </ion-col>
+      </ion-row>
+	</div>
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

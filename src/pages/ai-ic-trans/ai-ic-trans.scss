@@ -1,0 +1,59 @@
+page-ai-ic-trans {
+    
+.header{
+  color:#b30000;
+}
+.font{
+  font-size:13.5px;
+}
+.textcolor{
+  color:#666666;
+}
+
+.scroll-content{
+  margin-top: 70px !important;
+ }
+
+.colortext{
+  color: #404040;
+}
+.width{
+  max-width:40%
+}
+.center{
+	text-align: center;
+}
+
+ion-col.width-25.col {
+    max-width: 25%;
+    font-weight: 400;
+    padding: 13px;
+}
+ion-col.width-16.col {
+  max-width: 16%;
+  font-weight: 400;
+  padding: 10px;
+  padding-top: 15px;
+}
+ion-col.width-18.col {
+  max-width: 18%;
+  font-weight: 400;
+  padding: 10px;
+  padding-top: 15px;
+}
+.col {
+    padding: 2.5px;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    min-height: 1px;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+}

@@ -1,0 +1,61 @@
+<!--
+  Generated template for the AlertsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+ <ion-navbar color="header">
+  <ion-title>
+  	<ion-row>
+        <ion-col class="left" col-4 text-wrap>{{LacNo}}</ion-col>
+    	<ion-col class="right">{{Borrname}}</ion-col>
+    </ion-row>
+   </ion-title> 
+ </ion-navbar>
+</ion-header>
+ -->
+<ion-content padding>
+
+ <div class="error" *ngIf="alertflg==0" style="padding:15px;font-size:15px">
+                  No Records Found
+                </div> 
+<ion-card text-wrap *ngFor="let item of lac;">
+	<ion-row text-wrap>
+    <ion-col text-wrap class="header" id="date"><b>DATE</b>
+    </ion-col>
+ 	<ion-col text-wrap>{{item.ALERT_DATE | date:'dd-MM-yy'}}
+    </ion-col>	
+	</ion-row>
+	<ion-row>
+    <ion-col text-wrap class="header"><b>BORR</b>
+    </ion-col>
+     <ion-col text-wrap>{{item.BORR_NAME}}
+    </ion-col>
+	</ion-row>
+	<ion-row>
+    <ion-col text-wrap class="header"><b>NAME</b>
+    </ion-col>
+    <ion-col text-wrap>{{item.ALERT_NAME}}
+    </ion-col>
+	</ion-row>
+	<ion-row>
+    <ion-col text-wrap class="header"><b>TEXT</b>
+    </ion-col>
+     <ion-col text-wrap>{{item.ALERT_TEXT}}
+    </ion-col>
+	</ion-row>
+	<ion-row>
+    <ion-col text-wrap class="header"><b>REMARK</b>
+    </ion-col>
+     <ion-col text-wrap>{{item.REMARKS}}
+    </ion-col>
+    </ion-row>
++</ion-card>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

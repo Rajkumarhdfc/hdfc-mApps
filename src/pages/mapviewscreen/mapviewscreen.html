@@ -1,0 +1,49 @@
+<ion-header>
+ <ion-navbar  color="header">  
+  <ion-title>
+    <ion-row>
+<!--       <ion-icon class="arrow_icon_top" name="arrow-back" (click)="goBack()" tappable></ion-icon>
+ -->       
+     <ion-col class="left" col-4 text-wrap>{{LacNo}}</ion-col>
+        <ion-col class="right">{{borrname}}</ion-col>
+    </ion-row>
+   </ion-title> 
+ </ion-navbar>
+
+</ion-header>  
+
+<ion-content>
+
+    <ion-row style="padding: 15px; box-shadow: 0px 3px 20px 0px #4e4444; z-index: 9999; position: relative;"> 
+        <ion-col col-12> 
+            <ion-list style="margin: 0px;">
+                <!-- <img src="assets/imgs/map_loc_icon.png" class="map_loc_icon">
+                <ion-item class="input_class">
+                  <ion-label floating> CURRENT LOCATION </ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item> -->
+
+                <img src="assets/imgs/search-on.svg" class="map_loc_icon"> 
+                <ion-item class="input_class">
+                  <ion-label floating> Customer Address </ion-label>
+                  <ion-input id="myInput" [(ngModel)]="address_edit" type="text"></ion-input>
+                </ion-item>
+              </ion-list>
+        </ion-col>
+    </ion-row>
+
+<div id="map"></div>
+
+ <!-- <ion-row> 
+   <ion-col col-10> <textarea  id="myInput" rows="5" [(ngModel)]="address_edit" style="height: 120px !important;" ></textarea> </ion-col>
+   <ion-col col-2> <div class="map_icon" (click)="testaddress_afterC()"> <ion-icon name="search"></ion-icon> </div> </ion-col>
+ </ion-row> -->
+<ion-row>
+   <div style="text-align: center; width: 100%; position: absolute; bottom: 50px; z-index: 9999;">
+      <button ion-button color="light" (click)="plot()">Plot</button>
+      <button (click)="mapNavigation()" ion-button color="light">Navigate</button>
+      <button ion-button color="light" (click)="saveLocation()">Save</button>
+  </div>
+</ion-row>
+
+</ion-content>

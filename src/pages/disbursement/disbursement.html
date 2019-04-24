@@ -1,0 +1,56 @@
+
+<ion-content overflow-scroll="true">
+
+    <ion-row *ngFor="let data of Data; index as i;" class="even tab_card mt_10" text_wrap>
+      <ion-col class="header" text-wrap><b>BUILDER NO/BUILDER NAME:</b>
+      </ion-col>
+      <ion-col  text-wrap class="font13s">{{data.builder_no}}/{{data.builder_name}}
+      </ion-col>
+      <ion-col class="header" text-wrap><b>BUILDER DETAILS:</b>
+      </ion-col>
+      <ion-col  text-wrap class="font13s">{{data.builder_contact}}
+      </ion-col>
+    </ion-row>
+   
+    <ion-row *ngFor="let amt of amt; index as i ;" class="tab_card mt_10 padding15" text-wrap>
+      <ion-col col-12 class="prop-text" text-wrap> Total Dusbursed Amount </ion-col>
+      <ion-col col-12 class="prop-no" text-wrap>{{amt.Total_disbursed_amount}} </ion-col>
+    </ion-row>
+    
+    
+    <ion-card *ngFor="let item of Datalist; index as i ;" class="tab_card mt_15 padding0">
+      <ion-row>
+        <ion-col col-6 class="padding0" style="background-color: #c0d4ea">  
+
+            <div class="prop-text ptlrb"> Disb No </div> 
+            <div class="prop-value-txt pt10lrb"> {{item.disb_no}}  </div> 
+
+            <div class="prop-text ptlrb"> Amount </div> 
+            <div class="prop-value-txt pt10lrb">  {{item.doc_amt}}  </div> 
+
+            <div class="prop-text ptlrb"> Date </div> 
+            <div class="prop-value-txt pt10lrb"> {{item.disb_dt | date : 'dd-MM-yyyy'}}  </div>
+
+        </ion-col> 
+        <ion-col col-6 class="padding0"> 
+
+            <div class="prop-text ptlrb light_gray"> Payable To </div> 
+            <div class="prop-value-txt pt10lrb"> {{item.payable_to}} </div> 
+
+            <div class="prop-text ptlrb light_gray"> Doc_No / Date </div> 
+            <div class="prop-value-txt pt10lrb">  {{item.doc_no}}  </div> 
+
+            <div class="prop-text ptlrb light_gray"> Status </div> 
+            <div class="prop-value-txt pt10lrb"> {{item.status}} </div>
+
+        </ion-col>
+      </ion-row> 
+
+    </ion-card>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</ion-content>

@@ -1,0 +1,130 @@
+<!--
+  Generated template for the ContactsUpdatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>contacts update</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="ContactsUpdate">
+
+  <div class="tab_th mt40 padding13"> Personal Information </div> 
+  <div class="tab_card padding20">
+      <ion-list>
+        <ion-row> 
+            <ion-col col-6> 
+              <ion-item>
+                <ion-label stacked color="header">Name*</ion-label>
+                <ion-input formControlName="name" type="text"></ion-input>
+                </ion-item>
+                <div class="error" *ngIf="ContactsUpdate.get('name').hasError('required') && 
+                  ContactsUpdate.get('name').touched">
+                  this field is required*
+                </div> 
+            </ion-col>
+
+            <ion-col col-6>
+             <ion-item>
+                <ion-label stacked color="header">Relation*</ion-label>
+                  <ion-select  formControlName="Relation" interface="popover" (ionChange)="relation(Relation)" class="rel_sele">
+                    <ion-option value="select" value="{{item.para_value}}" *ngFor="let item of borr_rln">
+                    {{item.para_value}}
+                    </ion-option>
+                    </ion-select>
+              </ion-item>
+              <div class="error" *ngIf="ContactsUpdate.get('Relation').hasError('required') && 
+                ContactsUpdate.get('Relation').touched">
+                this field is required*
+              </div> 
+            </ion-col>
+        </ion-row>
+    </ion-list>
+</div>
+
+
+
+    <div class="tab_th mt40 padding13"> Contact Information </div>
+
+    <div class="tab_card padding20">
+
+        <ion-row> 
+          <ion-col col-6> <ion-item>
+              <ion-label stacked color="header">Address1*</ion-label>
+              <ion-input formControlName="Address1" type="text"></ion-input>
+            </ion-item>
+            <div class="error" *ngIf="ContactsUpdate.get('Address1').hasError('required') && 
+              ContactsUpdate.get('Address1').touched">
+              this field is required*
+            </div> 
+          </ion-col>
+          <ion-col>  <ion-item>
+              <ion-label stacked color="header">Address2</ion-label>
+              <ion-input   formControlName="Address2"  type="text"></ion-input>
+            </ion-item> </ion-col>
+        </ion-row>
+
+        <ion-row> 
+            <ion-col col-6> <ion-item>
+                <ion-label stacked color="header">Mobile1*</ion-label>
+                <ion-input   formControlName="Mobile1" type="tel"></ion-input>
+              </ion-item>
+              <div class="error" *ngIf="ContactsUpdate.get('Mobile1').hasError('required') && 
+                ContactsUpdate.get('Mobile1').touched">
+                this field is required*
+              </div>
+              <div class="error" *ngIf="ContactsUpdate.get('Mobile1').hasError('pattern') && 
+                ContactsUpdate.get('Mobile1').touched">
+                enter correct mobile no
+              </div> </ion-col>
+            <ion-col col-6> <ion-item>
+                <ion-label stacked color="header">Mobile2</ion-label>
+                <ion-input   formControlName="Mobile2" type="tel"></ion-input>
+              </ion-item>
+              <div class="error" *ngIf="ContactsUpdate.get('Mobile2').hasError('pattern') && 
+                ContactsUpdate.get('Mobile2').touched">
+                enter correct mobile no
+              </div> </ion-col>
+        </ion-row>
+
+        <ion-row> 
+              <ion-col col-6> <ion-item>
+                  <ion-label stacked color="header">Email</ion-label>
+                  <ion-input   formControlName="Email"  type="text"></ion-input>
+                </ion-item> </ion-col>
+              <ion-col col-6>   <ion-item>
+                  <ion-label stacked color="header">Res TelNo</ion-label>
+                  <ion-input  formControlName="TelNo" type="tel"></ion-input>
+                </ion-item> </ion-col>
+        </ion-row>
+
+        <ion-row> 
+              <ion-col col-6>  <ion-item>
+                  <ion-label stacked color="header">Off TelNo</ion-label>
+                  <ion-input   formControlName="offtelno" type="tel"></ion-input>
+                </ion-item> </ion-col>
+              <ion-col col-6>  <ion-item>
+                  <ion-label stacked color="header">Fax</ion-label>
+                  <ion-input  formControlName="Fax"  type="text"></ion-input>
+                </ion-item> </ion-col>
+        </ion-row>
+
+    </div>
+
+    <ion-row text-center class="mt20">
+        <ion-col col-12>  <button ion-button [disabled]='!ContactsUpdate.valid' color="primary" round (click)="Fu_ContactUpdate()"> SAVE CONTACT </button> </ion-col> 
+    </ion-row> 
+
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

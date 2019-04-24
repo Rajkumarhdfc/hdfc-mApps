@@ -1,0 +1,56 @@
+<!--
+  Generated template for the LacTermsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>LAC TERMS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+  	<div class="tab_card">
+      <ion-row class="tab_th" text-wrap>
+        <ion-col text-wrap class="width-15"><b>AMT</b>
+        </ion-col>
+        <ion-col text-wrap class="width-15" id="date"><b>TO</b>
+        </ion-col>
+        <ion-col text-wrap class="width-15" id="date"><b>FROM</b>
+        </ion-col>
+        <ion-col text-wrap class="width-15" id="date"><b>UPD</b>
+        </ion-col>
+        <ion-col text-wrap class="width-10"><b>TYPE</b>
+        </ion-col>
+        <ion-col text-wrap class="width-15"><b>ROI</b>
+        </ion-col>
+        <ion-col text-wrap class="width-15"><b>PERCTY</b>
+        </ion-col>
+      </ion-row>
+      
+    <ion-row text-wrap *ngFor="let item of LacTerms; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'even'">
+      <ion-col text-wrap class="width-15">{{item.AMT}}
+      </ion-col>
+      <ion-col  class="width-15" text-wrap>{{item.TO_DT | date : 'dd-MM-yy'}}
+      </ion-col>
+      <ion-col text-wrap class="width-15">{{item.FROM_DT | date : 'dd-MM-yy'}}
+      </ion-col>
+      <ion-col text-wrap class="width-15">{{item.UPD_DATE | date : 'dd-MM-yy'}}
+      </ion-col>
+      <ion-col text-wrap class="width-10">{{item.T_TYPE}}
+      </ion-col>
+      <ion-col text-wrap class="width-15">{{item.ROI}}
+      </ion-col>
+      <ion-col text-wrap class="width-15">{{item.PERIODICITY}}
+      </ion-col>
+    </ion-row>
+</div>
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</ion-content>

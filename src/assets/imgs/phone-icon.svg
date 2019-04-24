@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>phone-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.4%" y="-5.0%" width="104.8%" height="109.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-/-main-1.4" transform="translate(-90.000000, -552.000000)" fill="#C71515" fill-rule="nonzero">
+            <g id="lightBox" filter="url(#filter-1)" transform="translate(80.000000, 406.000000)">
+                <g id="Group-7" transform="translate(15.000000, 60.000000)">
+                    <g id="Group-2-Copy" transform="translate(0.000000, 0.000000)">
+                        <g id="Group-8" transform="translate(0.000000, 86.000000)">
+                            <path d="M2.01111111,9.32777778 C2.81111111,10.9 4.1,12.1833333 5.67222222,12.9888889 L6.89444444,11.7666667 C7.04444444,11.6166667 7.26666667,11.5666667 7.46111111,11.6333333 C8.08333333,11.8388889 8.75555556,11.95 9.44444444,11.95 C9.75,11.95 10,12.2 10,12.5055556 L10,14.4444444 C10,14.75 9.75,15 9.44444444,15 C4.22777778,15 0,10.7722222 0,5.55555556 C0,5.25 0.25,5 0.555555556,5 L2.5,5 C2.80555556,5 3.05555556,5.25 3.05555556,5.55555556 C3.05555556,6.25 3.16666667,6.91666667 3.37222222,7.53888889 C3.43333333,7.73333333 3.38888889,7.95 3.23333333,8.10555556 L2.01111111,9.32777778 Z" id="phone-icon"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

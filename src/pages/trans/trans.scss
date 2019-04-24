@@ -1,0 +1,17 @@
+page-trans {
+	@media (min-width: 600px) and (max-width: 767px) {
+		.scroll-content {
+			margin-top: 142px ;
+		}
+	}
+	
+	@media (min-width: 300px) and (max-width: 599px) {
+		.scroll-content {
+			margin-top: 125px ;
+		}
+	}
+	.tabbar.show-tabbar {
+		opacity: 1;
+		top: -8px !important;
+	}
+}

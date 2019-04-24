@@ -1,0 +1,152 @@
+
+<ion-header>
+  <ion-navbar hideBackButton>
+  
+      <button ion-button menuToggle class="w40p">
+          <ion-icon name="menu"></ion-icon>
+      </button>
+
+      <ion-title> Reminders </ion-title>
+
+      <!-- <ion-buttons end style="width: 4%;  text-align: center;">
+          <button ion-button icon-only (click)="onButtonClick()" style="width: 27px;">
+              <img src="assets/imgs/search-off.svg">
+          </button>
+      </ion-buttons>
+
+      <ion-buttons end style="width: 10%;  text-align: center;">
+          <button ion-button icon-only (click)="GlobalBucket()" style="width: 27px;">
+             <img src="assets/imgs/basket-off.svg"> 
+          </button>
+      </ion-buttons> -->
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+      <!-- <ion-row class="mt25">
+          <ion-col col-6>
+              <div class="left_align">
+                  <span class="sub_text_rem"> Reminders </span>
+              </div>
+          </ion-col> -->
+          <!-- <ion-col col-6>
+              <div class="right_align" style=" display: block;  margin-top: 5px;">
+                  <span class="view_all_text"> CLEAR ALL </span> 
+              </div>
+          </ion-col> -->
+      <!-- </ion-row> -->
+
+      
+    <ion-row *ngFor="let item of reminders;let i=index;">
+            <ion-col col-12>
+               <div class="card_box_list">
+                    <span class="card_list_data"> {{item.NXT_ACTION | date:'dd'}} <span class="card_list_mon"> {{item.NXT_ACTION | date:'MMM' | uppercase}} </span> </span>
+                    <span class="card_list_name" (click)="navigateACDetails(item.LAC_NO,item.NAME)"> {{item.NAME}} </span>
+                    <span class="card_list_text"> {{item.DEF_OBSERV}} </span>
+                    <span class="right_align card_list_icon"> 
+                        <img class="mr15" src="assets/imgs/home_icon_new.svg" (click)="getCommAddForBorr(item.LAC_NO)">
+                        <img class="mr15" src="assets/imgs/phone_inoc_new.svg" (click)="GetCustContact(item.LAC_NO)">
+                        <img class="mr15" src="assets/imgs/plot-icon-new.svg" (click)="goToMap(item.LAC_NO,item.BORR_NAME)">
+                    </span>
+               </div> 
+            </ion-col>
+        </ion-row>
+    
+    
+      <!-- <ion-row>
+          <ion-col col-12>
+              <div class="left_align">
+                  <span class="view_all_text"> Today </span> 
+              </div>
+          </ion-col>
+      </ion-row>  -->
+
+      <!-- <ion-row>
+          <ion-col col-12>
+             <div class="card_box_list">
+                  <span class="card_list_data"> 05 <span class="card_list_mon"> MAR </span> </span>
+                  <span class="card_list_name"> Mr Suprada Sudhir </span>
+                  <span class="card_list_text"> TCM </span>
+                  <span class="right_align card_list_icon"> 
+                      <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                      <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                      <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                      <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                  </span>
+             </div> 
+          </ion-col>
+      </ion-row>
+
+      <ion-row class="mt20">
+          <ion-col col-12>
+              <div class="left_align">
+                  <span class="view_all_text"> Tomorrow </span> 
+              </div>
+          </ion-col>
+      </ion-row> 
+      <ion-row>
+          <ion-col col-12>
+             <div class="card_box_list">
+                  <span class="card_list_data"> 05 <span class="card_list_mon"> MAR </span> </span>
+                  <span class="card_list_name"> Mr Suprada Sudhir </span>
+                  <span class="card_list_text"> TCM </span>
+                  <span class="right_align card_list_icon"> 
+                      <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                      <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                      <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                      <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                  </span>
+             </div> 
+          </ion-col>
+          <ion-col col-12>
+              <div class="card_box_list">
+                   <span class="card_list_data"> 05 <span class="card_list_mon"> MAR </span> </span>
+                   <span class="card_list_name"> Mr Suprada Sudhir </span>
+                   <span class="card_list_text"> TCM </span>
+                   <span class="right_align card_list_icon"> 
+                       <img class="mr10" src="assets/imgs/home_icon_new.svg">
+                       <img class="mr10" src="assets/imgs/phone_inoc_new.svg">
+                       <img class="mr10" src="assets/imgs/plot-icon-new.svg">
+                       <img class="mr10" src="assets/imgs/close-icon-new.svg">
+                   </span>
+              </div> 
+           </ion-col>
+      </ion-row> -->
+  
+
+
+
+<!-- <ion-grid>
+ 	<ion-row class="tab_th" text-wrap>
+ 	<ion-col text-wrap class="width-25"><b>LAC NO</b>
+    </ion-col>
+    <ion-col text-wrap class="width-30"><b>NAME</b>
+    </ion-col>
+    <ion-col text-wrap class="width-25" id="date"><b>NXT ACTION</b>
+    </ion-col>
+    <ion-col text-wrap class="width-20" ><b>DEF OBSERV</b>
+    </ion-col>
+	</ion-row>
+
+	<ion-row text-wrap *ngFor="let item of reminders; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'even'">
+  <ion-col tappable text-wrap class="width-25 link"  *ngIf="item.LAC_NO" 
+   (click)="navigateACDetails(item.LAC_NO,item.NAME)">
+            {{item.LAC_NO}}
+    </ion-col>
+    <ion-col text-wrap class="width-30">{{item.NAME}}
+    </ion-col>
+    <ion-col text-wrap  class="width-25">{{item.NXT_ACTION | date:"dd-MM-yy"}}
+    </ion-col>
+    <ion-col text-wrap class="width-20">{{item.DEF_OBSERV}}
+    </ion-col>
+	</ion-row>
+</ion-grid>
+ -->
+
+
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="canWeLoadMoreContent()" distance="1%">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>email-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.4%" y="-5.0%" width="104.8%" height="109.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-/-main-1.4" transform="translate(-90.000000, -583.000000)" fill="#D0021B" fill-rule="nonzero">
+            <g id="lightBox" filter="url(#filter-1)" transform="translate(80.000000, 406.000000)">
+                <g id="Group-7" transform="translate(15.000000, 60.000000)">
+                    <g id="Group-2-Copy" transform="translate(0.000000, 0.000000)">
+                        <g id="Group-6" transform="translate(0.000000, 118.000000)">
+                            <g id="email" transform="translate(0.000000, 4.000000)">
+                                <path d="M1.15200006,0.494686017 L5.77422254,4.66859929 C5.77422254,4.66859929 5.78844476,4.68405823 5.78844476,4.68405823 C5.90222254,4.79227079 6.058667,4.79227079 6.15822256,4.68405823 C6.15822256,4.68405823 6.17244478,4.66859929 6.17244478,4.66859929 L10.7946673,0.494686017 C10.8088895,0.479227079 10.8231117,0.479227079 10.8373339,0.463768141 C10.4817784,0.231884071 10.0693339,0.0772946902 9.62844497,0.0772946902 L2.30400013,0.0772946902 C1.86311121,0.0772946902 1.45066675,0.216425133 1.09511117,0.463768141 C1.10933339,0.463768141 1.13777784,0.479227079 1.15200006,0.494686017 Z" id="Shape"></path>
+                                <path d="M11.6195562,1.32946867 C11.5911117,1.37584549 11.5626673,1.40676336 11.5200006,1.43768124 L6.91200038,5.61159451 C6.64177814,5.85893752 6.31466701,5.99806796 5.97333366,5.99806796 C5.63200031,5.99806796 5.30488918,5.87439646 5.03466694,5.61159451 L0.42666669,1.43768124 C0.384000021,1.40676336 0.355555575,1.36038655 0.327111129,1.32946867 C0.14222223,1.68502425 0.028444446,2.10241557 0.028444446,2.55072478 L0.028444446,7.65217433 C0.028444446,9.01256088 1.0524445,10.1256044 2.30400013,10.1256044 L9.64266719,10.1256044 C10.8942228,10.1256044 11.9182229,9.01256088 11.9182229,7.65217433 L11.9182229,2.55072478 C11.9182229,2.10241557 11.8044451,1.68502425 11.6195562,1.32946867 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

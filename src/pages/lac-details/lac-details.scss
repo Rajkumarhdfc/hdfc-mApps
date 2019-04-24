@@ -1,0 +1,135 @@
+page-lac-details {
+
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 700% ;
+    margin: 10 ;
+    height:120%;
+    border-radius:30px;
+    border-color:grey;
+  }
+
+  ion-card-header{
+  background-color:#b30000;
+  font-size:5px;
+  color:gray;
+  white-space: normal;
+  }
+  .colorred{
+   background-color:#b30000;
+  }
+  .colorblue{
+   background-color:blue;
+  }
+  
+  .paymentcolor{
+    color: #38c42b;
+    width: 39px;
+    height: 27px;
+    text-align: center;
+  }
+
+  .default{
+    color: #0e0d0d;
+    width: 39px;
+    height: 27px;
+    text-align: center;
+  }
+
+  .possible{
+    color: #ffb814;
+    width: 39px;
+    height: 27px;
+    text-align: center;
+  }
+
+  .difficult{
+    color: #e22323;
+    width: 39px;
+    height: 27px;
+    text-align: center;
+  }
+  .try{
+    color: #fd8529;
+    width: 39px;
+    height: 27px;
+    text-align: center;
+  }
+  
+  .div-left{
+  text-align: left;
+	white-space: normal;
+  }
+
+  .div-right{
+  text-align: right;
+  white-space: normal;
+  color: #f52323;
+  padding:20px 0;
+  }
+
+ .text-color{
+   color: white;
+   }
+
+   .text-align{
+   width:30%;
+   }
+
+  .header-color{
+    background-color:#b30000;
+   }
+
+  header-text{
+  text-align:center;
+  }
+
+  button{
+  background-color:#b30000;
+  width:25%;
+  }
+
+
+
+ .text{
+ color:#b30000;
+ }
+
+
+.addfollowup{
+  background-color:yellow;
+}
+
+.white{
+  background-color:pink;
+}
+
+.notaddfollowup{
+  background-color:#da3434;
+}
+
+
+
+ .custom-alert button.alert-button-group {
+    width: 33.33%;
+}
+
+.custom-alert .alert-button-group .button-inner {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.custom-alert .alert-button-group-vertical {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row ;
+}
+
+.popover-md .popover-content{
+  left: 200px !important;
+}
+
+}
