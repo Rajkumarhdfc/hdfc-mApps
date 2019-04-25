@@ -100,6 +100,7 @@ reject(err);
 			
 			console.log( body.toString());	
 			console.log(dataRow.LAST_SYNC_ON);	
+			console.log(this.apiUrl + '/DownloadTable_v1', body.toString(), this.httpOptions);
 			this.http.post(this.apiUrl + '/DownloadTable_v1', body.toString(), this.httpOptions).subscribe(res => 
 				{
 					resolve(res);		
