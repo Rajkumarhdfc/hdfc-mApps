@@ -73,6 +73,7 @@ export class TableListPage {
                 
                 if(data==''||data==undefined){
                   alert("cannot sync");
+                  return ;
                 }
                 this.addtoAppTableMasterData(this.App_Master).then(res =>{
 
@@ -89,8 +90,8 @@ export class TableListPage {
                  this.dbProvider.updateSessionID(this.App_Master.SYNC_INFO[0].SESSION_ID, this.UserID).then((res)=>{
                       console.log("sessionid updated",this.App_Master.SYNC_INFO[0].SESSION_ID);
                     }).catch(e=>console.log(e))                  
-                  //  alert(this.App_Master.SYNC_INFO[0].SESSION_ID);
-                    //this.callDownloadData(this.App_Master.TABLE_LIST);
+                 //  alert(this.App_Master.SYNC_INFO[0].SESSION_ID);
+                    this.callDownloadData(this.App_Master.TABLE_LIST);
                 });
             });   
              }
