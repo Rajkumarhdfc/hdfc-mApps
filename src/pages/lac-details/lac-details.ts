@@ -344,7 +344,7 @@ navigate_my_basket(listItem){
 
 
 formatNumber (num) {
-  return (num / 100000).toFixed(2) + ' Lac'; 
+  return (num / 100000).toFixed(2) + ' L'; 
   //return num.toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
 }
 
@@ -414,10 +414,10 @@ public openPopover(listItem){
 
   getColorbasket(basketflag) {
     if(basketflag==undefined || basketflag==""){
-            return "red";
+            return "";
     }
     else{
-      return "#109a10";
+      return "#fff0cc";
     }
   }
 

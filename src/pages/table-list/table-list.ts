@@ -350,6 +350,7 @@ export class TableListPage {
                 console.log(this.displayData,this.displayData.length);
                  
                 if(this.displayData.length == 0){
+                    debugger;
                     this.startSync();
                 }
                 resolve();
@@ -362,6 +363,7 @@ export class TableListPage {
             this.dbProvider.TablelistAppTableMaster_refresh().then(result=> {
                  this.displayData=this.tablestartsyncData;
                   if(this.displayData.length == 0){
+                      debugger;
                     this.startSync();
                   }
                 resolve();

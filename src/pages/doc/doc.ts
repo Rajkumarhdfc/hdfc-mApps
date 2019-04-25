@@ -21,7 +21,8 @@ export class DocPage {
   docdetails:any;
     
   constructor(public navCtrl: NavController, public navParams: NavParams,public dbProvider:DbProvider ) {
-  	this.LacNo = navParams.get('lac');
+    this.LacNo = navParams.get('item');
+    console.log(this.LacNo);
   	this.Borrname=navParams.get('item2');
  	this.paramtab1={lac:this.LacNo,name:this.Borrname};
   }

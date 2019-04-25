@@ -67,7 +67,7 @@ textAreaChange(event){
 }
 
  submit(){
-   	this.dbProvider.LacMasterSetLevel(this.LacNo,this.level,this.remarks)
+   	this.dbProvider.LacMasterSetLevel(this.LacNo,this.level,"")
 
             .then((result) => {
                               console.log(result);

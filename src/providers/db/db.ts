@@ -3674,16 +3674,27 @@ UpdLevelandBasket(lacno,level,basket,lrmrks){
 	return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
+		let sSelectSqlstmt2= "UPDATE PDANEW_LAC_MASTER SET difficulty_level ='" + level + "',level_remarks ='" + lrmrks + "',my_basket ='" + basket + "' ;"
 
-				let sSelectSqlstmt1= "UPDATE PDANEW_LAC_MASTER SET difficulty_level ='" + level + "',level_remarks ='" + lrmrks + "',my_basket ='" + basket +
-        "' WHERE lac_no ="+lacno
-                       
-                       console.log(sSelectSqlstmt1);
-				db.executeSql(sSelectSqlstmt1, [])
-					.then(res =>
-					{
-					console.log(res);
-				 }).catch(e=>console.log(e))
+		let sSelectSqlstmt1= "UPDATE PDANEW_LAC_MASTER SET difficulty_level ='" + level + "',level_remarks ='" + lrmrks + "',my_basket ='" + basket +
+		"' WHERE lac_no ="+lacno
+				if(lacno!=""){
+					console.log(sSelectSqlstmt1);
+					db.executeSql(sSelectSqlstmt1, [])
+						.then(res =>
+						{
+						console.log(res);
+					 }).catch(e=>console.log(e))
+				}
+			   else
+			   {
+				console.log(sSelectSqlstmt2);
+				db.executeSql(sSelectSqlstmt2, [])
+				.then(res1=>
+				{
+				console.log(res1);
+			 }).catch(e=>console.log(e))
+			}
 
 			}).catch(e=>console.log(e))
 		})

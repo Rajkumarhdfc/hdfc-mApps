@@ -300,7 +300,7 @@ Fu_ActionInsertData(){
                                    {
                                    let toast = this.toastCtrl.create({
                                    message: 'uploaded successfully',
-                                   duration: 5000
+                                   duration: 10000
                                    
                                    });
                                    this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
@@ -318,7 +318,7 @@ Fu_ActionInsertData(){
                                  {
                                    let toast = this.toastCtrl.create({
                                      message: 'upload error pls try again',
-                                     duration: 5000
+                                     duration: 10000
                                      });
                                      toast.present(); 
                                  }
@@ -336,7 +336,7 @@ Fu_ActionInsertData(){
        {
          let toast = this.toastCtrl.create({
                                   message: 'data stored locally.To Upload Please turn your internet ON',
-                                  duration: 5000
+                                  duration: 10000
                                   });
                                   toast.present();
 
@@ -409,7 +409,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                               {
                               let toast = this.toastCtrl.create({
                               message: 'uploaded successfully',
-                              duration: 5000
+                              duration: 10000
                               });
                              
                               console.log(this.gflag);
@@ -428,7 +428,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                             {
                               let toast = this.toastCtrl.create({
                                 message: 'upload error pls try again',
-                                duration: 5000
+                                duration: 10000
                                 });
                                 toast.present(); 
                             }
@@ -476,7 +476,7 @@ for(var i=0;i<this.crosslinks.length;i++){
     {
       let toast = this.toastCtrl.create({
                                   message: 'data stored locally.To Upload Please turn your internet ON',
-                                  duration: 5000
+                                  duration: 10000
                                   });
                                   toast.present();
 

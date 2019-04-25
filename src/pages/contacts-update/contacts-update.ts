@@ -93,7 +93,7 @@ Fu_ContactUpdate(){
                               {
                               let toast = this.toastCtrl.create({
                               message: 'uploaded successfully',
-                              duration: 5000
+                              duration: 10000
                               });
                               toast.present(); 
                              this.dbProvider.Delete_Contact_Update(this.data).then((result=>{
@@ -103,7 +103,7 @@ Fu_ContactUpdate(){
                             {
                               let toast = this.toastCtrl.create({
                                 message: 'upload error pls try again',
-                                duration: 5000
+                                duration: 10000
                                 });
                                 toast.present(); 
                             }
@@ -125,7 +125,7 @@ Fu_ContactUpdate(){
          {
          let toast = this.toastCtrl.create({
                                   message: 'data stored locally.To Upload Please turn your internet ON',
-                                  duration: 5000
+                                  duration: 10000
                                   });
                                   toast.present();
 
@@ -179,7 +179,7 @@ Fu_ContactUpdate(){
                                 {
                                   let toast = this.toastCtrl.create({
                                   message: 'uploaded successfully',
-                                  duration: 5000
+                                  duration:10000
                                   });
                                   toast.present();
                                   this.dbProvider.Delete_Contact_Update(this.data).then((result)=>{
@@ -190,7 +190,7 @@ Fu_ContactUpdate(){
                               {
                               let toast = this.toastCtrl.create({
                                 message: 'upload error pls try again',
-                                duration: 5000
+                                duration: 10000
                                 });
                                 toast.present(); 
                                 console.log(this.table_id);

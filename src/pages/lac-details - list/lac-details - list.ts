@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { DbProvider } from '../../providers/db/db';
 import { IonicPage,LoadingController,NavController,NavParams,PopoverController,AlertController,ModalController,ViewController} from 'ionic-angular';
 import { Events } from 'ionic-angular';
@@ -9,7 +9,7 @@ import { AcDetailsPage } from '../ac-details/ac-details';
 import { DOCUMENT } from '@angular/common'; 
 import { Inject }  from '@angular/core';
 import { MapviewscreenPage} from '../mapviewscreen/mapviewscreen';
-
+import { Content } from 'ionic-angular';
 
 /**
  * Generated class for the LacDetailsPage page.
@@ -41,7 +41,12 @@ import { MapviewscreenPage} from '../mapviewscreen/mapviewscreen';
 ]
 })
 
+
+
+
 export class LacDetails_ListPage {
+
+@ViewChild(Content) content: Content;
 
 public tableItemlist: any =[];
 plt_tot_all:any
@@ -71,11 +76,13 @@ lac_no:any;
 pltall:any;
 search_flag:any;
 comm_address_borr:any;
-public buttonClicked: boolean = false; //Whatever you want to initialise it as
+public buttonClicked: boolean = false;
+ //Whatever you want to initialise it as
 public onButtonClick() {
   this.search_flag=false;
     this.buttonClicked = !this.buttonClicked;
-}
+    this.content.scrollToTop();
+  }
 
 public searchclose(){
   this.search_flag=true;
@@ -136,7 +143,7 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
   // }
 
   formatNumber (num) {
-    return (num / 100000).toFixed(2) + ' Lac'; 
+    return (num / 100000).toFixed(2) + ' L'; 
     //return num.toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
   }
   
@@ -432,10 +439,10 @@ public openPopover(listItem){
 
   getColorbasket(basketflag) {
     if(basketflag==undefined || basketflag==""){
-            return "red";
+            return "";
     }
     else{
-      return "#109a10";
+      return "#fff0cc";
     }
   }
 

@@ -175,9 +175,9 @@
                                     <!-- <span class="rating_icon" (click)="presentPopover(items)">
                                     <span class="default" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived','default': items.difficulty_level=='','default': items.difficulty_level==null}"></span> </span> -->
                                     
-                                    <ion-icon name="star-outline"  class="default" (click)="presentPopover(items)" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived'}"></ion-icon>
+                                    <ion-icon name="star-outline" class="default" (click)="presentPopover(items)" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived'}"></ion-icon>
 
-                                    <span class="btn_vi_to btn_visit" (click)="navigate_my_basket(items)"><ion-icon  *ngIf="items.my_basket==undefined || items.my_basket==''" name="basket"></ion-icon>{{items.my_basket}}</span> 
+                                    <span class="btn_vi_to btn_visit" [style.background-color]="getColorbasket(items.my_basket)" (click)="navigate_my_basket(items)"><ion-icon  *ngIf="items.my_basket==undefined || items.my_basket==''" name="basket"></ion-icon>{{items.my_basket}}</span> 
                                     <span class="down_arrow_adj"> 
 
                                         <ion-icon *ngIf="items.details_flag!=true" (click)="toggleList(i,items.LAC_NO)" name="ios-arrow-down-outline" class="dropdownicon">

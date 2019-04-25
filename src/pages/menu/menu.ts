@@ -155,7 +155,7 @@ public SelectAllPropclass(){
                                {
                                  let toast = this.toastCtrl.create({
                                  message: 'uploaded successfully',
-                                 duration: 500
+                                 duration: 10000
                                  });
                                  toast.present();
                                  this.dbProvider.deleteallPropClass().then((result)=>{
@@ -174,7 +174,7 @@ public SelectAllPropclass(){
                              {
                              let toast = this.toastCtrl.create({
                                message: 'upload error pls try again',
-                               duration: 2500
+                               duration:10000
                                });
                                toast.present(); 
                              }
@@ -202,7 +202,7 @@ SelectAllFuAction(){
                                {
                                  let toast = this.toastCtrl.create({
                                  message: 'uploaded successfully',
-                                 duration: 500
+                                 duration:10000
                                  });
                                  toast.present();
                                 this.dbProvider.deleteallnew_fu_action().then((result)=>{
@@ -220,7 +220,7 @@ SelectAllFuAction(){
                              {
                              let toast = this.toastCtrl.create({
                                message: 'upload error pls try again',
-                               duration: 4000
+                               duration: 10000
                                });
                                toast.present(); 
                              }
@@ -247,7 +247,7 @@ new Promise((resolve,reject) => {
                                {
                                  let toast = this.toastCtrl.create({
                                  message: 'uploaded successfully',
-                                 duration: 500
+                                 duration: 10000
                                  });
                                  toast.present();
                                  this.dbProvider.deleteallContact_Update().then((result)=>{
@@ -265,7 +265,7 @@ new Promise((resolve,reject) => {
                              {
                              let toast = this.toastCtrl.create({
                                message: 'upload error pls try again',
-                               duration: 4000
+                               duration: 10000
                                });
                                toast.present(); 
                              }
@@ -282,7 +282,7 @@ globalupload(){
 if(this.network.type=="none"){
       let toast = this.toastCtrl.create({
                                  message: 'Check Internet Connection',
-                                 duration: 2500
+                                 duration:10000
                                  });
                                  toast.present();
     }
@@ -399,7 +399,7 @@ encodebase64image(lacno,phototype,file_name,fileurl,propno,index,resp_length){
                                    else{
                                        let toast = this.toastCtrl.create({
                                        message: 'Error in upload',
-                                       duration: 2500
+                                       duration: 10000
                                    });
 
                                      
