@@ -89,7 +89,7 @@ export class MyApp {
           
         })
         events.subscribe('goback', (data) => {
-            const browser = this.iab.create('http://localhost:8080/#/list-master', '_self', {
+            const browser = this.iab.create('http://localhost/#/list-master', '_self', {
                 clearcache: 'yes',
                 clearsessioncache: 'yes'
             });
@@ -115,7 +115,7 @@ export class MyApp {
                
             }else{
                 
-                const browser = this.iab.create('http://localhost:8080/#/list-master', '_self', {
+                const browser = this.iab.create('http://localhost/#/list-master', '_self', {
                     clearcache: 'yes',
                     clearsessioncache: 'yes'
                 });
@@ -246,7 +246,7 @@ this.pages = [{
               this.sub1$ = this.platform.pause.subscribe(() => {
               console.log('****UserdashboardPage PAUSED****');
               this._timer = setTimeout(function(){ 
-             const browser = this.iab.create('http://localhost:8080/#/list-master', '_self', {
+             const browser = this.iab.create('http://localhost/#/list-master', '_self', {
                 clearcache: 'yes',
                 clearsessioncache: 'yes'
             });

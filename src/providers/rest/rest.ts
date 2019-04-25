@@ -61,7 +61,8 @@ apiUrl = "https://mapi.hdfc.com/PDA_SYNC_DMZ_API/api/pda";
 								  		 		  .set("sLatitude" , "")
 								  		 		  .set("slongitude" , "")
 								  		 		  .set("sReferenceSync_ID" , "");
-		  											
+								  
+													 console.log(this.apiUrl + '/StartSync', body.toString(), this.httpOptions)
 		  	this.http.post(this.apiUrl + '/StartSync', body.toString(), this.httpOptions).subscribe(res => 
 				{	
 					this.startSyncObj = res;
