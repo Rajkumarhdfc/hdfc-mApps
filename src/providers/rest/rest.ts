@@ -54,6 +54,12 @@ apiUrl = "https://mapi.hdfc.com/PDA_SYNC_DMZ_API/api/pda";
 
 	generateToken(data){		
 	  	return new Promise((resolve,reject) => {
+			this.dbProvider.sSelectApp_MasterScript().then((res)=>{
+				this.loginObj.userID= res['rows']['item'](0)['UserID'];
+				this.ldapid=res['rows']['item'](0)['UserID'];
+				console.log(this.ldapid);
+			   })
+			
 		  	const body = new HttpParams().set("sUserID" , this.loginObj.userID)
 	  									 		  .set("sApplicationId" , this.sApplicationID)
 								  			     .set("sVersion" , this.sVersion)
