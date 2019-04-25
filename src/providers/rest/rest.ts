@@ -58,29 +58,31 @@ apiUrl = "https://mapi.hdfc.com/PDA_SYNC_DMZ_API/api/pda";
 				this.loginObj.userID= res['rows']['item'](0)['UserID'];
 				this.ldapid=res['rows']['item'](0)['UserID'];
 				console.log(this.ldapid);
+
+				const body = new HttpParams().set("sUserID" , this.ldapid)
+				.set("sApplicationId" , this.sApplicationID)
+			  .set("sVersion" , this.sVersion)
+				.set("sProcessType" , "")
+				.set("sLatitude" , "")
+				.set("slongitude" , "")
+				.set("sReferenceSync_ID" , "");
+
+				console.log(this.apiUrl + '/StartSync', body.toString(), this.httpOptions)
+this.http.post(this.apiUrl + '/StartSync', body.toString(), this.httpOptions).subscribe(res => 
+{	
+this.startSyncObj = res;
+console.log(this.startSyncObj);				
+resolve(res);				
+}, (err) => 
+{
+console.log("ERROR");
+console.log(err);
+reject(err);
+}
+);
 			   })
 			
-		  	const body = new HttpParams().set("sUserID" , this.loginObj.userID)
-	  									 		  .set("sApplicationId" , this.sApplicationID)
-								  			     .set("sVersion" , this.sVersion)
-								  		 		  .set("sProcessType" , "")
-								  		 		  .set("sLatitude" , "")
-								  		 		  .set("slongitude" , "")
-								  		 		  .set("sReferenceSync_ID" , "");
-								  
-													 console.log(this.apiUrl + '/StartSync', body.toString(), this.httpOptions)
-		  	this.http.post(this.apiUrl + '/StartSync', body.toString(), this.httpOptions).subscribe(res => 
-				{	
-					this.startSyncObj = res;
-					console.log(this.startSyncObj);				
-					resolve(res);				
-			   	}, (err) => 
-			   	{
-			      console.log("ERROR");
-			      console.log(err);
-			      reject(err);
-			    }
-			);
+		  
 	  	});
 	}
 
