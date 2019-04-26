@@ -17,6 +17,7 @@ import { LacDetails_ListPage } from '../pages/lac-details - list/lac-details - l
 import { RemarkPage } from '../pages/remark/remark';
 import { TransPage } from '../pages/trans/trans';
 import { CommnPage } from '../pages/commn/commn';
+import { Firebase } from '@ionic-native/firebase';
 //import { MapviewscreenPage } from '../pages/mapviewscreen/mapviewscreen';
 import { FupPage } from '../pages/fup/fup';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -141,6 +142,7 @@ import { MapviewscreenPage} from '../pages/mapviewscreen/mapviewscreen';
     RestProvider,
     DbProvider,GetLatLongProvider,
     SQLite,
+    Firebase,
     Network,
     InAppBrowser,
     LacmastersortProvider,

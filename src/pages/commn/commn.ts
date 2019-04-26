@@ -91,8 +91,7 @@ export class CommnPage {
  }
 
   ionViewWillEnter() {
-                   this.events.publish('map_page', { lac:this.LacNo,borrname:this.Borrname,current_page_name:"map_page"});
-
+   this.events.publish('map_page', { lac:this.LacNo,borrname:this.Borrname,current_page_name:"map_page"});
    this.events.publish('hideheader', { headerstatus:false,navheaderstat:true});
    this.events.publish('hideHeader', { footerstatus:true,lac:this.LacNo,borrname:this.Borrname});//for hiding footer
 

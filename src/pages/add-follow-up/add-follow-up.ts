@@ -301,8 +301,9 @@ Fu_ActionInsertData(){
                                    let toast = this.toastCtrl.create({
                                    message: 'uploaded successfully',
                                    duration: 10000
-                                   
                                    });
+                                   window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
+
                                    this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                                    toast.present(); 
                                    this.saveflag=true;
@@ -310,8 +311,8 @@ Fu_ActionInsertData(){
                                   }))
                                   loading.dismiss();
                                   this.dbProvider.updatefollowupflag(this.gflag,this.data).then(()=>{
-                                  console.log("followup flag updated");
-                                  console.log(this.gflag);
+                                  // console.log("followup flag updated");
+                                  // console.log(this.gflag);
                                 })
                                  }
                                  else
@@ -321,6 +322,8 @@ Fu_ActionInsertData(){
                                      duration: 10000
                                      });
                                      toast.present(); 
+                                     window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
+
                                  }
      
                                  })
@@ -411,7 +414,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                               message: 'uploaded successfully',
                               duration: 10000
                               });
-                             
+                              window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
                               console.log(this.gflag);
                               this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                               console.log(this.gflag);
@@ -430,6 +433,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                                 message: 'upload error pls try again',
                                 duration: 10000
                                 });
+                                window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
                                 toast.present(); 
                             }
 
