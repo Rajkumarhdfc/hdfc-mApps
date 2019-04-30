@@ -185,8 +185,13 @@ UploadLatLong(){
 		}
 		console.log(data);
 		this.restProvider.LatLngMap(data).then((res)=>{
-			console.log(res);
-		})
+      console.log(res);
+      window["FirebasePlugin"].logEvent("lat-long-plot", {userdtls:data});
+
+		}).catch(err=>{
+      window["FirebasePlugin"].logEvent("lat-long-plot", {userdtls:data});
+
+    })
 
 }
 

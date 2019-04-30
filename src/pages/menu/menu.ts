@@ -309,12 +309,16 @@ if(this.upload_count==0&&this.photoupldcount==0)
 
    else
    {
-     this.SelectAllPropclass();
+   //  this.SelectAllPropclass();
      this.SelectAllFuAction();
+     
      this.SelectAllContactUpd();
+    // window["FirebasePlugin"].logEvent("upldglobalfuactio", {username:this.ldap_id});
      this.globaluploadPhoto();
-     this.total_upd_cnt=0;
+    // window["FirebasePlugin"].logEvent("upldglobalfuaction", {username:this.ldap_id});
 
+     this.total_upd_cnt=0;
+     window["FirebasePlugin"].logEvent("upldglobal", {username:this.ldap_id});
     }
     }
 
