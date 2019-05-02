@@ -1,8 +1,7 @@
 
 <ion-content scroll="true">
 
-   <div class="mb_10 sub_title_name"> Account Details </div> 
-
+ 
     <div *ngFor="let acitem of acdetails; index as i ;" (swipe)="swipe($event)" class="tab_card padding0">
         <div style="overflow: scroll;"> 
         <table>
@@ -110,7 +109,7 @@
         </ion-row>
 
         <ion-row class="h56">
-            <ion-col col-5  class="side_head" text-wrap>PROP CLASSI CODE: </ion-col>
+            <ion-col col-5  class="side_head" text-wrap>PROP CLASS CODE: </ion-col>
             <ion-col col-7 text-wrap class="tab_value">{{item.PROP_CLASS}} </ion-col>
         </ion-row>
 

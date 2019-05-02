@@ -10,6 +10,8 @@ import { DOCUMENT } from '@angular/common';
 import { Inject }  from '@angular/core';
 import { MapviewscreenPage} from '../mapviewscreen/mapviewscreen';
 import { Content } from 'ionic-angular';
+import { LacDetailsPage } from '../lac-details/lac-details';
+
 
 /**
  * Generated class for the LacDetailsPage page.
@@ -147,10 +149,14 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
     //return num.toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
   }
   
-  
+  Go_top_list(){
+    this.navCtrl.push(LacDetailsPage);
+
+  }
+
   presentPopover(listitem) {
 
-    let popover = this.popoverCtrl.create("LevelpopoverPage",{lacno:listitem.LAC_NO});
+    let popover = this.popoverCtrl.create("LevelpopoverPage",{lacno:listitem.LAC_NO,diff_level:listitem.difficulty_level});
 
     popover.present();
 

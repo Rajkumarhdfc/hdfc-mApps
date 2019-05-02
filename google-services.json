@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "940685483110",
+    "firebase_url": "https://fir-trial-e75b6.firebaseio.com",
+    "project_id": "fir-trial-e75b6",
+    "storage_bucket": "fir-trial-e75b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940685483110:android:43d81144357c6642",
+        "android_client_info": {
+          "package_name": "com.hdfc.ionicApps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940685483110-uas561an8ri2m8rgduqnkrj9i3v1grou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFKBwAONU2VG_bTA20fm0afoJCNkmXsI8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

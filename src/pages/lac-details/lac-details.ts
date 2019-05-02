@@ -162,7 +162,7 @@ navigateACDetails(lacno,borrname){
   
 
   presentPopover(listitem) {
-    let popover = this.popoverCtrl.create("LevelpopoverPage",{lacno:listitem.LAC_NO});
+    let popover = this.popoverCtrl.create("LevelpopoverPage",{lacno:listitem.LAC_NO,diff_level:listitem.difficulty_level});
     popover.present();
     popover.onDidDismiss(data => {
       if(data!=undefined && listitem !="")
@@ -177,7 +177,7 @@ navigateACDetails(lacno,borrname){
 
 Go_to_lacmaster_all(){
   this.navCtrl.push(LacDetails_ListPage);
-    // item:this.todo.userID
+   
  }
  Go_to_reminders_all(){
   this.navCtrl.push('RemindersPage');
