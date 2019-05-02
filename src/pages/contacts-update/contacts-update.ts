@@ -96,7 +96,7 @@ Fu_ContactUpdate(){
                               duration: 10000
                               });
                               toast.present(); 
-                              window["FirebasePlugin"].logEvent("uploadcontactsupt", {uname:this.ldap_id,fileno:this.data});
+                              window["FirebasePlugin"].logEvent("uploadcontactsupt", {uname:this.ldap_id,fileno:this.data.toString()});
 
                              this.dbProvider.Delete_Contact_Update(this.data).then((result=>{
                            }))  
@@ -108,7 +108,7 @@ Fu_ContactUpdate(){
                                 duration: 10000
                                 });
                                 toast.present(); 
-                                window["FirebasePlugin"].logEvent("uploadcontactsupterror", {uname:this.ldap_id,fileno:this.data});
+                                window["FirebasePlugin"].logEvent("uploadcontactsupterror", {uname:this.ldap_id,fileno:this.data.toString()});
 
                             }
                               console.log(res);
@@ -186,7 +186,7 @@ Fu_ContactUpdate(){
                                   duration:10000
                                   });
                                   toast.present();
-                                  window["FirebasePlugin"].logEvent("uploadcontactsupt", {uname:this.ldap_id,fileno:this.data});
+                                  window["FirebasePlugin"].logEvent("uploadcontactsupt", {uname:this.ldap_id,fileno:this.data.toString()});
                                   this.dbProvider.Delete_Contact_Update(this.data).then((result)=>{
                                   console.log(result);
                                 })
