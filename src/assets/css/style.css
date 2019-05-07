@@ -1,6 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 
- body {
+
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url('./fonts/Roboto-Medium.eot');
+	src: url('./fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'), url('./fonts/Roboto-Medium.woff') format('woff'), url('./fonts/Roboto-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto-Bold';
+	src: url('./fonts/Roboto-Bold.eot');
+	src: url('./fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/Roboto-Bold.woff') format('woff'), url('./fonts/Roboto-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('./fonts/Roboto-Light.eot');
+	src: url('./fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/Roboto-Light.woff') format('woff'), url('./fonts/Roboto-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('./fonts/Roboto-Regular.eot');
+	src: url('./fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/Roboto-Regular.woff') format('woff'), url('./fonts/Roboto-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
      overflow:auto !important;
      -webkit-overflow-scrolling:touch !important;
      -webkit-overflow-scrolling:auto !important;
