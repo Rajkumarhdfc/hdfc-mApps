@@ -311,11 +311,7 @@ export class TableListPage {
                 resolve();                          
               loading.dismiss();
             })    
-           //})
-             
-
-
-     
+        
         })
          })
        
