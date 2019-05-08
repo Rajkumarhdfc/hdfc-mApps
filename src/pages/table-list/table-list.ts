@@ -103,7 +103,7 @@ export class TableListPage {
                      console.log(res);
                      this.countBaskandDiff=res;
                  }).then(res =>{
-                     if(this.full_sync=="Y"||this.full_sync=="N"){
+                     if(this.full_sync=="Y"){
                     this.clearSync().then((res)=>{
                     if(this.displayData.length != 0){
                     this.displayData.forEach(function(v) {
@@ -262,7 +262,8 @@ export class TableListPage {
                                         console.log(iCnt)
                                     //update
                                       if(this.countBaskandDiff!=undefined){
-                                          alert(this.countBaskandDiff);
+                                       //   alert(this.countBaskandDiff);
+                                       console.log(this.countBaskandDiff);
                                          for(var i=0;i<this.countBaskandDiff.length;i++){
                                             this.dbProvider.UpdLevelandBasket(this.countBaskandDiff[i].lac_no,this.countBaskandDiff[i].difficulty_level,this.countBaskandDiff[i].basket,this.countBaskandDiff[i].level_remarks).then(res=>{
                                              console.log(this.countBaskandDiff[i].lac_no,this.countBaskandDiff[i].difficulty_level,this.countBaskandDiff[i].basket);
