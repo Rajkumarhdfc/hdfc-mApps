@@ -88,6 +88,31 @@ public onButtonClick() {
 
 public searchclose(){
   this.search_flag=true;
+  this.dbProvider.LacMasterTableDetails_v1()
+
+  .then((result) => {
+    console.log(result);
+                    this.allRows = result;
+                    this.alllen=this.allRows.length;
+                    this.tlen=this.alllen;
+                    this.crrlen = 0;
+                    this.totlen=this.alllen
+                    var t=0;
+                    for(let i = this.crrlen; i < this.alllen ; i++)
+                    {
+                      this.tableItemlist.push(this.allRows[i]);
+                      this.crrlen++;
+                      console.log(this.crrlen);
+                      t++;
+                      if(t==10){
+                        break;
+                      }
+                     }
+                  
+                    },
+          (error) => {
+                    console.log("ERROR: ", error);
+       })
 }
 constructor(@Inject(DOCUMENT) document,public navCtrl: NavController, 
     public navParams: NavParams, 

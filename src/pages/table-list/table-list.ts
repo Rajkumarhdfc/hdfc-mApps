@@ -5,6 +5,7 @@ import { DbProvider } from '../../providers/db/db';
 import { LoadingController } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
 import { Firebase } from '@ionic-native/firebase';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @IonicPage()
@@ -102,7 +103,7 @@ export class TableListPage {
                      console.log(res);
                      this.countBaskandDiff=res;
                  }).then(res =>{
-                     if(this.full_sync=="Y"){
+                     if(this.full_sync=="Y"||this.full_sync=="N"){
                     this.clearSync().then((res)=>{
                     if(this.displayData.length != 0){
                     this.displayData.forEach(function(v) {
@@ -261,6 +262,7 @@ export class TableListPage {
                                         console.log(iCnt)
                                     //update
                                       if(this.countBaskandDiff!=undefined){
+                                          alert(this.countBaskandDiff);
                                          for(var i=0;i<this.countBaskandDiff.length;i++){
                                             this.dbProvider.UpdLevelandBasket(this.countBaskandDiff[i].lac_no,this.countBaskandDiff[i].difficulty_level,this.countBaskandDiff[i].basket,this.countBaskandDiff[i].level_remarks).then(res=>{
                                              console.log(this.countBaskandDiff[i].lac_no,this.countBaskandDiff[i].difficulty_level,this.countBaskandDiff[i].basket);
