@@ -76,19 +76,21 @@ export class MapviewscreenPage {
     console.log(this.paddrssflag);
   	console.log(this.address_details)
 
-
+  if(this.paddrssflag==false || this.paddrssflag===undefined){
+  this.address_edit=this.address_details.address.split("Mobile")[0];
+ this.getCurrentLatlng();
+  }
+  else{
+  this.address_edit=this.address_details.perm_address.split("Mobile")[0];
+ this.getCurrentLatlng();
+  }
 
   //  events.subscribe('getLocation', (data) => {
   //          console.log(data)
   //       })
    
 
-  var centre = ['19.0760','72.8777'];
-  this.map = new MapmyIndia.Map('map', {
-    center: centre,
-    zoomControl: true,
-    hybrid: true
-});
+
        
 
  }
@@ -378,18 +380,9 @@ console.log('updated in UpdateCustomerDetails');
 
 ionViewDidLoad()
 {
-
-
-if(this.paddrssflag==false || this.paddrssflag===undefined){
-  this.address_edit=this.address_details.address.split("Mobile")[0];
- this.getCurrentLatlng();
-  }
-  else{
-  this.address_edit=this.address_details.perm_address.split("Mobile")[0];
- this.getCurrentLatlng();
-  }
-  this.getuserid();
+	this.getuserid();
 this.getSessionId();
+
 }
 
 testaddress(){
