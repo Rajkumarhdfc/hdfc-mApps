@@ -91,6 +91,7 @@ constructor(private geolocation: Geolocation,
 
   ionViewDidLoad() {
     this.getPermaddress();
+  //  this.RedirectToMap()
     this.dbProvider.GetCustomerAddress(this.LacNo).then((res)=>{
       console.log(res);
       this.customeraddrs=res;

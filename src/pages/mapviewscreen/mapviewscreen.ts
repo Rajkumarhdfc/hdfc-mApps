@@ -85,9 +85,9 @@ export class MapviewscreenPage {
  this.getCurrentLatlng();
   }
 
-  //  events.subscribe('getLocation', (data) => {
-  //          console.log(data)
-  //       })
+   events.subscribe('getLocation', (data) => {
+           console.log(data)
+        })
    
 
 
@@ -399,7 +399,7 @@ testaddress(){
   }
 }
 testaddress_afterC(){
-
+  this.address_edit=this.address_details.perm_address.split("Mobile")[0];
   this.getLatitudeLongitude(this.address_edit);
 
 }
