@@ -399,7 +399,7 @@ testaddress(){
   }
 }
 testaddress_afterC(){
-  this.address_edit=this.address_details.perm_address.split("Mobile")[0];
+  this.address_edit=this.address_details.address.split("Mobile")[0];
   this.getLatitudeLongitude(this.address_edit);
 
 }
