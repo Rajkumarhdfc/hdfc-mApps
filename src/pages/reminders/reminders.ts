@@ -178,9 +178,10 @@ getCommAddForBorr(lacno){
     const optionDialog = this.alertCtrl.create({
       title: 'HOME ADDRESS',
       message: '<div>' +
-      '<span class="alert_name block"><img src="assets/imgs/alert_map.png">'+res[0].comm_address+'</span>' +
+      '<span class="alert_name block"><img src="assets/imgs/alert_map.png" style="margin-right:10px;>'+res[0].comm_address+'</span>' +
      
       '</div>',
+      cssClass: 'reset', 
       buttons: [
         {
           text: 'Cancel',
@@ -217,8 +218,9 @@ GetCustContact(lacno){
             const phoneDialog = this.alertCtrl.create({
               title: 'Mobile Number' ,
               message: '<div>' +
-              '<span class="alert_add block"><img src="assets/imgs/alert_phone.png">'+result[0].contact_det+'</span>' + 
+              '<span class="alert_add block" style="font-size: 16px;"><img src="assets/imgs/alert_phone.png" style="margin-right:10px;">'+result[0].contact_det+'</span>' + 
               '</div>',
+              cssClass: 'reset', 
               buttons: [
                 {
                   text: 'Cancel',

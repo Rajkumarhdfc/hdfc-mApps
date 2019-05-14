@@ -78,17 +78,25 @@ export class MapviewscreenPage {
 
   if(this.paddrssflag==false || this.paddrssflag===undefined){
   this.address_edit=this.address_details.address.split("Mobile")[0];
-   this.getCurrentLatlng();
+ this.getCurrentLatlng();
   }
   else{
   this.address_edit=this.address_details.perm_address.split("Mobile")[0];
-  this.getCurrentLatlng();
+ this.getCurrentLatlng();
   }
 
-   events.subscribe('getLocation', (data) => {
-           console.log(data)
-        })
+  //  events.subscribe('getLocation', (data) => {
+  //          console.log(data)
+  //       })
    
+
+  var centre = ['19.0760','72.8777'];
+  this.map = new MapmyIndia.Map('map', {
+    center: centre,
+    zoomControl: true,
+    hybrid: true
+});
+       
 
  }
 
@@ -130,7 +138,9 @@ getCurrentLatlng(){
       	hybrid: true
     });
            
-        this.testaddress();
+    this.getuserid();
+    this.getSessionId();
+    this.testaddress();
 
 
         if(this.address_details.latitude==undefined || this.address_details.latitude==""){
@@ -161,6 +171,7 @@ getCurrentLatlng(){
    alert("Keep Your Internet On");
  	console.log("Keep Your Internet On")
  }
+
 
   }
 
@@ -375,7 +386,7 @@ console.log('updated in UpdateCustomerDetails');
 ionViewDidLoad()
 {
 	this.getuserid();
-	this.getSessionId();
+this.getSessionId();
 
 }
 

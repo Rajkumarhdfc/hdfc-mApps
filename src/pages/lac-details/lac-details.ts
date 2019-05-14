@@ -131,35 +131,9 @@ navigateACDetails(lacno,borrname){
 
   this.navCtrl.push(AcDetailsPage,{item:lacno,item2:borrname})
   console.log("navigated");
-  
+
   }
-//  this.dbProvider.LacMasterTableDetails_v1()
 
-//             .then((result) => {
-//               console.log(result);
-//                               this.allRows = result;
-//                               this.alllen=this.allRows.length;
-//                               this.tlen=this.alllen;
-//                               this.crrlen = 0;
-//                               this.totlen=this.alllen
-//                               var t=0;
-//                               for(let i = this.crrlen; i < this.alllen ; i++)
-//                               {
-//                                 this.tableItemlist.push(this.allRows[i]);
-//                                 this.crrlen++;
-//                                 console.log(this.crrlen);
-//                                 t++;
-//                                 if(t==10){
-//                                   break;
-//                                 }
-//                                }
-                            
-//                               },
-//                     (error) => {
-//                               console.log("ERROR: ", error);
-//                  })
-
-  
 
   presentPopover(listitem) {
     let popover = this.popoverCtrl.create("LevelpopoverPage",{lacno:listitem.LAC_NO,diff_level:listitem.difficulty_level});
@@ -175,9 +149,17 @@ navigateACDetails(lacno,borrname){
 
   }
 
-Go_to_lacmaster_all(){
-  this.navCtrl.push(LacDetails_ListPage);
-   
+Go_to_lacmaster_all(param,value,count){
+
+  if(count==0){
+    alert('Not found..');
+
+  }
+  else {
+    this.navCtrl.push(LacDetails_ListPage,{sortopt:param,valueof:value,totcount:count});
+  }
+ 
+
  }
  Go_to_reminders_all(){
   this.navCtrl.push('RemindersPage');
@@ -648,8 +630,9 @@ GetCustContact(lacno){
             const phoneDialog = this.alertCtrl.create({
               title: 'Mobile Number' ,
               message: '<div>' +
-              '<span class="alert_add block"> <img src="assets/imgs/alert_phone.png">'+result[0].contact_det+'</span>' + 
+              '<span class="alert_add block" style="font-size: 16px;"> <img src="assets/imgs/alert_phone.png" style="margin-right:10px;">'+result[0].contact_det+'</span>' + 
               '</div>',
+              cssClass: 'reset', 
               buttons: [
                 {
                   text: 'Cancel',
@@ -713,9 +696,10 @@ getCommAddForBorr(lacno){
     const optionDialog = this.alertCtrl.create({
       title: 'HOME ADDRESS',
       message: '<div>' +
-      '<span class="alert_name block"><img src="assets/imgs/alert_map.png">'+res[0].comm_address+'</span>' +
+      '<span class="alert_name block"><img src="assets/imgs/alert_map.png" style="margin-right:10px;">'+res[0].comm_address+'</span>' +
      
       '</div>',
+      cssClass: 'reset',
       buttons: [
         {
           text: 'Cancel',

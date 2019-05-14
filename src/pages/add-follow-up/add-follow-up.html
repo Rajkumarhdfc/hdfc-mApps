@@ -35,6 +35,53 @@
           </ion-col>
 
 
+          
+          <ion-col col-12>    
+            <ion-item>
+                <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
+                  <ion-label stacked>Action Date *</ion-label>
+                  <ion-datetime type="Date" formControlName="ActionDate" min="2016" max="2019" displayFormat="DD/MM/YYYY" 
+                  (ionChange)="compareTwoDate1()"></ion-datetime>
+            </ion-item>
+              <div *ngIf="error.isError" class="alert alert-danger error">
+              {{ error.errorMessage }}
+              </div>
+              <div class="error" *ngIf="addfollowup.get('ActionDate').hasError('required') && addfollowup.get('ActionDate').touched">
+                this field is required*
+              </div>  
+      </ion-col>
+
+
+      <ion-col col-12>
+        <ion-item>
+            <ion-label stacked> Response *</ion-label>
+            <ion-input type="text"  formControlName="response" 
+            (keyup)="getItems_all('RESPONSE_CD',$event,'2')">
+            </ion-input>
+            </ion-item>
+          <div class="error" *ngIf="addfollowup.get('response').hasError('required') && addfollowup.get('response').touched">
+            this field is required*
+          </div>
+          <ion-list  class="list_div_bg" *ngIf="showList2">
+            <ion-item *ngFor="let items of list1" (click)="setValue_All(items.para_value,items.para_desc,'2','response','response',400)">
+          {{items.para_desc}} 
+          </ion-item>
+          </ion-list> 
+    </ion-col>
+
+
+    <ion-col col-12> 
+        <ion-item>
+            <ion-label stacked> Obs Cd *</ion-label>
+          <ion-input type="text" formControlName="ObsCd"  (keyup)="getItems_all('DEF_OBS_CD',$event,'3')">
+            </ion-input>
+            </ion-item>
+          <ion-list class="list_div_bg"  *ngIf="showList3">
+            <ion-item *ngFor="let items of list1"  (click)="setValue_All(items.para_value,items.para_desc,'3','ObsCd','ObsCd',490)">
+          {{items.para_desc}} 
+          </ion-item>
+        </ion-list> 
+    </ion-col>
           <ion-col col-12> 
               <ion-item>
                   <ion-label stacked> Action To Be *</ion-label>
@@ -49,22 +96,8 @@
           </ion-col>
 
 
-          <ion-col col-6>    
-                <ion-item>
-                    <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
-                      <ion-label stacked>Action Date *</ion-label>
-                      <ion-datetime type="Date" formControlName="ActionDate" min="2016" max="2019" displayFormat="DD/MM/YYYY" 
-                      (ionChange)="compareTwoDate1()"></ion-datetime>
-                </ion-item>
-                  <div *ngIf="error.isError" class="alert alert-danger error">
-                  {{ error.errorMessage }}
-                  </div>
-                  <div class="error" *ngIf="addfollowup.get('ActionDate').hasError('required') && addfollowup.get('ActionDate').touched">
-                    this field is required*
-                  </div>  
-          </ion-col>
 
-              <ion-col col-6>
+              <ion-col col-12>
                   <ion-item>
                       <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
                         <ion-label stacked>Next Action Date *</ion-label>
@@ -100,36 +133,7 @@
                  </ion-col> -->
 
 
-                  <ion-col col-12>
-                      <ion-item>
-                          <ion-label stacked> Response *</ion-label>
-                          <ion-input type="text"  formControlName="response" 
-                          (keyup)="getItems_all('RESPONSE_CD',$event,'2')">
-                          </ion-input>
-                          </ion-item>
-                        <div class="error" *ngIf="addfollowup.get('response').hasError('required') && addfollowup.get('response').touched">
-                          this field is required*
-                        </div>
-                        <ion-list  class="list_div_bg" *ngIf="showList2">
-                          <ion-item *ngFor="let items of list1" (click)="setValue_All(items.para_value,items.para_desc,'2','response','response',400)">
-                        {{items.para_desc}} 
-                        </ion-item>
-                        </ion-list> 
-                  </ion-col>
 
-
-                  <ion-col col-12> 
-                      <ion-item>
-                          <ion-label stacked> Obs Cd *</ion-label>
-                        <ion-input type="text" formControlName="ObsCd"  (keyup)="getItems_all('DEF_OBS_CD',$event,'3')">
-                          </ion-input>
-                          </ion-item>
-                        <ion-list class="list_div_bg"  *ngIf="showList3">
-                          <ion-item *ngFor="let items of list1"  (click)="setValue_All(items.para_value,items.para_desc,'3','ObsCd','ObsCd',490)">
-                        {{items.para_desc}} 
-                        </ion-item>
-                      </ion-list> 
-                  </ion-col>
 
   
          
@@ -170,34 +174,32 @@
                   </ion-col>
 
                   <ion-col col-12>
-                      <ion-item>
-                          <ion-label stacked> Ci Type </ion-label>
-                          <ion-select formControlName="CiType"   interface="popover">
-                          <ion-option  value="{{items.para_value}}" *ngFor="let items of citype">{{items.para_desc}}</ion-option>
-                          </ion-select>
-                        </ion-item>
+                   
+                          <ion-label stacked class="lbl_sele"> Ci Type </ion-label>
+                          <select formControlName="CiType">
+                          <option *ngFor="let items of citype" value={{items.para_value}}>{{items.para_desc}}</option>
+                          </select>
+                   
                 </ion-col>
 
 
-                <ion-col col-6> 
+                <!-- <ion-col col-6> 
                     <ion-item>
                         <ion-label stacked> Action Type *</ion-label>
-                          <!-- <ion-select formControlName="ActionType" interface="popover">
+                          <ion-select formControlName="ActionType" interface="popover">
                             <ion-option value="P">P</ion-option>
                             <ion-option value="T">T</ion-option>
-                          </ion-select> -->
+                          </ion-select> 
                           <ion-label stacked>P</ion-label>
 
                       </ion-item>
-                </ion-col>
+                </ion-col> -->
 
-                <ion-col col-6>
-                    <ion-item>
-                        <ion-label stacked> Risk Event</ion-label>
-                          <ion-select formControlName="RiskEvent"  interface="popover">
-                          <ion-option value="{{item.para_value}}" *ngFor="let item of riskevent">{{item.para_desc}}</ion-option>
-                          </ion-select>
-                      </ion-item> 
+                <ion-col col-12>
+                        <ion-label stacked class="lbl_sele"> Risk Event</ion-label>
+                          <select formControlName="RiskEvent">
+                            <option value="{{item.para_value}}" *ngFor="let item of riskevent">{{item.para_desc}}</option>
+                          </select>
                   </ion-col>
 
 
@@ -224,7 +226,7 @@
           <div class="font16 mt_10 mb_10"> Acc No &nbsp;&nbsp; {{items.lac_no1}} </div> 
         </ion-col> 
 
-        <ion-col col-6>  
+        <ion-col col-12>  
             <ion-item inset>
                 <ion-label stacked> Action* </ion-label>
                   <ion-input type="text" value="{{items.action_cl}}"
@@ -242,7 +244,7 @@
         </ion-col>
 
 
-        <ion-col col-6>    
+        <ion-col col-12>    
           <ion-item>
             <ion-label stacked> Amt Chargeable *</ion-label>
             <ion-input type="tel" maxlength="6" (keyup)="getAmtChrg(i,$event)"  value="{{items.amount_cr_cl}}" ></ion-input>

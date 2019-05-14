@@ -79,6 +79,9 @@ pltall:any;
 search_flag:any;
 comm_address_borr:any;
 public buttonClicked: boolean = false;
+valueof:any;
+tot_count:any;
+paramval:any;
  //Whatever you want to initialise it as
 public onButtonClick() {
   this.search_flag=false;
@@ -126,39 +129,73 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
     public viewCtrl:ViewController) {
 
    this.dbProvider.tableItems=[];
-   events.subscribe('headercolor', (data) => {
+      events.subscribe('headercolor', (data) => {
           this.addfollowup_flag = data.hcolor;
           console.log(this.addfollowup_flag);
             
         })
 
-
+        this.valueof=navParams.get('valueof');
+        this.paramval=navParams.get('sortopt');
+        this.tot_count=navParams.get('totcount');
+       
+        console.log(this.valueof+"  "+this.paramval+""+this.tot_count);
  
- this.dbProvider.LacMasterTableDetails_v1()
+        if(this.valueof===''){
 
-            .then((result) => {
-              console.log(result);
-                              this.allRows = result;
-                              this.alllen=this.allRows.length;
-                              this.tlen=this.alllen;
-                              this.crrlen = 0;
-                              this.totlen=this.alllen
-                              var t=0;
-                              for(let i = this.crrlen; i < this.alllen ; i++)
-                              {
-                                this.tableItemlist.push(this.allRows[i]);
-                                this.crrlen++;
-                                console.log(this.crrlen);
-                                t++;
-                                if(t==10){
-                                  break;
-                                }
-                               }
-                            
-                              },
-                    (error) => {
-                              console.log("ERROR: ", error);
-                 })
+          this.dbProvider.LacMasterTableDetails_v1()
+
+          .then((result) => {
+            console.log(result);
+                            this.allRows = result;
+                            this.alllen=this.allRows.length;
+                            this.tlen=this.alllen;
+                            this.crrlen = 0;
+                            this.totlen=this.alllen
+                            var t=0;
+                            for(let i = this.crrlen; i < this.alllen ; i++)
+                            {
+                              this.tableItemlist.push(this.allRows[i]);
+                              this.crrlen++;
+                              console.log(this.crrlen);
+                              t++;
+                              if(t==10){
+                                break;
+                              }
+                             }
+                          
+                            },
+                  (error) => {
+                            console.log("ERROR: ", error);
+               })
+        }
+        else{
+          this.dbProvider.DashboardSort(this.paramval,this.valueof).then(res=>{
+            console.log(res);
+            this.allRows = res;
+            this.alllen=this.allRows.length;
+            this.tlen=this.alllen;
+            this.crrlen = 0;
+            this.totlen=this.alllen
+            var t=0;
+            for(let i = this.crrlen; i < this.alllen ; i++)
+            {
+              this.tableItemlist.push(this.allRows[i]);
+              this.crrlen++;
+              console.log(this.crrlen);
+              t++;
+              if(t==10){
+                break;
+              }
+             }
+          
+            },
+       (error) => {
+            console.log("ERROR: ", error);
+        })
+        //  })
+        }
+
 
   }
 
@@ -643,9 +680,10 @@ getCommAddForBorr(lacno){
     const optionDialog = this.alertCtrl.create({
       title: 'HOME ADDRESS',
       message: '<div>' +
-      '<span class="alert_name block"><img src="assets/imgs/alert_map.png">'+res[0].comm_address+'</span>' +
+      '<span class="alert_name block"><img src="assets/imgs/alert_map.png" style="margin-right:10px;">'+res[0].comm_address+'</span>' +
      
       '</div>',
+      cssClass: 'reset', 
       buttons: [
         {
           text: 'Cancel',
@@ -682,9 +720,9 @@ GetCustContact(lacno){
             const phoneDialog = this.alertCtrl.create({
               title: 'Mobile Number',
               message: '<div>' +
-              '<span class="alert_add block"> <img src="assets/imgs/alert_phone.png">'+result[0].contact_det+'</span>' + 
+              '<span class="alert_add block" style="font-size: 16px;"> <img src="assets/imgs/alert_phone.png" style="margin-right:10px;">'+result[0].contact_det+'</span>' + 
               '</div>',
-
+              cssClass: 'reset', 
               buttons: [
                 {
                   text: 'Cancel',

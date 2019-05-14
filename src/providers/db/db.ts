@@ -740,7 +740,7 @@ SelectLacMasterAcDetails(lacno){
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 				let sSelectSqlstmt = 
-				"SELECT lac_no,to_date,plt,last_rcbl_dt,prin_os_last_tr_comb FROM PDANEW_LAC_MASTER where LAC_NO =" + lacno 
+				"SELECT lac_no,to_date,plt,last_rcbl_dt,prin_os_last_tr_comb,amrt_prin FROM PDANEW_LAC_MASTER where LAC_NO =" + lacno 
 
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -753,14 +753,14 @@ SelectLacMasterAcDetails(lacno){
 								LAC_NO:res.rows.item(i).lac_no,
 								last_rcbl_dt:(res.rows.item(i).last_rcbl_dt).toString().slice(0,10),
 								prin_os_last_tr_comb:res.rows.item(i).prin_os_last_tr_comb ,
-
+								amrt_prin:res.rows.item(i).amrt_prin,
 								plt:res.rows.item(i).prin_os_last_tr_comb
 
 		                    }); 
 		                }
 
 				    }
-	     			console.log(res);
+	     			console.log(lacmasteracdetails);
 					})
 					.then(res => {
 						
@@ -1056,6 +1056,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 		//		basketname=basketname.toString();
 
 				let sSelectSqlstmt=	"SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p.my_basket='"+basketname+"' GROUP BY p.lac_no"
+
 
 
 			//	let sSelectSqlstmt = "SELECT max_action_date,company_arrangement,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level,my_basket FROM PDANEW_LAC_MASTER where my_basket='"+basketname+"'";
@@ -2531,6 +2532,73 @@ return new Promise((resolve,reject)=>{
 
 }
 
+
+
+	DashboardSort(paramval,value){
+	var dashsort=[];
+   
+   return new Promise((resolve,reject)=>{
+			   this.sqlite.create(this.options)
+			   .then((db : SQLiteObject) => {
+			   //	let sSelectSqlstmt1= "select max_action_date,company_arrangement,followupflag,my_basket,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level from PDANEW_LAC_MASTER where lac_no !='' ORDER BY " + sorttype + " " + sortorder 
+			   let sSelectSqlstmt ="SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p."+paramval+"='"+value+"'"+'GROUP BY p.lac_no'; 
+   
+   
+			   //"SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where lac_no !='' ORDER BY " + sorttype + " " + sortorder +'GROUP BY p.lac_no';
+			   debugger;
+			   db.executeSql(sSelectSqlstmt, [])
+					   .then(res =>
+					   {
+						   console.log(res);
+					   if (res.rows.length > 0) {
+						   for (let i=0; i < res.rows.length; i++){
+							dashsort.push({
+								   LAC_NO: res.rows.item(i).lac_no,
+									  BORR_NAME: res.rows.item(i).borr_name,
+									  FOLLOW_UP_IND:res.rows.item(i).follow_up_ind,
+									  PRIN_OS_LAST_TR_COMB: res.rows.item(i).prin_os_last_tr_comb,
+									  MONTHS_OS: res.rows.item(i).months_os,
+									  AREA_DESC: res.rows.item(i).area_desc,
+									  CUSTOMER_GRADE: res.rows.item(i).customer_grade,
+									  PROP_AREA_DESC:res.rows.item(i).prop_area_desc,
+									  PROP_NAME: res.rows.item(i).prop_name,
+									  EMP_COMPANY_NAME: res.rows.item(i).selfemp_company_name,
+									  M_OS:res. rows.item(i).plt,
+									  FOLLOW_UP: res.rows.item(i).fu_area_desc,
+									  EMP_AREA: res.rows.item(i).emp_area_desc,
+									  difficulty_level:res.rows.item(i).difficulty_level,
+									  my_basket:res.rows.item(i).my_basket,
+									  followupflag:res.rows.item(i).followupflag,
+									  max_action_date:res.rows.item(i).max_action_date,
+								 	  company_arrangement:res.rows.item(i).company_arrangement,
+									no_of_acc:res.rows.item(i).total_acc_cnt,
+								  	 plt_count:res.rows.item(i).all_plt
+   
+							   
+   
+							   }); 
+						   }
+   
+					   }
+						console.log(res);
+					   })
+					   .then(res => {
+					   resolve(dashsort);
+				   }).catch(e=>console.log(e))
+   
+			   }).catch(e=>console.log(e))
+		   })
+   
+   }
+   
+
+
+
+
+
+
+
+
 LacMasterSetLevel(lac_no,level,remark){
 	return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
@@ -2614,7 +2682,7 @@ LacMasterInsertMyBasket(basketname){
 	return new Promise((resolve,reject) => {
 	  	this.sqlite.create(this.options)
 		.then((db : SQLiteObject) => {
-			    let sInsertAppMasterScript = "INSERT INTO PDANEW_LAC_MASTER(lac_no ,  my_basket) values(?,?)";
+			    let sInsertAppMasterScript = "INSERT INTO PDANEW_LAC_MASTER(lac_no,my_basket) values(?,?)";
 				db.executeSql(sInsertAppMasterScript,["",basketname])
 				.then(res => {
 					resolve(res)})
@@ -3643,6 +3711,7 @@ return new Promise((resolve,reject)=>{
 				//let sSelectSqlstmt1= "select level_remarks,my_basket,difficulty_level,lac_no from PDANEW_LAC_MASTER where my_basket !='' or difficulty_level!='' or level_remarks!=''"
 				let sSelectSqlstmt2="select level_remarks,my_basket,difficulty_level,lac_no from PDANEW_LAC_MASTER where my_basket !='' and my_basket!='undefined' and my_basket!='null' or  difficulty_level !='' and difficulty_level!='undefined' and difficulty_level!='null' or level_remarks!='' "
 				console.log(sSelectSqlstmt2);
+			//	let sSelectSqlstmt1="select my_basket from PDANEW_LAC_MASTER where my_basket !='' and my_basket!='undefined' and my_basket!='null' or  difficulty_level !='' and difficulty_level!='undefined' and difficulty_level!='null' or level_remarks!='' "
 				db.executeSql(sSelectSqlstmt2, [])
 					.then(res =>
 					{
@@ -3674,7 +3743,7 @@ UpdLevelandBasket(lacno,level,basket,lrmrks){
 	return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
-		let sSelectSqlstmt2= "UPDATE PDANEW_LAC_MASTER SET difficulty_level ='" + level + "',level_remarks ='" + lrmrks + "',my_basket ='" + basket + "' ;"
+		let sSelectSqlstmt2="INSERT INTO PDANEW_LAC_MASTER(my_basket) values(?)";
 
 		let sSelectSqlstmt1= "UPDATE PDANEW_LAC_MASTER SET difficulty_level ='" + level + "',level_remarks ='" + lrmrks + "',my_basket ='" + basket +
 		"' WHERE lac_no ="+lacno
@@ -3689,7 +3758,8 @@ UpdLevelandBasket(lacno,level,basket,lrmrks){
 			   else
 			   {
 				console.log(sSelectSqlstmt2);
-				db.executeSql(sSelectSqlstmt2, [])
+			//	db.executeSql(sSelectSqlstmt2, [])
+				db.executeSql(sSelectSqlstmt2,[basket])
 				.then(res1=>
 				{
 				console.log(res1);
@@ -3969,7 +4039,7 @@ count_top_basket(){ ////--update total no of clicks //////////
 	return new Promise((resolve, reject) => {
 	 this.sqlite.create(this.options)
 		.then((db : SQLiteObject) => {
-	 		let sUpdateAppMasterScript ="select my_basket,count(my_basket) as count_bask from PDANEW_LAC_MASTER  where my_basket!=''group by my_basket order by count(my_basket) desc limit 2";
+	 		let sUpdateAppMasterScript ="select my_basket,count(my_basket) as count_bask from PDANEW_LAC_MASTER  where my_basket!='' and lac_no!='' group by my_basket order by count(my_basket) desc limit 2";
 				db.executeSql(sUpdateAppMasterScript, [])
 				.then(res =>
 				{

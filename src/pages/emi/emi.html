@@ -10,9 +10,9 @@
   <div class="tab_card padding0">
     <ion-row class="tab_th" text-wrap>
       <ion-col text-wrap class="width-25 text-left"> TOTAL </ion-col>
-      <ion-col text-wrap class="width-25 text-left" id="date"> RECEIVABLE </ion-col>
-      <ion-col text-wrap class="width-25 text-left" id="date"> RECEIVED </ion-col>
-      <ion-col text-wrap class="width-25 text-left" id="date"> CURRENT 0/S </ion-col>
+      <ion-col text-wrap class="width-25 text-right" id="date"> RCBL </ion-col>
+      <ion-col text-wrap class="width-25 text-right" id="date"> RCVD </ion-col>
+      <ion-col text-wrap class="width-25 text-right" id="date"> CR O/S </ion-col>
     </ion-row>
 
       <ion-row text-wrap *ngFor="let item of tot; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
@@ -26,7 +26,7 @@
 
   <div class="tab_card mt25 padding0">
       <ion-row class="tab_th ">
-        <ion-col text-wrap class="width-25 text-right" id="date"> TR DATE  </ion-col>
+        <ion-col text-wrap class="width-25 text-right" id="date"> TR DT  </ion-col>
         <ion-col text-wrap class="width-25 text-right"> RCBL </ion-col>
         <ion-col text-wrap class="width-25 text-right" id="date"> RCVD </ion-col>
         <ion-col text-wrap class="width-25 text-right" id="date"> OS </ion-col>

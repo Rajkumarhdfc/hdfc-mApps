@@ -23,7 +23,7 @@ import { AlertController } from 'ionic-angular';
 export class BucketPage {
 addr = 'MyBasket';
 LacNo: any;
-Basket:any ;
+Basket:any;
 mybasketlist;
 chip:string;
 bucketflag:boolean=true;
@@ -163,8 +163,8 @@ else{
    }
    else{
     chip.remove();
-    this.dbProvider.update_global_buck(basketname,this.Basket).then(res=>{
-      this.ViewBasket();
+    this.dbProvider.update_global_buck(basketname,"").then(res=>{
+     // this.ViewBasket();
       console.log(res);
       console.log(basketname);
     })

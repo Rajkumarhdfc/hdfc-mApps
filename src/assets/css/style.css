@@ -223,6 +223,10 @@ ion-header{
     display: block;
     width: 100%;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden !important;
+
 }
 .btn_vi_to{
     padding: 6px 13px;
@@ -332,6 +336,7 @@ ion-header{
     padding: 20px;
     margin-top: 40px;
 }
+
 .level_text{
     color: #00334e;
     font-size: 10pt;
@@ -464,6 +469,9 @@ ion-menu[type=overlay] .show-backdrop {
     color: #00334e;
     font-size: 11pt;
     margin-top: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden !important;
 }
 .user_lac_details{
     color: #00334e;
@@ -515,7 +523,7 @@ tr td {
 .tab_value{
     font-size: 11pt;
     color: #00334e;
-    padding: 15px;
+    padding: 20px 10px;
 }
 .arrow_icon_top{
     margin-right: 15px;
@@ -577,12 +585,9 @@ ion-app.md [padding] .scroll-content{
     padding: 0px 16px;
 }
 .tab_line_text{
-    min-height: 56px;
     font-size: 10pt !important;
     color: #00334e;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 13px;
+    padding: 20px 12px !important;
 }
 ion-tabs.tabs_common > .tabbar {
     width: 100%;
@@ -1263,7 +1268,7 @@ ion-tabs.tabs_common > .tabbar > .tab-button {
  .padding_add {
      padding:2vw !important;
 }
- .datee, select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+ .datee, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     height: 30px !important;
     border-radius: 5px !important;
     font-size: 12pt !important;
@@ -2581,7 +2586,7 @@ ion-tabs.tabs_common > .tabbar > .tab-button {
 }
 
 .datetime-text {
-    padding-top: 20px;
+    padding-top: 10px;
     color: #00334e;
     letter-spacing: 0px;
     font-size: 12pt !important;
@@ -2868,12 +2873,48 @@ ion-tabs.tabs_common > .tabbar > .tab-button {
         border-bottom: 1px solid #dedede;
         width: 88%;
     }
-
-    .search_btn{
+    .search_btn {
         position: relative;
-        top: -12px;
-        left: 5px;
+        top: -9px;
+        left: 10px;
     }
 
 }
 
+
+
+.reset .alert-button-group {
+    position: relative;
+    width: 39%;
+    left: 30%;
+}
+
+.lbl_sele{
+    color: #00334e !important;
+    font-weight: 400 !important;
+    font-size: 10pt !important;
+}
+
+select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bbb6b6;
+    height: 50px !important;
+    border-radius: 0px !important;
+    color: #00334e;
+    font-size: 12pt !important;
+    width: 100%;
+}
+
+.alert_name img {
+    margin-right: 10px;
+}
+.alert_add img{
+    width: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+.alert_add{
+    font-size: 16px !important;
+}
