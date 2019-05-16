@@ -77,11 +77,18 @@ export class MapviewscreenPage {
   	console.log(this.address_details)
 
   if(this.paddrssflag==false || this.paddrssflag===undefined){
+
+
   this.address_edit=this.address_details.address.split("Mobile")[0];
+  this.address_edit= this.address_edit.substr(this.address_edit.indexOf(" ")+1)
+
  this.getCurrentLatlng();
   }
   else{
+
+
   this.address_edit=this.address_details.perm_address.split("Mobile")[0];
+  this.address_edit= this.address_details.perm_address.substr(this.address_edit.indexOf(" ")+1)
  this.getCurrentLatlng();
   }
 
@@ -399,7 +406,10 @@ testaddress(){
   }
 }
 testaddress_afterC(){
-  this.address_edit=this.address_details.address.split("Mobile")[0];
+  this.address_edit= this.address_edit.substr(this.address_edit.indexOf(" ")+1);
+ // this.address_details.address.split("Mobile")[0];
+ this.address_edit=this.address_details.address.split("Mobile")[0];
+
   this.getLatitudeLongitude(this.address_edit);
 
 }

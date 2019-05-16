@@ -34,7 +34,7 @@
       
       <ion-row text-wrap *ngFor="let item of emi; let i=index" [ngClass]="(i % 2 == 0) ? 'odd' : 'tr_even'">
 
-        <ion-col text-wrap class="width-25 text-right link tab_line_text" *ngIf="item.tran_dt"  (click)="PopoverBncReason(item.bnc_reason,item.tran_dt)">{{item.tran_dt | date:'dd-MM-yy'}} </ion-col>
+        <ion-col text-wrap class="width-25 text-right link tab_line_text" *ngIf="item.tran_dt"  (click)="PopoverBncReason(item.bnc_reason,item.tran_dt)"><u>{{item.tran_dt | date:'dd-MM-yy'}}</u></ion-col>
         <ion-col text-wrap class="width-25 text-right tab_line_text">{{item.rcbl}} </ion-col>
         <ion-col class="width-25 text-right tab_line_text" text-wrap  [ngClass]="(item.rcvd > 0) ? 'pos' : 'neg'">{{item.rcvd }} </ion-col>
         <ion-col text-wrap class="width-25 text-right tab_line_text" [ngClass]="(item.os > 0) ? 'pos' : 'neg'">{{item.os}} </ion-col>

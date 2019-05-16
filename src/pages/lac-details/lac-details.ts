@@ -568,7 +568,7 @@ ionViewWillEnter() {
      this.most_visited_list=res;
      this.tot_top_count= this.most_visited_list.length;
     })
-    this.dbProvider.SelectLacMasterPltSum().then((res)=>{
+    this.dbProvider.SelectLacMasterPltSum('','').then((res)=>{
      this.plttot=(res[0].plt)/10000000;
      console.log(this.plttot);
      this.plt_tot_all=this.plttot

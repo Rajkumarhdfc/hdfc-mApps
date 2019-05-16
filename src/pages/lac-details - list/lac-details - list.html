@@ -142,18 +142,44 @@
 
 
     <ion-row class="mt25">
+        <ion-col col-5>
+            <div class="left_align" style="margin-top: 7px;">
+                <span class="sub_text"> All Listing  </span> <span class="view_all_text ml5">{{scroll_count}}/{{totlen}} </span> 
+            </div>
+        </ion-col>
+        <ion-col col-4>
+            <div class="right_align" style="margin-top: 7px;">
+                <span class="view_all_text">PLT TOTAL </span> <span class="view_all_text ml5">{{plttot | number : '1.0-2'}} Cr</span> 
+            </div>
+        </ion-col>
+
+        <ion-col col-3>
+            <div class="right_align" (click)="Go_to_lacmaster_all('','','all')">
+                <span class="view_all_text"> Back </span> <span class="ml5 edits_icon_adj"> <img src="assets/imgs/ios-arrow-back.svg"style=" width: 20px; margin-left: 5px;"> </span>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+
+<!--<ion-row class="mt25">
         <ion-col col-6>
             <div class="left_align" style="margin-top: 7px;">
                 <span class="sub_text"> All Listing </span> <span class="view_all_text ml5">{{scroll_count}}/{{totlen}}</span> 
             </div>
         </ion-col>
         <ion-col col-6>
-            <div class="right_align">
-                <span class="view_all_text" (click)="Go_top_list()"> <span class="ml5 edits_icon_adj"> <img src="assets/imgs/ios-arrow-back.svg" style=" width: 20px; margin-left: 5px;"> </span> Back </span> 
+            <div class="right_align" style="margin-top: 7px;">
+                <span class="view_all_text">PLT TOTAL </span> <span class="view_all_text ml5">{{plttot | number : '1.0-2'}} Cr</span> 
             </div>
+                <span (click)="Go_top_list()"> <span class="ml5 edits_icon_adj"> <img src="assets/imgs/ios-arrow-back.svg" style=" width: 20px; margin-left: 5px;"> </span> Back </span> 
+            
             
         </ion-col>
-    </ion-row>
+        <!-- <b>PLT TOTAL : &nbsp;&nbsp;{{plttot | number : '1.0-2'}} Cr</b> -->
+
+     
+   <!--</ion-row>-->
 
     <ion-item-sliding>
             <ion-item *ngFor="let items of tableItemlist;let i=index;">

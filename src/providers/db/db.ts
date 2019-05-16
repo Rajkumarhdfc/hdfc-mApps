@@ -772,13 +772,21 @@ SelectLacMasterAcDetails(lacno){
 
 
 
-SelectLacMasterPltSum(){
+SelectLacMasterPltSum(filter,filter_value){
+	let sSelectSqlstmt = 
+		"SELECT SUM(plt) as plttot FROM PDANEW_LAC_MASTER "
+	if(filter!=""){
+
+
+		 sSelectSqlstmt ="SELECT SUM(plt) as plttot FROM PDANEW_LAC_MASTER where "+filter_value+"='"+filter+"'"; 
+
+	}
 	var plt=[];
+	console.log(sSelectSqlstmt);
 		return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
-				let sSelectSqlstmt = 
-				"SELECT SUM(plt) as plttot FROM PDANEW_LAC_MASTER "
+				
 
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -2571,8 +2579,9 @@ return new Promise((resolve,reject)=>{
 									  followupflag:res.rows.item(i).followupflag,
 									  max_action_date:res.rows.item(i).max_action_date,
 								 	  company_arrangement:res.rows.item(i).company_arrangement,
-									no_of_acc:res.rows.item(i).total_acc_cnt,
-								  	 plt_count:res.rows.item(i).all_plt
+										no_of_acc:res.rows.item(i).total_acc_cnt,
+									   plt_count:res.rows.item(i).all_plt,
+									   //plttot:res.rows.item(i).
    
 							   
    

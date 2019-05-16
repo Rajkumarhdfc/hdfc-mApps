@@ -151,7 +151,9 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
                             this.alllen=this.allRows.length;
                             this.tlen=this.alllen;
                             this.crrlen = 0;
-                            this.totlen=this.alllen
+                            this.totlen=this.alllen;
+                            this.scroll_count = this.crrlen;
+
                             var t=0;
                             for(let i = this.crrlen; i < this.alllen ; i++)
                             {
@@ -162,6 +164,8 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
                               if(t==10){
                                 break;
                               }
+                              this.scroll_count++;
+
                              }
                           
                             },
@@ -176,6 +180,8 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
             this.alllen=this.allRows.length;
             this.tlen=this.alllen;
             this.crrlen = 0;
+            this.scroll_count = this.crrlen;
+
             this.totlen=this.alllen
             var t=0;
             for(let i = this.crrlen; i < this.alllen ; i++)
@@ -187,8 +193,10 @@ constructor(@Inject(DOCUMENT) document,public navCtrl: NavController,
               if(t==10){
                 break;
               }
+              this.scroll_count++;
+
              }
-          
+
             },
        (error) => {
             console.log("ERROR: ", error);
@@ -588,11 +596,13 @@ GlobalBucket(){
  ionViewDidLoad(){
      this.search_flag=true;
          console.log('ionViewDidLoad LacDetailsPage');
-         this.dbProvider.SelectLacMasterPltSum().then((res)=>{
+         this.dbProvider.SelectLacMasterPltSum(this.valueof,this.paramval).then((res)=>{
          this.plttot=(res[0].plt)/10000000;
          console.log(this.plttot);
         this.plt_tot_all=this.plttot
          })
+
+
   }
 
    ionViewWillEnter() {
