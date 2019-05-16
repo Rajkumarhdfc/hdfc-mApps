@@ -422,7 +422,7 @@ updateSessionID(sSessionID, sUserId){ ////--update session id//////////
 				let sUpdateAppMasterScript = "UPDATE App_Master SET SessionId=? WHERE UserID=?";
 		        db.executeSql(sUpdateAppMasterScript, [sSessionID, sUserId])
 		        .then(res => {
-		        	alert(sSessionID);
+		        	//alert(sSessionID);
 		        	console.log(res);
 		        	resolve(res)
 		        })
