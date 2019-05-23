@@ -176,14 +176,14 @@
             
             
         </ion-col>
-        <!-- <b>PLT TOTAL : &nbsp;&nbsp;{{plttot | number : '1.0-2'}} Cr</b> -->
+        <b>PLT TOTAL : &nbsp;&nbsp;{{plttot | number : '1.0-2'}} Cr</b> -->
 
      
    <!--</ion-row>-->
 
     <ion-item-sliding>
             <ion-item *ngFor="let items of tableItemlist;let i=index;">
-                <div class="main_card_box">
+                <div class="main_card_box" [style.background-color]="getColor(items.followupflag)">
                     <ion-row>
                         <ion-col col-1 class="padding0">
                             <div class="allocated_box"> 
@@ -204,7 +204,7 @@
                                     <ion-icon name="star-outline" class="default" (click)="presentPopover(items)" [ngClass]="{'possible': items.difficulty_level=='Possible','difficult': items.difficulty_level=='Make Extra Effort','try': items.difficulty_level=='Needs Attention','paymentcolor': items.difficulty_level=='PaymentReceived'}"></ion-icon>
 
                                     <span class="btn_vi_to btn_visit" [style.background-color]="getColorbasket(items.my_basket)" (click)="navigate_my_basket(items)"><ion-icon  *ngIf="items.my_basket==undefined || items.my_basket==''" name="basket"></ion-icon>{{items.my_basket}}</span> 
-                                    <span class="down_arrow_adj"> 
+                                    <!-- <span class="down_arrow_adj"> 
 
                                         <ion-icon *ngIf="items.details_flag!=true" (click)="toggleList(i,items.LAC_NO)" name="ios-arrow-down-outline" class="dropdownicon">
                                             </ion-icon> 
@@ -212,15 +212,21 @@
                                         <ion-icon  (click)="toggleList(i,items.LAC_NO)" *ngIf="items.details_flag==true" name="ios-arrow-up-outline" class="dropupicon" >
                                             </ion-icon>
 
-                                    </span>
+                                    </span> -->
                                 </div>
                                 <div class="side_box_bottom">
                                     <span class="side_box_aac"> No. of Acc <span class="side_box_num_val">{{items.no_of_acc}}</span> </span> 
                                     <span class="side_box_tot"> Total Exposure  <span class="side_box_num_val"><img src="assets/imgs/INR_icon.png" class="inr_icon">{{formatNumber(items.plt_count)}}</span> </span> 
                                     <span class="right_align side_box_icon_adj"> 
-                                        <img class="mr15" src="assets/imgs/home_icon_new.svg" (click)="getCommAddForBorr(items.LAC_NO)">
-                                        <img class="mr15" src="assets/imgs/phone_inoc_new.svg" (click)="GetCustContact(items.LAC_NO)">
-                                        <img class="mr15" src="assets/imgs/plot-icon-new.svg" (click)="goToMap(items.LAC_NO,items.BORR_NAME)">
+                                        <img class="mr05" src="assets/imgs/home_icon_new.svg" (click)="getCommAddForBorr(items.LAC_NO)">
+                                        <img class="mr05" src="assets/imgs/phone_inoc_new.svg" (click)="GetCustContact(items.LAC_NO)">
+                                        <img class="mr13" src="assets/imgs/plot-icon-new.svg" (click)="goToMap(items.LAC_NO,items.BORR_NAME)">
+                                        <span class="down_arrow_adj"> 
+                                            <ion-icon *ngIf="items.details_flag!=true" (click)="toggleList(i,items.LAC_NO)" name="ios-arrow-down-outline" class="dropdownicon">
+                                                </ion-icon> 
+                                            <ion-icon  (click)="toggleList(i,items.LAC_NO)" *ngIf="items.details_flag==true" name="ios-arrow-up-outline" class="dropupicon" >
+                                                </ion-icon>
+                                        </span>
                                     </span> 
                                 </div>
                             </div>
@@ -228,7 +234,7 @@
                     </ion-row>
                 </div> 
 
-                <div class="main_card_box_exp" [attr.id]=i *ngIf="items.details_flag==true">
+                <div class="main_card_box_exp"  [style.background-color]="getColor(items.followupflag)" [attr.id]=i *ngIf="items.details_flag==true">
                         <ion-row>
                             <ion-col col-1 class="padding0">
                             </ion-col>

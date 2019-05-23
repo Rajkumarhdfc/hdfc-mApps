@@ -507,10 +507,8 @@ public openPopover(listItem){
   getColor(followupflag) {
     switch (followupflag) {
       case "true":
-        return "blue";
-      case "false":
-        return "red";
-      }
+        return "#e0e9f3";
+       }
   }
 
   getColorbasket(basketflag) {

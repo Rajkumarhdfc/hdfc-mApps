@@ -302,7 +302,7 @@ Fu_ActionInsertData(){
                                    message: 'uploaded successfully',
                                    duration: 10000
                                    });
-                                   window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
+                            //       window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
 
                                    this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                                    toast.present(); 
@@ -322,7 +322,7 @@ Fu_ActionInsertData(){
                                      duration: 10000
                                      });
                                      toast.present(); 
-                                     window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
+                                  //   window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
 
                                  }
      
@@ -364,7 +364,11 @@ Fu_ActionInsertData(){
                 this.result=result;
                 console.log(this.result);
                 this.saveflag=true;
-
+                this.gflag=true;
+                this.dbProvider.updatefollowupflag(this.gflag,this.data).then(()=>{
+                  // console.log("followup flag updated");
+                  // console.log(this.gflag);
+                })
               })
        }
 }
@@ -414,7 +418,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                               message: 'uploaded successfully',
                               duration: 10000
                               });
-                              window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
+                             // window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
                               console.log(this.gflag);
                               this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                               console.log(this.gflag);
@@ -433,7 +437,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                                 message: 'upload error pls try again',
                                 duration: 10000
                                 });
-                                window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
+                           //     window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
                                 toast.present(); 
                             }
 
@@ -500,6 +504,11 @@ for(var i=0;i<this.crosslinks.length;i++){
             .then((result) => {
                 this.result=result;
                 console.log(this.result);
+                this.gflag=true;
+                this.dbProvider.updatefollowupflag(this.gflag,this.data).then(()=>{
+                  // console.log("followup flag updated");
+                  // console.log(this.gflag);
+                })
               })
     }
 

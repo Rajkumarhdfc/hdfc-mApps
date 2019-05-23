@@ -266,6 +266,13 @@ Go_to_lacmaster_all(param,value,count){
    return (this.scroll_count==this.totlen||this.filter_cnt >= 1) ? false : true;
   }  
 
+  
+  getColor(followupflag) {
+    switch (followupflag) {
+      case "true":
+        return "#e0e9f3";
+       }
+  }
 
 ///////bucket ///////////////////////////////
 
@@ -385,14 +392,6 @@ public openPopover(listItem){
 
   } 
 
-  getColor(followupflag) {
-    switch (followupflag) {
-      case "true":
-        return "blue";
-      case "false":
-        return "red";
-      }
-  }
 
   getColorbasket(basketflag) {
     if(basketflag==undefined || basketflag==""){

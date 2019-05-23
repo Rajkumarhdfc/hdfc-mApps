@@ -148,7 +148,7 @@ encodebase64image(base,img_filename){
           uploadphoto(this.fileno,this.ldap_id,this.propno,img_filename,this.sessionid,base64File).
           then((res)=>{
          loading.dismiss();
-         window["FirebasePlugin"].logEvent("uploadphoto", {username:this.ldap_id,fileno:this.fileno});
+      //   window["FirebasePlugin"].logEvent("uploadphoto", {username:this.ldap_id,fileno:this.fileno});
             })
         }, (err) => {
             loading.dismiss();

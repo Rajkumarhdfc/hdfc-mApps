@@ -233,7 +233,8 @@ ion-header{
     border-radius: 50px;
     font-size: 10pt;
     margin-left: 15px;
-    display: inline-block;
+    float: right;
+    margin-right: 10px;
 }
 
 
@@ -256,9 +257,9 @@ ion-header{
 }
 .down_arrow_adj{
     float: right;
-    margin-right: 23px;
+    margin-right: 10px;
     position: relative;
-    top: -7px;
+    top: -10px;
     padding-top: 8px;
 }
 .side_box_aac{
@@ -268,7 +269,7 @@ ion-header{
     font-size: 10pt;
     color: #00334e;
     border-right: 1px solid #ebebeb;
-    margin-right: 25px;
+    margin-right: 15px;
 }
 .side_box_tot{
     width: 30%;
@@ -276,7 +277,7 @@ ion-header{
     font-size: 10pt;
     color: #00334e;
     border-right: 1px solid #ebebeb;
-    margin-right: 25px;
+    margin-right: 15px;
 }
 .side_box_num_val{
     display: block;
@@ -287,7 +288,8 @@ ion-header{
 .side_box_icon_adj{
     padding-top: 15px;
     display: block;
-    margin-right: 20px;
+    margin-right: 1px;
+    float:left;
 }
 .rating_icon{
     position: relative;
@@ -320,12 +322,12 @@ ion-header{
 }
 .dropdownicon{
     color: #00334e;
-    font-size: 20pt;
+    font-size: 22pt;
     margin-right: 0px;
 }
 .dropupicon{
     color: #00334e;
-    font-size: 20pt;
+    font-size: 22pt;
     margin-right: 0px;
 }
 .label-md {
@@ -833,6 +835,12 @@ ion-tabs.tabs_common > .tabbar > .tab-button {
 }
 .mt5 {
     margin-top: 5px;
+}
+.mr05{
+    margin-right: 5px;
+}
+.mr13{
+    margin-right: 13px;
 }
 .mr10{
     margin-right: 10px;
@@ -2809,7 +2817,7 @@ ion-tabs.tabs_common > .tabbar > .tab-button {
         line-height: 14px;
     }
     .down_arrow_adj{
-        margin-right: 25px;
+        margin-right: 10px;
     }
     .more_details_val {
         font-size: 11pt;
