@@ -58,7 +58,7 @@ asc:string ="asc";
 
       alert.addInput({
       type: 'radio',
-      label: 'Allocation R/S',
+      label: 'Allocation/RFV',
       value: 'prop_area_desc',
       checked: false
     });
@@ -76,25 +76,25 @@ asc:string ="asc";
     });
       alert.addInput({
       type: 'radio',
-      label: 'my_basket',
+      label: 'My Basket',
       value: 'my_basket',
       checked: false
     });
        alert.addInput({
       type: 'radio',
-      label: 'Follwup Done',
+      label: 'Followup Done',
       value: 'followupflag',
       checked: false
     });
           alert.addInput({
       type: 'radio',
-      label: 'max_action_date',
+      label: 'Max Action Date',
       value: 'max_action_date',
       checked: false
     });
      alert.addInput({
       type: 'radio',
-      label: 'company_arrangement',
+      label: 'Company Arrangement',
       value: 'company_arrangement',
       checked: false
     });

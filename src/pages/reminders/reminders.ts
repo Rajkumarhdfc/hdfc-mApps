@@ -177,10 +177,12 @@ getCommAddForBorr(lacno){
 
     const optionDialog = this.alertCtrl.create({
       title: 'HOME ADDRESS',
-      message: '<div>' +
-      '<span class="alert_name block"><img src="assets/imgs/alert_map.png" style="margin-right:10px;>'+res[0].comm_address+'</span>' +
+      message: res[0].comm_address,
+      
+      // '<div>' +
+      // '<span class="alert_name block"><img src="assets/imgs/alert_map.png" style="margin-right:10px;>'+res[0].comm_address+'</span>' +
      
-      '</div>',
+      // '</div>',
       cssClass: 'reset', 
       buttons: [
         {

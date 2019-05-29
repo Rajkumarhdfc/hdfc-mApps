@@ -59,11 +59,13 @@ addfollowup:FormGroup;
   AmtChargcrosslink:any;
   crosslinkindex:any;
   myrows=6;
+ // tmonth:any;
   crossflag:boolean=false;
  today_date = new Date();
 error:any={isError:false,errorMessage:''};
 error1:any={isError:false,errorMessage:''};
 tdate=this.datePipe.transform(this.today_date,"yyyy-MM-dd");
+tmonth=this.today_date.getMonth();
 version_no:any=3;
 crosslinks:any;
 saveflag:boolean=false;
@@ -288,10 +290,10 @@ Fu_ActionInsertData(){
                                     });
                                   loading.present(); 
                                 this.restProvider.generateToken({}).then((res1:any)=>{
-                                this.resultsessn =res1;
-                              console.log("sessionid",res1);
-                          }).then((res1)=>{
-                              this.restProvider.uploadData(this.table_id,result,this.resultsessn.SYNC_INFO[0].SESSION_ID)
+                                  this.resultsessn =res1;
+                                  console.log("sessionid",res1);
+                                }).then((res1)=>{
+                                this.restProvider.uploadData(this.table_id,result,this.resultsessn.SYNC_INFO[0].SESSION_ID)
                                   .then(res => { 
                                    console.log(this.table_id);
                                    console.log(res);
@@ -302,7 +304,7 @@ Fu_ActionInsertData(){
                                    message: 'uploaded successfully',
                                    duration: 10000
                                    });
-                            //       window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
+                              window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
 
                                    this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                                    toast.present(); 
@@ -322,13 +324,12 @@ Fu_ActionInsertData(){
                                      duration: 10000
                                      });
                                      toast.present(); 
-                                  //   window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
+                                   window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
 
                                  }
      
                                  })
-                })
-                                  
+                          })
                               },
                     (error) => {
                                 console.log("ERROR: ", error);
@@ -418,7 +419,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                               message: 'uploaded successfully',
                               duration: 10000
                               });
-                             // window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
+                             window["FirebasePlugin"].logEvent("Add_follow_up form upload", {username:this.ldap_id,table_id:this.table_id});
                               console.log(this.gflag);
                               this.events.publish('headercolor', {hcolor:this.gflag,lacno:this.data});
                               console.log(this.gflag);
@@ -437,7 +438,7 @@ clUpload(lac_no_cl,actioncross,AmtChargcrosslink){
                                 message: 'upload error pls try again',
                                 duration: 10000
                                 });
-                           //     window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
+                             window["FirebasePlugin"].logEvent("Add_follow_up form upload error", {username:this.ldap_id,table_id:this.table_id});
                                 toast.present(); 
                             }
 
@@ -546,9 +547,20 @@ compareTwoDate1(){
    
   }
   compareTwoDate2(){
-   if(this.addfollowup.value.NextActionDate < this.tdate){
-     this.error1={isError:true,errorMessage:"Next action date should be future date"};
-     console.log("End NextDate can't be a past date");
+    var x = 2; //or whatever offset 
+    var CurrentDate = new Date();
+   // CurrentDate=this.datePipe.transform(CurrentDate,"yyyy-MM-dd");
+
+    console.log("Current date:", CurrentDate); 
+    CurrentDate.setMonth(CurrentDate.getMonth() + x); 
+    console.log("Date after " + x + " months:", CurrentDate); 
+    var x1=this.datePipe.transform(CurrentDate,"yyyy-MM-dd");
+
+   if(this.addfollowup.value.NextActionDate < this.tdate || this.addfollowup.value.NextActionDate>=x1){
+    // console.log(this.addfollowup.value.NextActionDate);
+    // console.log(this.tmonth,this.tdate);
+     this.error1={isError:true,errorMessage:"Next action date should be future date and Next action date cannot be greater than 2 months"};
+   //  console.log("End NextDate can't be a past date");
    }
    else{
    //   this.content.scrollTo(0, 580)

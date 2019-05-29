@@ -57,7 +57,7 @@ export class DbProvider {
 	         { TableId : 223 , TableName:'PDANEW_FU_ACT_REMINDER', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_FU_ACT_REMINDER (LAC_NO NUMERIC, NXT_ACTION NUMERIC, DEF_OBSERV TEXT, LDAP_ID TEXT, NAME TEXT, SRNO NUMERIC, DELETED_FLAG TEXT,  TIMESTAMP NUMERIC);"},
 	         { TableId : 224 , TableName:'PDANEW_LAC_AMRT', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_LAC_AMRT (LAC_NO NUMERIC, PR_EMI NUMERIC, EMI NUMERIC, ROI NUMERIC, PERIODICITY NUMERIC, AMRT_FR_DT NUMERIC, DT_OF_AMRT NUMERIC, YYYYYY NUMERIC, LDAP_ID TEXT, AMRT_TO_DT NUMERIC, SRNO NUMERIC,TIMESTAMP NUMERIC)"},
 	         { TableId : 225 , TableName:'PDANEW_LAC_DEFAULT_INFO', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_LAC_DEFAULT_INFO(LAC_NO NUMERIC , RISK_EVENT TEXT, UPDATED_BY NUMERIC , UPDATED_DATE NUMERIC, LDAP_ID TEXT, SRNO NUMERIC , DELETED_FLAG TEXT , TIMESTAMP NUMERIC);"},
-	         { TableId : 200 , TableName:'PDANEW_LAC_MASTER', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_LAC_MASTER (amrt_prin NUMBER(20,2),click_count numeric DEFAULT 0,company_arrangement varchar2(100),max_action_date NUMERIC,lac_no NUMERIC,os_months_emi NUMERIC, os_months_pmi NUMERIC, borr_name TEXT, follow_up_ind TEXT,  prin_os_last_tr_comb NUMERIC,  months_os_comb NUMERIC, area_desc TEXT,  selfemp_company_name TEXT,  prop_class TEXT,  fraud_ind TEXT ,  customer_grade TEXT,  cure_type TEXT,  srno NUMERIC,  deleted_flag TEXT,  timestamp NUMERIC,  ldap_id TEXT,  prop_area_desc TEXT,  prop_name TEXT,  obs_code TEXT,  file_no TEXT,  sanction TEXT ,  my_basket TEXT,  prop_no TEXT,  builder_name TEXT,  builder_contact TEXT,  action_taken TEXT,  fu_area_desc TEXT,  plt NUMERIC,  months_os TEXT,  emp_area_desc TEXT,  last_rcbl_dt TEXT,  to_date TEXT,  rec_type TEXT,difficulty_level TEXT,level_remarks TEXT,followupflag TEXT);"},
+	         { TableId : 200 , TableName:'PDANEW_LAC_MASTER', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_LAC_MASTER (rec_type VARCHAR2(30),amrt_prin NUMBER(20,2),click_count numeric DEFAULT 0,company_arrangement varchar2(100),max_action_date NUMERIC,lac_no NUMERIC,os_months_emi NUMERIC, os_months_pmi NUMERIC, borr_name TEXT, follow_up_ind TEXT,  prin_os_last_tr_comb NUMERIC,  months_os_comb NUMERIC, area_desc TEXT,  selfemp_company_name TEXT,  prop_class TEXT,  fraud_ind TEXT ,  customer_grade TEXT,  cure_type TEXT,  srno NUMERIC,  deleted_flag TEXT,  timestamp NUMERIC,  ldap_id TEXT,  prop_area_desc TEXT,  prop_name TEXT,  obs_code TEXT,  file_no TEXT,  sanction TEXT ,  my_basket TEXT,  prop_no TEXT,  builder_name TEXT,  builder_contact TEXT,  action_taken TEXT,  fu_area_desc TEXT,  plt NUMERIC,  months_os TEXT,  emp_area_desc TEXT,  last_rcbl_dt TEXT,  to_date TEXT,  rec_type TEXT,difficulty_level TEXT,level_remarks TEXT,followupflag TEXT);"},
 	         { TableId : 201 , TableName:'PDANEW_PROP_DETAILS', CreateSql : "CREATE TABLE IF NOT EXISTS PDANEW_PROP_DETAILS (lac_no NUMERIC, prop_addr_line1 TEXT,  prop_addr_line2 TEXT,  prop_addr_line3 TEXT,  prop_addr_line4 TEXT,  prop_addr_line5 TEXT, landmark TEXT, prop_area NUMERIC,  mortgage_type TEXT,  prin_ason_dt1 NUMERIC,  prin_ason_val1 NUMERIC,  srno NUMERIC ,  deleted_flag TEXT,  timestamp NUMERIC,  ldap_id TEXT,  cumdisb NUMERIC,  prop_no TEXT,  prop_pin NUMERIC,  no_of_owners NUMERIC,  prop_val_cost NUMERIC,  reserve_price NUMERIC,  prop_state TEXT,  prop_city TEXT,  master_fileno TEXT,  docket_location TEXT,  ta_remarks TEXT,  prop_spec_addr TEXT,  prop_area_desc TEXT,  tot_plot_area NUMERIC,prop_latitude VARCHAR2(25),prop_longitude VARCHAR2(25));"},
 	       	{TableId : 209 , TableName:'PDANEW_NEW_FU_ACTION', CreateSql :"create table  IF NOT EXISTS PDANEW_NEW_FU_ACTION(  ldap_id VARCHAR2(20),  lac_no  NUMBER(10),  action VARCHAR2(5),  date_of_action DATE,  response VARCHAR2(3),  def_observ VARCHAR2(5),  remark VARCHAR2(500),  opr_id VARCHAR2(10),  action_to_be VARCHAR2(3),  action_to_be_dt   DATE,  amount_tobechg   NUMBERIC(7,2),  amount_spent NUMBERIC(7,2),  copy_status VARCHAR2(2),  dwld_date DATE,  uploaded_flag VARCHAR2(1),  created_dt DATE,  latitude VARCHAR2(25),  longitude VARCHAR2(25),mobile_srno INTEGER PRIMARY KEY AUTOINCREMENT,version_no NUMBER(10),  processed_flag VARCHAR2(2),  processed_dt DATE,area_code VARCHAR2(50),  special_info_type    VARCHAR2(2),  action_type VARCHAR2(2),  risk_event VARCHAR2(20),  promised_dt DATE,  promised_amt NUMBER(12,2),  pipeline_amt NUMBER(20,2),  pipeline_dt DATE,  pipeline_proj_bucket VARCHAR2(500));" },
 	        {TableId : 229 , TableName:'PDANEW_PROP_CLASS', CreateSql :"create table IF NOT EXISTS PDANEW_PROP_CLASS(lac_no NUMBER(10),class_code VARCHAR2(20),specific_value VARCHAR2(20),ldap_id VARCHAR2(20),deleted_flag VARCHAR2(1),timestamp DATE,  mobile_srno INTEGER PRIMARY KEY AUTOINCREMENT,uploaded_flag  VARCHAR2(1));"},
@@ -902,7 +902,7 @@ LacMasterTableDetails_v1(){//displaying the lac master table page
 	   this.sqlite.create(this.options)
 	   .then((db : SQLiteObject) => {
 
-		   let sSelectSqlstmt ="SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no GROUP BY p.lac_no"
+		   let sSelectSqlstmt ="SELECT p.rec_type,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no GROUP BY p.lac_no"
 			   console.log(sSelectSqlstmt);
 			   db.executeSql(sSelectSqlstmt, [])
 			   .then(res =>
@@ -936,7 +936,8 @@ LacMasterTableDetails_v1(){//displaying the lac master table page
 							  max_action_date:res.rows.item(i).max_action_date,
 							  company_arrangement:res.rows.item(i).company_arrangement,
 							  no_of_acc:res.rows.item(i).total_acc_cnt,
-							  plt_count:res.rows.item(i).all_plt
+							  plt_count:res.rows.item(i).all_plt,
+							  rec_type:res.rows.item(i).rec_type
 
 					   }); 
 					   }
@@ -1012,7 +1013,7 @@ LacMasterTableDFilter(){//displaying the lac master table page
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 			//console.log(len);
-				let sSelectSqlstmt = "SELECT max_action_date,company_arrangement,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level,my_basket FROM PDANEW_LAC_MASTER ;"
+				let sSelectSqlstmt = "SELECT rec_type,max_action_date,company_arrangement,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level,my_basket FROM PDANEW_LAC_MASTER ;"
 					console.log(sSelectSqlstmt);
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -1037,7 +1038,8 @@ LacMasterTableDFilter(){//displaying the lac master table page
 		   						difficulty_level:res.rows.item(i).difficulty_level,
 		   						my_basket:res.rows.item(i).my_basket,
 		   						max_action_date:res.rows.item(i).max_action_date,
-							  company_arrangement:res.rows.item(i).company_arrangement
+								company_arrangement:res.rows.item(i).company_arrangement,
+								rect_type:res.rows.item(i).rec_type
 		                    }); 
 		                }
 
@@ -1060,14 +1062,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 		return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
-
-		//		basketname=basketname.toString();
-
-				let sSelectSqlstmt=	"SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p.my_basket='"+basketname+"' GROUP BY p.lac_no"
-
-
-
-			//	let sSelectSqlstmt = "SELECT max_action_date,company_arrangement,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level,my_basket FROM PDANEW_LAC_MASTER where my_basket='"+basketname+"'";
+				let sSelectSqlstmt=	"SELECT p.rec_type,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p.my_basket='"+basketname+"' GROUP BY p.lac_no"
 					console.log(sSelectSqlstmt);
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -1094,8 +1089,8 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 		   						max_action_date:res.rows.item(i).max_action_date,
 							   company_arrangement:res.rows.item(i).company_arrangement,
 							   no_of_acc:res.rows.item(i).total_acc_cnt,
-							   plt_count:res.rows.item(i).all_plt
-
+							   plt_count:res.rows.item(i).all_plt,
+							   rec_type:res.rows.item(i).rec_type
 
 							 
 		                    }); 
@@ -3987,7 +3982,7 @@ Listingmostvisitedlist(){
 	   this.sqlite.create(this.options)
 	   .then((db : SQLiteObject) => {
 
-		   let sSelectSqlstmt ="SELECT p.click_count,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no  where p.click_count!=0 group by p.click_count,p.lac_no order by count(p.click_count) DESC limit 3"
+		   let sSelectSqlstmt ="SELECT p.rec_type,p.click_count,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no  where p.click_count!=0 group by p.click_count,p.lac_no order by count(p.click_count) DESC limit 3"
 			   console.log(sSelectSqlstmt);
 			   db.executeSql(sSelectSqlstmt, [])
 			   .then(res =>
@@ -4022,7 +4017,8 @@ Listingmostvisitedlist(){
 							  company_arrangement:res.rows.item(i).company_arrangement,
 							  no_of_acc:res.rows.item(i).total_acc_cnt,
 							  click_count:res.rows.item(i).click_count,
-							  plt_count:res.rows.item(i).all_plt
+							  plt_count:res.rows.item(i).all_plt,
+							  rec_type:res.rows.item(i).rec_type
 
 					   }); 
 					   }

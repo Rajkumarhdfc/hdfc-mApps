@@ -683,6 +683,7 @@ close(){
 
 
 getCommAddForBorr(lacno){
+
   this.dbProvider.GetCustomerAddress_lac(lacno).then((res:any)=>{
    // alert('success');
    if(res.length==0){

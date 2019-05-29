@@ -180,7 +180,7 @@ export class TableListPage {
           this.DismissSpinner();
             this.timerStop();
             alert("error while syncing");
-           // window["FirebasePlugin"].logEvent("syncerror", {param1:this.UserID,errflag:app_master.TABLE_LIST});
+            window["FirebasePlugin"].logEvent("syncerror", {param1:this.UserID,errflag:app_master.TABLE_LIST});
         }
         else{
            if(app_master.TABLE_LIST.length!=null){
@@ -272,7 +272,7 @@ export class TableListPage {
                                         }
                                   }
                                        console.log("call data complete1");    
-                                    //   window["FirebasePlugin"].logEvent("syncCompleted", {param1:this.UserID,syncflag:this.full_sync});
+                                     window["FirebasePlugin"].logEvent("syncCompleted", {param1:this.UserID,syncflag:this.full_sync});
     
                                         this.DismissSpinner();
                                         this.timerStop();

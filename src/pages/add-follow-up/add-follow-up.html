@@ -40,7 +40,7 @@
             <ion-item>
                 <ion-icon name="calendar" style="zoom:2.0"></ion-icon>
                   <ion-label stacked>Action Date *</ion-label>
-                  <ion-datetime type="Date" formControlName="ActionDate" min="2019" max="2019" displayFormat="DD/MM/YYYY" 
+                  <ion-datetime type="Date" formControlName="ActionDate" min="2019" maxmonth="2019" displayFormat="DD/MM/YYYY" 
                   (ionChange)="compareTwoDate1()"></ion-datetime>
             </ion-item>
               <div *ngIf="error.isError" class="alert alert-danger error">
