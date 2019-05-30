@@ -610,6 +610,8 @@ GlobalBucket(){
           this.dbProvider.getFollowuoFlag(this.last_active_lacno.LAC_NO).then((res)=>{
             this.tableItemlist[this.last_active_lacno.last_index].followupflag=res[0].followupflag;
             console.log(res);
+            console.log("res");
+
           })
          }
 
