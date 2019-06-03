@@ -1117,7 +1117,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 				let sSelectSqlstmt = 
-				"SELECT months_os_comb,emi,os_months_emi,asset_classification,bal_term,roi,rcd_dt,last_tr_dt,sanction,cumdisb,normal_pay_mode,fraud_ind,prop_class,gr_no,origin_place,thru_whom,lac_no FROM PDANEW_LAC_DETAILS where LAC_NO =" + lac_no 
+				"SELECT emi,os_months_emi,asset_classification,bal_term,roi,rcd_dt,last_tr_dt,sanction,cumdisb,normal_pay_mode,fraud_ind,prop_class,gr_no,origin_place,thru_whom,lac_no FROM PDANEW_LAC_DETAILS where LAC_NO =" + lac_no 
 
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -1126,7 +1126,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 					    for (let i=0; i < res.rows.length; i++){
 							Items.push({
 		    					EMI: res.rows.item(i).emi,
-		   						M0NTH_OS: res.rows.item(i).months_os_comb,
+		   						M0NTH_OS: res.rows.item(i).os_months_emi,
 		   						ASSET_CLASS:res.rows.item(i).asset_classification,
 		   						BAL_TERM: res.rows.item(i).bal_term,
 		   						ROI: res.rows.item(i).roi,
