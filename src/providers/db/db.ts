@@ -1116,7 +1116,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 				let sSelectSqlstmt = 
-				"SELECT emi,os_months_emi,asset_classification,bal_term,roi,rcd_dt,last_tr_dt,sanction,cumdisb,normal_pay_mode,fraud_ind,prop_class,gr_no,origin_place,thru_whom,lac_no FROM PDANEW_LAC_DETAILS where LAC_NO =" + lac_no 
+				"SELECT months_os_comb,emi,os_months_emi,asset_classification,bal_term,roi,rcd_dt,last_tr_dt,sanction,cumdisb,normal_pay_mode,fraud_ind,prop_class,gr_no,origin_place,thru_whom,lac_no FROM PDANEW_LAC_DETAILS where LAC_NO =" + lac_no 
 
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -1125,7 +1125,7 @@ LacMasterTableBasketFilter(basketname){//displaying the lac master table page
 					    for (let i=0; i < res.rows.length; i++){
 							Items.push({
 		    					EMI: res.rows.item(i).emi,
-		   						M0NTH_OS: res.rows.item(i).os_months_emi,
+		   						M0NTH_OS: res.rows.item(i).months_os_comb,
 		   						ASSET_CLASS:res.rows.item(i).asset_classification,
 		   						BAL_TERM: res.rows.item(i).bal_term,
 		   						ROI: res.rows.item(i).roi,
@@ -2485,7 +2485,7 @@ return new Promise((resolve,reject)=>{
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 			//	let sSelectSqlstmt1= "select max_action_date,company_arrangement,followupflag,my_basket,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level from PDANEW_LAC_MASTER where lac_no !='' ORDER BY " + sorttype + " " + sortorder 
-			let sSelectSqlstmt ="SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p.lac_no !='' GROUP BY p.lac_no ORDER BY "+ 'p.'+sorttype + " " + sortorder;
+			let sSelectSqlstmt ="SELECT p.rec_type,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p.lac_no !='' GROUP BY p.lac_no ORDER BY "+ 'p.'+sorttype + " " + sortorder;
 
 
 			//"SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where lac_no !='' ORDER BY " + sorttype + " " + sortorder +'GROUP BY p.lac_no';
@@ -2516,7 +2516,8 @@ return new Promise((resolve,reject)=>{
 		   						max_action_date:res.rows.item(i).max_action_date,
 								company_arrangement:res.rows.item(i).company_arrangement,
 								no_of_acc:res.rows.item(i).total_acc_cnt,
-								plt_count:res.rows.item(i).all_plt
+								plt_count:res.rows.item(i).all_plt,
+								rec_type:res.rows.item(i).rec_type
 
 		                    }); 
 		                }
@@ -2542,7 +2543,7 @@ return new Promise((resolve,reject)=>{
 			   this.sqlite.create(this.options)
 			   .then((db : SQLiteObject) => {
 			   //	let sSelectSqlstmt1= "select max_action_date,company_arrangement,followupflag,my_basket,lac_no,borr_name,follow_up_ind,prin_os_last_tr_comb,months_os,area_desc,customer_grade,prop_area_desc,fu_area_desc,emp_area_desc,selfemp_company_name,plt,prop_name,difficulty_level from PDANEW_LAC_MASTER where lac_no !='' ORDER BY " + sorttype + " " + sortorder 
-			   let sSelectSqlstmt ="SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p."+paramval+"='"+value+"'"+'GROUP BY p.lac_no'; 
+			   let sSelectSqlstmt ="SELECT p.rec_type,p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where p."+paramval+"='"+value+"'"+'GROUP BY p.lac_no'; 
    
    
 			   //"SELECT p.os_months_emi,p.max_action_date,p.company_arrangement,p.os_months_pmi,p.lac_no,p.file_no,p.prop_no,p.srno,p.borr_name,p.follow_up_ind,p.prin_os_last_tr_comb,p.months_os,area_desc,p.customer_grade,p.prop_area_desc,p.fu_area_desc,p.emp_area_desc,p.selfemp_company_name,p.plt,p.prop_name,p.difficulty_level,p.my_basket,p.followupflag,count(u.lac_no)as total_acc_cnt,sum(u.plt_comb)as all_plt FROM PDANEW_LAC_MASTER p join pdanew_unique_id_accounts u on p.lac_no=u.lac_no where lac_no !='' ORDER BY " + sorttype + " " + sortorder +'GROUP BY p.lac_no';
@@ -2572,12 +2573,9 @@ return new Promise((resolve,reject)=>{
 									  followupflag:res.rows.item(i).followupflag,
 									  max_action_date:res.rows.item(i).max_action_date,
 								 	  company_arrangement:res.rows.item(i).company_arrangement,
-										no_of_acc:res.rows.item(i).total_acc_cnt,
+									  no_of_acc:res.rows.item(i).total_acc_cnt,
 									   plt_count:res.rows.item(i).all_plt,
-									   //plttot:res.rows.item(i).
-   
-							   
-   
+									   rec_type:res.rows.item(i).rec_type
 							   }); 
 						   }
    
