@@ -6,9 +6,8 @@ import { DbProvider } from '../../providers/db/db';
 export class RestProvider {
 
 
-apiUrl = "https://mapiuat.hdfc.com/PDA_SYNC_DMZ_V1/api/pda";
-
-//apiUrl = "https://mapi.hdfc.com/PDA_SYNC_DMZ_API/api/pda";
+//apiUrl = "https://mapiuat.hdfc.com/PDA_SYNC_DMZ_V1/api/pda";
+apiUrl = "https://mapi.hdfc.com/PDA_SYNC_DMZ_API/api/pda";
 
 	sApplicationID = "3";
 	sVersion = "3";
