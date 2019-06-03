@@ -102,7 +102,7 @@ public searchclose(){
                     this.totlen=this.alllen
                     var t=0;
                    // this.filter_cnt=this.tableItemlist.length;
-
+                   this.filter_cnt=0;
                     for(let i = this.crrlen; i < this.alllen ; i++)
                     {
                       this.tableItemlist.push(this.allRows[i]);
@@ -113,7 +113,7 @@ public searchclose(){
                         break;
                       }
                      }
-                      this.filter_cnt=this.tableItemlist.length;
+                   //   this.filter_cnt=this.tableItemlist.length;
                     },
           (error) => {
                     console.log("ERROR: ", error);
@@ -287,6 +287,8 @@ setFilteredItems(searchitem) {
       console.log(this.allRows);
          if (searchitem && searchitem.length>=3 && searchitem!=null) 
          {
+         // this.filter_cnt=0;
+
           this.plttot=0
           this.tableItemlist=this.allRows.filter((item) => {
               if(item.difficulty_level==null){
@@ -336,8 +338,8 @@ setFilteredItems(searchitem) {
                               }
                              this.filter_cnt=0;
         }
-                      this.filter_cnt=this.tableItemlist.length;
-                      this.scroll_count=this.filter_cnt;
+                    //  this.filter_cnt=this.tableItemlist.length;
+                      this.scroll_count=this.tableItemlist.length;
           
  }
 
