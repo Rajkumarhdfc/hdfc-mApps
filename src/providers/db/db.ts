@@ -740,7 +740,7 @@ SelectLacMasterAcDetails(lacno){
 			this.sqlite.create(this.options)
 			.then((db : SQLiteObject) => {
 				let sSelectSqlstmt = 
-				"SELECT lac_no,to_date,plt,last_rcbl_dt,prin_os_last_tr_comb,amrt_prin FROM PDANEW_LAC_MASTER where LAC_NO =" + lacno 
+				"SELECT months_os_comb,lac_no,to_date,plt,last_rcbl_dt,prin_os_last_tr_comb,amrt_prin FROM PDANEW_LAC_MASTER where LAC_NO =" + lacno 
 
 					db.executeSql(sSelectSqlstmt, [])
 					.then(res =>
@@ -754,7 +754,8 @@ SelectLacMasterAcDetails(lacno){
 								last_rcbl_dt:(res.rows.item(i).last_rcbl_dt).toString().slice(0,10),
 								prin_os_last_tr_comb:res.rows.item(i).prin_os_last_tr_comb ,
 								amrt_prin:res.rows.item(i).amrt_prin,
-								plt:res.rows.item(i).prin_os_last_tr_comb
+								plt:res.rows.item(i).prin_os_last_tr_comb,
+								MONTHS_OS:res.rows.item(i).months_os_comb
 
 		                    }); 
 		                }
